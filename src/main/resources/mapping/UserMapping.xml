@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.sumi.mapper.UserMapper">
+
+    <select id="find"  parameterType="java.lang.String" resultType="cn.sumi.pojo.User">
+        SELECT account,passwd as password,nickname,email FROM user WHERE account=#{account}
+    </select>
+
+    <insert id="save" parameterType="cn.sumi.pojo.User">
+        INSERT INTO user(account,passwd,nickname,email) VALUES(#{account},#{password},#{nickname},#{email})
+    </insert>
+
+    <update id="update" parameterType="cn.sumi.pojo.User">
+        update user set passwd=#{password},nickname=#{nickname},email=#{email} where account=#{account};
+    </update>
+
+    <delete id="delete" parameterType="cn.sumi.pojo.User">
+        delete from user where account=#{account};
+    </delete>
+</mapper>
