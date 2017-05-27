@@ -1,29 +1,39 @@
 package cn.sumi.pojo;
 
-/**
- * 评论
- * Created by 龚洪富 on 5/26/17.
- */
 public class Feedback {
-    private int feedbackId;
-    private int articleId;
+    private Integer fid;
+
+    private Integer aid;
+
     private String contents;
-    private int replyId;
 
-    public int getFeedbackId() {
-        return feedbackId;
+    private Integer replyId;
+
+    public Feedback(Integer fid, Integer aid, String contents, Integer replyId) {
+        this.fid = fid;
+        this.aid = aid;
+        this.contents = contents;
+        this.replyId = replyId;
     }
 
-    public void setFeedbackId(int feedbackId) {
-        this.feedbackId = feedbackId;
+    public Feedback() {
+        super();
     }
 
-    public int getArticleId() {
-        return articleId;
+    public Integer getFid() {
+        return fid;
     }
 
-    public void setArticleId(int articleId) {
-        this.articleId = articleId;
+    public void setFid(Integer fid) {
+        this.fid = fid;
+    }
+
+    public Integer getAid() {
+        return aid;
+    }
+
+    public void setAid(Integer aid) {
+        this.aid = aid;
     }
 
     public String getContents() {
@@ -31,14 +41,14 @@ public class Feedback {
     }
 
     public void setContents(String contents) {
-        this.contents = contents;
+        this.contents = contents == null ? null : contents.trim();
     }
 
-    public int getReplyId() {
+    public Integer getReplyId() {
         return replyId;
     }
 
-    public void setReplyId(int replyId) {
+    public void setReplyId(Integer replyId) {
         this.replyId = replyId;
     }
 }

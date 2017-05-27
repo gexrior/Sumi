@@ -1,9 +1,8 @@
 package cn.sumi.controller;
 
-import cn.sumi.utils.Model;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 /**
  * 类别控制层
@@ -19,8 +18,7 @@ public class CategoryController {
      * @author 龚洪富
      */
     @RequestMapping("/category/add")
-    public @ResponseBody
-    Model add(String category) {
+    public ModelAndView add(String category) {
         return null;
     }
 
@@ -30,8 +28,8 @@ public class CategoryController {
      * @author 龚洪富
      */
     @RequestMapping("/category")
-    public @ResponseBody
-    Model category() {
+    public
+    ModelAndView category() {
 
         return null;
     }

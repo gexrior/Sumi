@@ -1,19 +1,25 @@
 package cn.sumi.pojo;
 
-/**
- * 文章类别
- * Created by gonghf95 on 5/27/17.
- */
 public class Category {
-    private int categoryId;
+    private Integer cid;
+
     private String name;
 
-    public int getCategoryId() {
-        return categoryId;
+    public Category(Integer cid, String name) {
+        this.cid = cid;
+        this.name = name;
     }
 
-    public void setCategoryId(int categoryId) {
-        this.categoryId = categoryId;
+    public Category() {
+        super();
+    }
+
+    public Integer getCid() {
+        return cid;
+    }
+
+    public void setCid(Integer cid) {
+        this.cid = cid;
     }
 
     public String getName() {
@@ -21,6 +27,6 @@ public class Category {
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.name = name == null ? null : name.trim();
     }
 }

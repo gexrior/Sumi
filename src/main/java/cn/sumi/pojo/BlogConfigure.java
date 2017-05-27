@@ -1,16 +1,22 @@
 package cn.sumi.pojo;
 
 public class BlogConfigure {
-    private String account;
+    private int userId;
     private String title;
     private String signature;
 
-    public String getAccount() {
-        return account;
+    public BlogConfigure(int userId, String title, String signature) {
+        this.userId = userId;
+        this.title = title;
+        this.signature = signature;
     }
 
-    public void setAccount(String account) {
-        this.account = account;
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
     public String getTitle() {

@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.sumi.mapper.VisitorMapper">
+  <resultMap id="BaseResultMap" type="cn.sumi.pojo.Visitor">
+    <constructor>
+      <idArg column="vid" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="aid" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="ipaddr" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="access_time" javaType="java.util.Date" jdbcType="DATE" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    vid, aid, ipaddr, access_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from visitor
+    where vid = #{vid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from visitor
+    where vid = #{vid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.sumi.pojo.Visitor">
+    insert into visitor (vid, aid, ipaddr, 
+      access_time)
+    values (#{vid,jdbcType=INTEGER}, #{aid,jdbcType=INTEGER}, #{ipaddr,jdbcType=VARCHAR}, 
+      #{accessTime,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.sumi.pojo.Visitor">
+    insert into visitor
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="vid != null">
+        vid,
+      </if>
+      <if test="aid != null">
+        aid,
+      </if>
+      <if test="ipaddr != null">
+        ipaddr,
+      </if>
+      <if test="accessTime != null">
+        access_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="vid != null">
+        #{vid,jdbcType=INTEGER},
+      </if>
+      <if test="aid != null">
+        #{aid,jdbcType=INTEGER},
+      </if>
+      <if test="ipaddr != null">
+        #{ipaddr,jdbcType=VARCHAR},
+      </if>
+      <if test="accessTime != null">
+        #{accessTime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.sumi.pojo.Visitor">
+    update visitor
+    <set>
+      <if test="aid != null">
+        aid = #{aid,jdbcType=INTEGER},
+      </if>
+      <if test="ipaddr != null">
+        ipaddr = #{ipaddr,jdbcType=VARCHAR},
+      </if>
+      <if test="accessTime != null">
+        access_time = #{accessTime,jdbcType=DATE},
+      </if>
+    </set>
+    where vid = #{vid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.sumi.pojo.Visitor">
+    update visitor
+    set aid = #{aid,jdbcType=INTEGER},
+      ipaddr = #{ipaddr,jdbcType=VARCHAR},
+      access_time = #{accessTime,jdbcType=DATE}
+    where vid = #{vid,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="cn.sumi.pojo.Visitor">
+    <constructor>
+      <idArg column="vid" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="aid" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="ipaddr" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="access_time" javaType="java.util.Date" jdbcType="DATE" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    vid, aid, ipaddr, access_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from visitor
+    where vid = #{vid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from visitor
+    where vid = #{vid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.sumi.pojo.Visitor">
+    insert into visitor (vid, aid, ipaddr, 
+      access_time)
+    values (#{vid,jdbcType=INTEGER}, #{aid,jdbcType=INTEGER}, #{ipaddr,jdbcType=VARCHAR}, 
+      #{accessTime,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.sumi.pojo.Visitor">
+    insert into visitor
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="vid != null">
+        vid,
+      </if>
+      <if test="aid != null">
+        aid,
+      </if>
+      <if test="ipaddr != null">
+        ipaddr,
+      </if>
+      <if test="accessTime != null">
+        access_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="vid != null">
+        #{vid,jdbcType=INTEGER},
+      </if>
+      <if test="aid != null">
+        #{aid,jdbcType=INTEGER},
+      </if>
+      <if test="ipaddr != null">
+        #{ipaddr,jdbcType=VARCHAR},
+      </if>
+      <if test="accessTime != null">
+        #{accessTime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.sumi.pojo.Visitor">
+    update visitor
+    <set>
+      <if test="aid != null">
+        aid = #{aid,jdbcType=INTEGER},
+      </if>
+      <if test="ipaddr != null">
+        ipaddr = #{ipaddr,jdbcType=VARCHAR},
+      </if>
+      <if test="accessTime != null">
+        access_time = #{accessTime,jdbcType=DATE},
+      </if>
+    </set>
+    where vid = #{vid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.sumi.pojo.Visitor">
+    update visitor
+    set aid = #{aid,jdbcType=INTEGER},
+      ipaddr = #{ipaddr,jdbcType=VARCHAR},
+      access_time = #{accessTime,jdbcType=DATE}
+    where vid = #{vid,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="cn.sumi.pojo.Visitor">
+    <constructor>
+      <idArg column="vid" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="aid" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="ipaddr" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="access_time" javaType="java.util.Date" jdbcType="DATE" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    vid, aid, ipaddr, access_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from visitor
+    where vid = #{vid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from visitor
+    where vid = #{vid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.sumi.pojo.Visitor">
+    insert into visitor (vid, aid, ipaddr, 
+      access_time)
+    values (#{vid,jdbcType=INTEGER}, #{aid,jdbcType=INTEGER}, #{ipaddr,jdbcType=VARCHAR}, 
+      #{accessTime,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.sumi.pojo.Visitor">
+    insert into visitor
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="vid != null">
+        vid,
+      </if>
+      <if test="aid != null">
+        aid,
+      </if>
+      <if test="ipaddr != null">
+        ipaddr,
+      </if>
+      <if test="accessTime != null">
+        access_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="vid != null">
+        #{vid,jdbcType=INTEGER},
+      </if>
+      <if test="aid != null">
+        #{aid,jdbcType=INTEGER},
+      </if>
+      <if test="ipaddr != null">
+        #{ipaddr,jdbcType=VARCHAR},
+      </if>
+      <if test="accessTime != null">
+        #{accessTime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.sumi.pojo.Visitor">
+    update visitor
+    <set>
+      <if test="aid != null">
+        aid = #{aid,jdbcType=INTEGER},
+      </if>
+      <if test="ipaddr != null">
+        ipaddr = #{ipaddr,jdbcType=VARCHAR},
+      </if>
+      <if test="accessTime != null">
+        access_time = #{accessTime,jdbcType=DATE},
+      </if>
+    </set>
+    where vid = #{vid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.sumi.pojo.Visitor">
+    update visitor
+    set aid = #{aid,jdbcType=INTEGER},
+      ipaddr = #{ipaddr,jdbcType=VARCHAR},
+      access_time = #{accessTime,jdbcType=DATE}
+    where vid = #{vid,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="cn.sumi.pojo.Visitor">
+    <constructor>
+      <idArg column="vid" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="aid" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="ipaddr" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="access_time" javaType="java.util.Date" jdbcType="DATE" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    vid, aid, ipaddr, access_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from visitor
+    where vid = #{vid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from visitor
+    where vid = #{vid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.sumi.pojo.Visitor">
+    insert into visitor (vid, aid, ipaddr, 
+      access_time)
+    values (#{vid,jdbcType=INTEGER}, #{aid,jdbcType=INTEGER}, #{ipaddr,jdbcType=VARCHAR}, 
+      #{accessTime,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.sumi.pojo.Visitor">
+    insert into visitor
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="vid != null">
+        vid,
+      </if>
+      <if test="aid != null">
+        aid,
+      </if>
+      <if test="ipaddr != null">
+        ipaddr,
+      </if>
+      <if test="accessTime != null">
+        access_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="vid != null">
+        #{vid,jdbcType=INTEGER},
+      </if>
+      <if test="aid != null">
+        #{aid,jdbcType=INTEGER},
+      </if>
+      <if test="ipaddr != null">
+        #{ipaddr,jdbcType=VARCHAR},
+      </if>
+      <if test="accessTime != null">
+        #{accessTime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.sumi.pojo.Visitor">
+    update visitor
+    <set>
+      <if test="aid != null">
+        aid = #{aid,jdbcType=INTEGER},
+      </if>
+      <if test="ipaddr != null">
+        ipaddr = #{ipaddr,jdbcType=VARCHAR},
+      </if>
+      <if test="accessTime != null">
+        access_time = #{accessTime,jdbcType=DATE},
+      </if>
+    </set>
+    where vid = #{vid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.sumi.pojo.Visitor">
+    update visitor
+    set aid = #{aid,jdbcType=INTEGER},
+      ipaddr = #{ipaddr,jdbcType=VARCHAR},
+      access_time = #{accessTime,jdbcType=DATE}
+    where vid = #{vid,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="cn.sumi.pojo.Visitor">
+    <constructor>
+      <idArg column="vid" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="aid" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="ipaddr" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="access_time" javaType="java.util.Date" jdbcType="DATE" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    vid, aid, ipaddr, access_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from visitor
+    where vid = #{vid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from visitor
+    where vid = #{vid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.sumi.pojo.Visitor">
+    insert into visitor (vid, aid, ipaddr, 
+      access_time)
+    values (#{vid,jdbcType=INTEGER}, #{aid,jdbcType=INTEGER}, #{ipaddr,jdbcType=VARCHAR}, 
+      #{accessTime,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.sumi.pojo.Visitor">
+    insert into visitor
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="vid != null">
+        vid,
+      </if>
+      <if test="aid != null">
+        aid,
+      </if>
+      <if test="ipaddr != null">
+        ipaddr,
+      </if>
+      <if test="accessTime != null">
+        access_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="vid != null">
+        #{vid,jdbcType=INTEGER},
+      </if>
+      <if test="aid != null">
+        #{aid,jdbcType=INTEGER},
+      </if>
+      <if test="ipaddr != null">
+        #{ipaddr,jdbcType=VARCHAR},
+      </if>
+      <if test="accessTime != null">
+        #{accessTime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.sumi.pojo.Visitor">
+    update visitor
+    <set>
+      <if test="aid != null">
+        aid = #{aid,jdbcType=INTEGER},
+      </if>
+      <if test="ipaddr != null">
+        ipaddr = #{ipaddr,jdbcType=VARCHAR},
+      </if>
+      <if test="accessTime != null">
+        access_time = #{accessTime,jdbcType=DATE},
+      </if>
+    </set>
+    where vid = #{vid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.sumi.pojo.Visitor">
+    update visitor
+    set aid = #{aid,jdbcType=INTEGER},
+      ipaddr = #{ipaddr,jdbcType=VARCHAR},
+      access_time = #{accessTime,jdbcType=DATE}
+    where vid = #{vid,jdbcType=INTEGER}
+  </update>
+</mapper>

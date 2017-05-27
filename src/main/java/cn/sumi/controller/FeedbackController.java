@@ -1,8 +1,7 @@
 package cn.sumi.controller;
 
-import cn.sumi.utils.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 /**
  * 评论控制层
@@ -13,11 +12,11 @@ public class FeedbackController {
 
     /**
      * 评论管理
+     *
      * @author 龚洪富
      */
     @RequestMapping("/feedback")
-    public @ResponseBody
-    Model feedback() {
+    public ModelAndView feedback() {
         return null;
     }
 }

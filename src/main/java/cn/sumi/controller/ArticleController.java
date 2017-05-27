@@ -1,11 +1,9 @@
 package cn.sumi.controller;
 
-import cn.sumi.utils.Model;
-import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 /**
  * 文章控制层
@@ -21,8 +19,7 @@ public class ArticleController {
      * @author 龚洪富
      */
     @RequestMapping("/delete/{aid}")
-    public @ResponseBody
-    Model delete(@RequestParam int aid) {
+    public ModelAndView delete(@RequestParam int aid) {
         return null;
     }
 
@@ -33,8 +30,7 @@ public class ArticleController {
      * @author 龚洪富
      */
     @RequestMapping("/details/{aid}")
-    public @ResponseBody
-    Model details(int aid) {
+    public ModelAndView details(int aid) {
 
         return null;
     }

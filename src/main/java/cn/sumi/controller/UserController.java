@@ -2,13 +2,13 @@ package cn.sumi.controller;
 
 import cn.sumi.pojo.User;
 import cn.sumi.service.UserService;
-import cn.sumi.utils.Model;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
-
-import javax.servlet.http.HttpServletRequest;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * User Controller layer
@@ -28,10 +28,9 @@ public class UserController {
      * @author 龚洪富
      */
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public @ResponseBody
-    Model login(User user) {
-        Model model = userService.login(user);
-        return model;
+    public String login(User user, Model model) {
+        logger.info(user.toString());
+        return "main";
     }
 
     /**
@@ -41,8 +40,7 @@ public class UserController {
      * @author 龚洪富
      */
     @RequestMapping("/postlist/{category}")
-    public @ResponseBody
-    Model postlist(@RequestParam String category) {
+    public String postlist(@RequestParam String category) {
         return null;
     }
 
@@ -52,8 +50,7 @@ public class UserController {
      * @author 龚洪富
      */
     @RequestMapping("configure")
-    public @ResponseBody
-    Model configure() {
+    public String configure() {
         return null;
     }
 }

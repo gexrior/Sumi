@@ -25,10 +25,7 @@ public class UserMapperUnit extends BaseConfiguration{
 
     @Test
     public void find(){
-        User u = new User();
-        u.setAccount("jlk");
-        User user = userMapper.find(u.getAccount());
-        Assert.assertNull(user);
+
     }
 
     @Test

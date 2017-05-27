@@ -1,21 +1,34 @@
 package cn.sumi.pojo;
 
 public class User {
-    private int userId;
+    private Integer uid;
+
     private String account;
-    private String password;
+
+    private String passwd;
+
     private String nickname;
+
     private String email;
 
+    public User(Integer uid, String account, String passwd, String nickname, String email) {
+        this.uid = uid;
+        this.account = account;
+        this.passwd = passwd;
+        this.nickname = nickname;
+        this.email = email;
+    }
+
     public User() {
+        super();
     }
 
-    public int getUserId() {
-        return userId;
+    public Integer getUid() {
+        return uid;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setUid(Integer uid) {
+        this.uid = uid;
     }
 
     public String getAccount() {
@@ -23,19 +36,15 @@ public class User {
     }
 
     public void setAccount(String account) {
-        this.account = account;
+        this.account = account == null ? null : account.trim();
     }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getPassword() {
-        return password;
+    public String getPasswd() {
+        return passwd;
     }
 
     public void setPasswd(String passwd) {
-        this.password = passwd;
+        this.passwd = passwd == null ? null : passwd.trim();
     }
 
     public String getNickname() {
@@ -43,7 +52,7 @@ public class User {
     }
 
     public void setNickname(String nickname) {
-        this.nickname = nickname;
+        this.nickname = nickname == null ? null : nickname.trim();
     }
 
     public String getEmail() {
@@ -51,16 +60,6 @@ public class User {
     }
 
     public void setEmail(String email) {
-        this.email = email;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "account='" + account + '\'' +
-                ", password='" + password + '\'' +
-                ", nickname='" + nickname + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+        this.email = email == null ? null : email.trim();
     }
 }

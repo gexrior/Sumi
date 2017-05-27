@@ -4,7 +4,7 @@
     <title>用户登录</title>
 </head>
 <body>
-<form action="/usr/login" method="post">
+<form action="/login" method="post">
     <center>
         <table>
             <tr>

@@ -1,9 +1,19 @@
 package cn.sumi.mapper;
 
-/**
- * 游客DAO
- * Created by gonghf95 on 5/27/17.
- */
-public interface VisitorMapper {
+import cn.sumi.pojo.Visitor;
+import org.springframework.stereotype.Repository;
 
+@Repository
+public interface VisitorMapper {
+    int deleteByPrimaryKey(Integer vid);
+
+    int insert(Visitor record);
+
+    int insertSelective(Visitor record);
+
+    Visitor selectByPrimaryKey(Integer vid);
+
+    int updateByPrimaryKeySelective(Visitor record);
+
+    int updateByPrimaryKey(Visitor record);
 }

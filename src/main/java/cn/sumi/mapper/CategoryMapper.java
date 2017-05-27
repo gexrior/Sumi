@@ -1,14 +1,19 @@
 package cn.sumi.mapper;
 
 import cn.sumi.pojo.Category;
+import org.springframework.stereotype.Repository;
 
-/**
- * 文章类别DAO
- * Created by gonghf95 on 5/27/17.
- */
+@Repository
 public interface CategoryMapper {
-    Category find(int cid);
-    void add(Category category);
-    void update(Category category);
-    void delete(Category category);
+    int deleteByPrimaryKey(Integer cid);
+
+    int insert(Category record);
+
+    int insertSelective(Category record);
+
+    Category selectByPrimaryKey(Integer cid);
+
+    int updateByPrimaryKeySelective(Category record);
+
+    int updateByPrimaryKey(Category record);
 }

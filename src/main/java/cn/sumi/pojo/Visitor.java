@@ -3,33 +3,47 @@ package cn.sumi.pojo;
 import java.util.Date;
 
 public class Visitor {
-    private int visitorId;
-    private int articleId;
-    private String ipAddr;
+    private Integer vid;
+
+    private Integer aid;
+
+    private String ipaddr;
+
     private Date accessTime;
 
-    public int getVisitorId() {
-        return visitorId;
+    public Visitor(Integer vid, Integer aid, String ipaddr, Date accessTime) {
+        this.vid = vid;
+        this.aid = aid;
+        this.ipaddr = ipaddr;
+        this.accessTime = accessTime;
     }
 
-    public void setVisitorId(int visitorId) {
-        this.visitorId = visitorId;
+    public Visitor() {
+        super();
     }
 
-    public int getArticleId() {
-        return articleId;
+    public Integer getVid() {
+        return vid;
     }
 
-    public void setArticleId(int articleId) {
-        this.articleId = articleId;
+    public void setVid(Integer vid) {
+        this.vid = vid;
     }
 
-    public String getIpAddr() {
-        return ipAddr;
+    public Integer getAid() {
+        return aid;
     }
 
-    public void setIpAddr(String ipAddr) {
-        this.ipAddr = ipAddr;
+    public void setAid(Integer aid) {
+        this.aid = aid;
+    }
+
+    public String getIpaddr() {
+        return ipaddr;
+    }
+
+    public void setIpaddr(String ipaddr) {
+        this.ipaddr = ipaddr == null ? null : ipaddr.trim();
     }
 
     public Date getAccessTime() {
