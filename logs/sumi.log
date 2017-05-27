@@ -1,0 +1,718 @@
+[INFO][main][2017-05-27 23:10:56][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO][main][2017-05-27 23:10:56][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@51081592, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@7f9a81e8, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@9629756, org.springframework.test.context.support.DirtiesContextTestExecutionListener@62ee68d8, org.springframework.test.context.transaction.TransactionalTestExecutionListener@735b5592, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@58651fd0]
+[INFO][main][2017-05-27 23:10:57][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring.xml]
+[INFO][main][2017-05-27 23:10:58][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO][main][2017-05-27 23:10:58][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[ERROR][main][2017-05-27 23:11:18][org.springframework.test.context.TestContextManager] - Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@9629756] to prepare test instance [mapper.UserMapperUnit@64cd705f]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:228)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:230)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:249)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:89)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:193)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:160)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:51)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+Caused by: org.springframework.beans.factory.BeanDefinitionStoreException: IOException parsing XML document from class path resource [spring-mybatis.xml]; nested exception is java.net.UnknownHostException: mybatis.org
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions(XmlBeanDefinitionReader.java:410)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:336)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:304)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:181)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:217)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:188)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:252)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadBeanDefinitions(AbstractGenericContextLoader.java:253)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:122)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:109)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:261)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116)
+	... 24 more
+Caused by: java.net.UnknownHostException: mybatis.org
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:184)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:180)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1202)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1138)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1032)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:966)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1546)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1474)
+	at com.sun.org.apache.xerces.internal.impl.XMLEntityManager.setupCurrentEntity(XMLEntityManager.java:647)
+	at com.sun.org.apache.xerces.internal.impl.XMLEntityManager.startEntity(XMLEntityManager.java:1304)
+	at com.sun.org.apache.xerces.internal.impl.XMLEntityManager.startDTDEntity(XMLEntityManager.java:1270)
+	at com.sun.org.apache.xerces.internal.impl.XMLDTDScannerImpl.setInputSource(XMLDTDScannerImpl.java:264)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$DTDDriver.dispatch(XMLDocumentScannerImpl.java:1161)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$DTDDriver.next(XMLDocumentScannerImpl.java:1045)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$PrologDriver.next(XMLDocumentScannerImpl.java:959)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:841)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:770)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(DOMParser.java:243)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(DocumentBuilderImpl.java:339)
+	at org.springframework.beans.factory.xml.DefaultDocumentLoader.loadDocument(DefaultDocumentLoader.java:76)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadDocument(XmlBeanDefinitionReader.java:429)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions(XmlBeanDefinitionReader.java:391)
+	... 37 more
+[INFO][main][2017-05-27 23:12:01][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO][main][2017-05-27 23:12:01][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@51081592, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@7f9a81e8, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@9629756, org.springframework.test.context.support.DirtiesContextTestExecutionListener@62ee68d8, org.springframework.test.context.transaction.TransactionalTestExecutionListener@735b5592, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@58651fd0]
+[INFO][main][2017-05-27 23:12:01][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring.xml]
+[INFO][main][2017-05-27 23:12:01][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO][main][2017-05-27 23:12:01][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[ERROR][main][2017-05-27 23:12:22][org.springframework.test.context.TestContextManager] - Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@9629756] to prepare test instance [mapper.UserMapperUnit@64cd705f]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:228)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:230)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:249)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:89)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:193)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:160)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:51)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+Caused by: org.springframework.beans.factory.BeanDefinitionStoreException: IOException parsing XML document from class path resource [spring-mybatis.xml]; nested exception is java.net.UnknownHostException: mybatis.org
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions(XmlBeanDefinitionReader.java:410)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:336)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:304)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:181)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:217)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:188)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:252)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadBeanDefinitions(AbstractGenericContextLoader.java:253)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:122)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:109)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:261)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116)
+	... 24 more
+Caused by: java.net.UnknownHostException: mybatis.org
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:184)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:180)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1202)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1138)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1032)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:966)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1546)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1474)
+	at com.sun.org.apache.xerces.internal.impl.XMLEntityManager.setupCurrentEntity(XMLEntityManager.java:647)
+	at com.sun.org.apache.xerces.internal.impl.XMLEntityManager.startEntity(XMLEntityManager.java:1304)
+	at com.sun.org.apache.xerces.internal.impl.XMLEntityManager.startDTDEntity(XMLEntityManager.java:1270)
+	at com.sun.org.apache.xerces.internal.impl.XMLDTDScannerImpl.setInputSource(XMLDTDScannerImpl.java:264)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$DTDDriver.dispatch(XMLDocumentScannerImpl.java:1161)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$DTDDriver.next(XMLDocumentScannerImpl.java:1045)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$PrologDriver.next(XMLDocumentScannerImpl.java:959)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:841)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:770)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(DOMParser.java:243)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(DocumentBuilderImpl.java:339)
+	at org.springframework.beans.factory.xml.DefaultDocumentLoader.loadDocument(DefaultDocumentLoader.java:76)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadDocument(XmlBeanDefinitionReader.java:429)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions(XmlBeanDefinitionReader.java:391)
+	... 37 more
+[INFO][main][2017-05-27 23:14:25][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO][main][2017-05-27 23:14:25][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@396a51ab, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@51081592, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@7f9a81e8, org.springframework.test.context.support.DirtiesContextTestExecutionListener@9629756, org.springframework.test.context.transaction.TransactionalTestExecutionListener@62ee68d8, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@735b5592]
+[INFO][main][2017-05-27 23:14:26][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring.xml]
+[INFO][main][2017-05-27 23:14:26][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO][main][2017-05-27 23:14:26][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[ERROR][main][2017-05-27 23:14:46][org.springframework.test.context.TestContextManager] - Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@7f9a81e8] to prepare test instance [mapper.BlogConfigureMapperUnit@13e39c73]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:228)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:230)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:249)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:89)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:193)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:160)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:51)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+Caused by: org.springframework.beans.factory.BeanDefinitionStoreException: IOException parsing XML document from class path resource [spring-mybatis.xml]; nested exception is java.net.UnknownHostException: mybatis.org
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions(XmlBeanDefinitionReader.java:410)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:336)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:304)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:181)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:217)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:188)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:252)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadBeanDefinitions(AbstractGenericContextLoader.java:253)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:122)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:109)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:261)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116)
+	... 24 more
+Caused by: java.net.UnknownHostException: mybatis.org
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:184)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:180)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1202)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1138)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1032)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:966)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1546)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1474)
+	at com.sun.org.apache.xerces.internal.impl.XMLEntityManager.setupCurrentEntity(XMLEntityManager.java:647)
+	at com.sun.org.apache.xerces.internal.impl.XMLEntityManager.startEntity(XMLEntityManager.java:1304)
+	at com.sun.org.apache.xerces.internal.impl.XMLEntityManager.startDTDEntity(XMLEntityManager.java:1270)
+	at com.sun.org.apache.xerces.internal.impl.XMLDTDScannerImpl.setInputSource(XMLDTDScannerImpl.java:264)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$DTDDriver.dispatch(XMLDocumentScannerImpl.java:1161)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$DTDDriver.next(XMLDocumentScannerImpl.java:1045)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$PrologDriver.next(XMLDocumentScannerImpl.java:959)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:841)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:770)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(DOMParser.java:243)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(DocumentBuilderImpl.java:339)
+	at org.springframework.beans.factory.xml.DefaultDocumentLoader.loadDocument(DefaultDocumentLoader.java:76)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadDocument(XmlBeanDefinitionReader.java:429)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions(XmlBeanDefinitionReader.java:391)
+	... 37 more
+[INFO][main][2017-05-27 23:21:46][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO][main][2017-05-27 23:21:46][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@396a51ab, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@51081592, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@7f9a81e8, org.springframework.test.context.support.DirtiesContextTestExecutionListener@9629756, org.springframework.test.context.transaction.TransactionalTestExecutionListener@62ee68d8, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@735b5592]
+[INFO][main][2017-05-27 23:21:46][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring.xml]
+[INFO][main][2017-05-27 23:21:47][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO][main][2017-05-27 23:21:47][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO][main][2017-05-27 23:21:50][org.springframework.context.support.AbstractApplicationContext] - Refreshing org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Sat May 27 23:21:50 CST 2017]; root of context hierarchy
+[INFO][main][2017-05-27 23:21:51][org.springframework.core.io.support.PropertiesLoaderSupport] - Loading properties file from class path resource [jdbc.properties]
+[INFO][main][2017-05-27 23:21:51][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO][main][2017-05-27 23:21:51][org.springframework.jdbc.datasource.DriverManagerDataSource] - Loaded JDBC driver: com.mysql.jdbc.Driver
+[INFO][main][2017-05-27 23:21:52][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/configure]}" onto public java.lang.String cn.sumi.controller.UserController.configure()
+[INFO][main][2017-05-27 23:21:52][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/login],methods=[POST]}" onto public java.lang.String cn.sumi.controller.UserController.login(cn.sumi.pojo.User,org.springframework.ui.Model)
+[INFO][main][2017-05-27 23:21:52][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/postlist/{category}]}" onto public java.lang.String cn.sumi.controller.UserController.postlist(java.lang.String)
+[INFO][main][2017-05-27 23:21:52][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/details/{aid}]}" onto public org.springframework.web.servlet.ModelAndView cn.sumi.controller.ArticleController.details(int)
+[INFO][main][2017-05-27 23:21:52][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/delete/{aid}]}" onto public org.springframework.web.servlet.ModelAndView cn.sumi.controller.ArticleController.delete(int)
+[INFO][main][2017-05-27 23:21:52][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/category]}" onto public org.springframework.web.servlet.ModelAndView cn.sumi.controller.CategoryController.category()
+[INFO][main][2017-05-27 23:21:52][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/category/add]}" onto public org.springframework.web.servlet.ModelAndView cn.sumi.controller.CategoryController.add(java.lang.String)
+[INFO][main][2017-05-27 23:21:52][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Sat May 27 23:21:50 CST 2017]; root of context hierarchy
+[INFO][main][2017-05-27 23:21:52][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Sat May 27 23:21:50 CST 2017]; root of context hierarchy
+[INFO][main][2017-05-27 23:21:52][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/article] onto handler '/article'
+[INFO][Thread-0][2017-05-27 23:21:53][org.springframework.context.support.AbstractApplicationContext] - Closing org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Sat May 27 23:21:50 CST 2017]; root of context hierarchy
+[INFO][main][2017-05-27 23:22:19][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO][main][2017-05-27 23:22:20][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@51081592, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@7f9a81e8, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@9629756, org.springframework.test.context.support.DirtiesContextTestExecutionListener@62ee68d8, org.springframework.test.context.transaction.TransactionalTestExecutionListener@735b5592, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@58651fd0]
+[INFO][main][2017-05-27 23:22:20][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring.xml]
+[INFO][main][2017-05-27 23:22:20][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO][main][2017-05-27 23:22:20][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO][main][2017-05-27 23:22:22][org.springframework.context.support.AbstractApplicationContext] - Refreshing org.springframework.context.support.GenericApplicationContext@4f7d0008: startup date [Sat May 27 23:22:22 CST 2017]; root of context hierarchy
+[INFO][main][2017-05-27 23:22:23][org.springframework.core.io.support.PropertiesLoaderSupport] - Loading properties file from class path resource [jdbc.properties]
+[INFO][main][2017-05-27 23:22:23][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO][main][2017-05-27 23:22:23][org.springframework.jdbc.datasource.DriverManagerDataSource] - Loaded JDBC driver: com.mysql.jdbc.Driver
+[INFO][main][2017-05-27 23:22:23][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/configure]}" onto public java.lang.String cn.sumi.controller.UserController.configure()
+[INFO][main][2017-05-27 23:22:23][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/login],methods=[POST]}" onto public java.lang.String cn.sumi.controller.UserController.login(cn.sumi.pojo.User,org.springframework.ui.Model)
+[INFO][main][2017-05-27 23:22:23][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/postlist/{category}]}" onto public java.lang.String cn.sumi.controller.UserController.postlist(java.lang.String)
+[INFO][main][2017-05-27 23:22:23][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/details/{aid}]}" onto public org.springframework.web.servlet.ModelAndView cn.sumi.controller.ArticleController.details(int)
+[INFO][main][2017-05-27 23:22:23][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/delete/{aid}]}" onto public org.springframework.web.servlet.ModelAndView cn.sumi.controller.ArticleController.delete(int)
+[INFO][main][2017-05-27 23:22:23][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/category]}" onto public org.springframework.web.servlet.ModelAndView cn.sumi.controller.CategoryController.category()
+[INFO][main][2017-05-27 23:22:23][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/category/add]}" onto public org.springframework.web.servlet.ModelAndView cn.sumi.controller.CategoryController.add(java.lang.String)
+[INFO][main][2017-05-27 23:22:24][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@4f7d0008: startup date [Sat May 27 23:22:22 CST 2017]; root of context hierarchy
+[INFO][main][2017-05-27 23:22:24][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@4f7d0008: startup date [Sat May 27 23:22:22 CST 2017]; root of context hierarchy
+[INFO][main][2017-05-27 23:22:24][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/article] onto handler '/article'
+[INFO][Thread-0][2017-05-27 23:22:24][org.springframework.context.support.AbstractApplicationContext] - Closing org.springframework.context.support.GenericApplicationContext@4f7d0008: startup date [Sat May 27 23:22:22 CST 2017]; root of context hierarchy
+[INFO][main][2017-05-27 23:23:12][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO][main][2017-05-27 23:23:12][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@51081592, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@7f9a81e8, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@9629756, org.springframework.test.context.support.DirtiesContextTestExecutionListener@62ee68d8, org.springframework.test.context.transaction.TransactionalTestExecutionListener@735b5592, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@58651fd0]
+[INFO][main][2017-05-27 23:23:13][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring.xml]
+[INFO][main][2017-05-27 23:23:13][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO][main][2017-05-27 23:23:13][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO][main][2017-05-27 23:23:15][org.springframework.context.support.AbstractApplicationContext] - Refreshing org.springframework.context.support.GenericApplicationContext@4f7d0008: startup date [Sat May 27 23:23:15 CST 2017]; root of context hierarchy
+[INFO][main][2017-05-27 23:23:15][org.springframework.core.io.support.PropertiesLoaderSupport] - Loading properties file from class path resource [jdbc.properties]
+[INFO][main][2017-05-27 23:23:15][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO][main][2017-05-27 23:23:15][org.springframework.jdbc.datasource.DriverManagerDataSource] - Loaded JDBC driver: com.mysql.jdbc.Driver
+[INFO][main][2017-05-27 23:23:16][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/configure]}" onto public java.lang.String cn.sumi.controller.UserController.configure()
+[INFO][main][2017-05-27 23:23:16][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/login],methods=[POST]}" onto public java.lang.String cn.sumi.controller.UserController.login(cn.sumi.pojo.User,org.springframework.ui.Model)
+[INFO][main][2017-05-27 23:23:16][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/postlist/{category}]}" onto public java.lang.String cn.sumi.controller.UserController.postlist(java.lang.String)
+[INFO][main][2017-05-27 23:23:16][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/details/{aid}]}" onto public org.springframework.web.servlet.ModelAndView cn.sumi.controller.ArticleController.details(int)
+[INFO][main][2017-05-27 23:23:16][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/delete/{aid}]}" onto public org.springframework.web.servlet.ModelAndView cn.sumi.controller.ArticleController.delete(int)
+[INFO][main][2017-05-27 23:23:16][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/category]}" onto public org.springframework.web.servlet.ModelAndView cn.sumi.controller.CategoryController.category()
+[INFO][main][2017-05-27 23:23:16][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/category/add]}" onto public org.springframework.web.servlet.ModelAndView cn.sumi.controller.CategoryController.add(java.lang.String)
+[INFO][main][2017-05-27 23:23:16][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@4f7d0008: startup date [Sat May 27 23:23:15 CST 2017]; root of context hierarchy
+[INFO][main][2017-05-27 23:23:16][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@4f7d0008: startup date [Sat May 27 23:23:15 CST 2017]; root of context hierarchy
+[INFO][main][2017-05-27 23:23:16][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/article] onto handler '/article'
+[INFO][Thread-0][2017-05-27 23:23:16][org.springframework.context.support.AbstractApplicationContext] - Closing org.springframework.context.support.GenericApplicationContext@4f7d0008: startup date [Sat May 27 23:23:15 CST 2017]; root of context hierarchy
+[INFO][main][2017-05-27 23:29:54][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO][main][2017-05-27 23:29:54][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@51081592, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@7f9a81e8, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@9629756, org.springframework.test.context.support.DirtiesContextTestExecutionListener@62ee68d8, org.springframework.test.context.transaction.TransactionalTestExecutionListener@735b5592, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@58651fd0]
+[INFO][main][2017-05-27 23:29:54][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring.xml]
+[INFO][main][2017-05-27 23:29:54][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO][main][2017-05-27 23:29:55][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO][main][2017-05-27 23:29:56][org.springframework.context.support.AbstractApplicationContext] - Refreshing org.springframework.context.support.GenericApplicationContext@4f7d0008: startup date [Sat May 27 23:29:56 CST 2017]; root of context hierarchy
+[INFO][main][2017-05-27 23:29:56][org.springframework.core.io.support.PropertiesLoaderSupport] - Loading properties file from class path resource [jdbc.properties]
+[INFO][main][2017-05-27 23:29:56][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO][main][2017-05-27 23:29:57][org.springframework.jdbc.datasource.DriverManagerDataSource] - Loaded JDBC driver: com.mysql.jdbc.Driver
+[INFO][main][2017-05-27 23:29:57][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/configure]}" onto public java.lang.String cn.sumi.controller.UserController.configure()
+[INFO][main][2017-05-27 23:29:57][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/login],methods=[POST]}" onto public java.lang.String cn.sumi.controller.UserController.login(cn.sumi.pojo.User,org.springframework.ui.Model)
+[INFO][main][2017-05-27 23:29:57][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/postlist/{category}]}" onto public java.lang.String cn.sumi.controller.UserController.postlist(java.lang.String)
+[INFO][main][2017-05-27 23:29:57][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/details/{aid}]}" onto public org.springframework.web.servlet.ModelAndView cn.sumi.controller.ArticleController.details(int)
+[INFO][main][2017-05-27 23:29:57][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/delete/{aid}]}" onto public org.springframework.web.servlet.ModelAndView cn.sumi.controller.ArticleController.delete(int)
+[INFO][main][2017-05-27 23:29:57][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/category]}" onto public org.springframework.web.servlet.ModelAndView cn.sumi.controller.CategoryController.category()
+[INFO][main][2017-05-27 23:29:57][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/category/add]}" onto public org.springframework.web.servlet.ModelAndView cn.sumi.controller.CategoryController.add(java.lang.String)
+[INFO][main][2017-05-27 23:29:57][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@4f7d0008: startup date [Sat May 27 23:29:56 CST 2017]; root of context hierarchy
+[INFO][main][2017-05-27 23:29:57][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@4f7d0008: startup date [Sat May 27 23:29:56 CST 2017]; root of context hierarchy
+[INFO][main][2017-05-27 23:29:57][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/article] onto handler '/article'
+[INFO][Thread-0][2017-05-27 23:29:58][org.springframework.context.support.AbstractApplicationContext] - Closing org.springframework.context.support.GenericApplicationContext@4f7d0008: startup date [Sat May 27 23:29:56 CST 2017]; root of context hierarchy
+[INFO][main][2017-05-27 23:37:48][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO][main][2017-05-27 23:37:48][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@51081592, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@7f9a81e8, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@9629756, org.springframework.test.context.support.DirtiesContextTestExecutionListener@62ee68d8, org.springframework.test.context.transaction.TransactionalTestExecutionListener@735b5592, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@58651fd0]
+[INFO][main][2017-05-27 23:37:48][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring.xml]
+[INFO][main][2017-05-27 23:37:48][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO][main][2017-05-27 23:37:48][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO][main][2017-05-27 23:37:50][org.springframework.context.support.AbstractApplicationContext] - Refreshing org.springframework.context.support.GenericApplicationContext@4f7d0008: startup date [Sat May 27 23:37:50 CST 2017]; root of context hierarchy
+[INFO][main][2017-05-27 23:37:50][org.springframework.core.io.support.PropertiesLoaderSupport] - Loading properties file from class path resource [jdbc.properties]
+[INFO][main][2017-05-27 23:37:50][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO][main][2017-05-27 23:37:50][org.springframework.jdbc.datasource.DriverManagerDataSource] - Loaded JDBC driver: com.mysql.jdbc.Driver
+[INFO][main][2017-05-27 23:37:51][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/configure]}" onto public java.lang.String cn.sumi.controller.UserController.configure()
+[INFO][main][2017-05-27 23:37:51][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/login],methods=[POST]}" onto public java.lang.String cn.sumi.controller.UserController.login(cn.sumi.pojo.User,org.springframework.ui.Model)
+[INFO][main][2017-05-27 23:37:51][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/postlist/{category}]}" onto public java.lang.String cn.sumi.controller.UserController.postlist(java.lang.String)
+[INFO][main][2017-05-27 23:37:51][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/details/{aid}]}" onto public org.springframework.web.servlet.ModelAndView cn.sumi.controller.ArticleController.details(int)
+[INFO][main][2017-05-27 23:37:51][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/delete/{aid}]}" onto public org.springframework.web.servlet.ModelAndView cn.sumi.controller.ArticleController.delete(int)
+[INFO][main][2017-05-27 23:37:51][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/category]}" onto public org.springframework.web.servlet.ModelAndView cn.sumi.controller.CategoryController.category()
+[INFO][main][2017-05-27 23:37:51][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/category/add]}" onto public org.springframework.web.servlet.ModelAndView cn.sumi.controller.CategoryController.add(java.lang.String)
+[INFO][main][2017-05-27 23:37:51][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@4f7d0008: startup date [Sat May 27 23:37:50 CST 2017]; root of context hierarchy
+[INFO][main][2017-05-27 23:37:51][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@4f7d0008: startup date [Sat May 27 23:37:50 CST 2017]; root of context hierarchy
+[INFO][main][2017-05-27 23:37:51][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/article] onto handler '/article'
+[INFO][Thread-0][2017-05-27 23:37:51][org.springframework.context.support.AbstractApplicationContext] - Closing org.springframework.context.support.GenericApplicationContext@4f7d0008: startup date [Sat May 27 23:37:50 CST 2017]; root of context hierarchy
+[INFO][main][2017-05-27 23:48:10][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO][main][2017-05-27 23:48:10][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@51081592, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@7f9a81e8, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@9629756, org.springframework.test.context.support.DirtiesContextTestExecutionListener@62ee68d8, org.springframework.test.context.transaction.TransactionalTestExecutionListener@735b5592, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@58651fd0]
+[INFO][main][2017-05-27 23:48:10][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring.xml]
+[INFO][main][2017-05-27 23:48:10][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO][main][2017-05-27 23:48:11][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO][main][2017-05-27 23:48:13][org.springframework.context.support.AbstractApplicationContext] - Refreshing org.springframework.context.support.GenericApplicationContext@4f7d0008: startup date [Sat May 27 23:48:13 CST 2017]; root of context hierarchy
+[INFO][main][2017-05-27 23:48:13][org.springframework.core.io.support.PropertiesLoaderSupport] - Loading properties file from class path resource [jdbc.properties]
+[INFO][main][2017-05-27 23:48:13][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO][main][2017-05-27 23:48:13][org.springframework.jdbc.datasource.DriverManagerDataSource] - Loaded JDBC driver: com.mysql.jdbc.Driver
+[WARN][main][2017-05-27 23:48:14][org.springframework.context.support.AbstractApplicationContext] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userServiceImpl': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private cn.sumi.mapper.UserMapper cn.sumi.service.impl.UserServiceImpl.userMapper; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [cn.sumi.mapper.UserMapper] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+[ERROR][main][2017-05-27 23:48:14][org.springframework.test.context.TestContextManager] - Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@9629756] to prepare test instance [mapper.UserMapperUnit@18271936]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:228)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:230)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:249)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:89)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:193)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:160)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:51)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userServiceImpl': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private cn.sumi.mapper.UserMapper cn.sumi.service.impl.UserServiceImpl.userMapper; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [cn.sumi.mapper.UserMapper] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1214)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:543)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:772)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:839)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:538)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:125)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:109)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:261)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116)
+	... 24 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private cn.sumi.mapper.UserMapper cn.sumi.service.impl.UserServiceImpl.userMapper; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [cn.sumi.mapper.UserMapper] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:573)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331)
+	... 40 more
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [cn.sumi.mapper.UserMapper] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoSuchBeanDefinitionException(DefaultListableBeanFactory.java:1373)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1119)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1014)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:545)
+	... 42 more
+[INFO][main][2017-05-27 23:58:31][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO][main][2017-05-27 23:58:31][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@51081592, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@7f9a81e8, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@9629756, org.springframework.test.context.support.DirtiesContextTestExecutionListener@62ee68d8, org.springframework.test.context.transaction.TransactionalTestExecutionListener@735b5592, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@58651fd0]
+[INFO][main][2017-05-27 23:58:31][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring.xml]
+[INFO][main][2017-05-27 23:58:31][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO][main][2017-05-27 23:58:32][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO][main][2017-05-27 23:58:39][org.springframework.context.support.AbstractApplicationContext] - Refreshing org.springframework.context.support.GenericApplicationContext@4f7d0008: startup date [Sat May 27 23:58:39 CST 2017]; root of context hierarchy
+[INFO][main][2017-05-27 23:58:39][org.springframework.core.io.support.PropertiesLoaderSupport] - Loading properties file from class path resource [jdbc.properties]
+[INFO][main][2017-05-27 23:58:39][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO][main][2017-05-27 23:58:39][org.springframework.jdbc.datasource.DriverManagerDataSource] - Loaded JDBC driver: com.mysql.jdbc.Driver
+[WARN][main][2017-05-27 23:58:39][org.springframework.context.support.AbstractApplicationContext] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [spring.xml]: Invocation of init method failed; nested exception is org.springframework.core.NestedIOException: Failed to parse config resource: class path resource [spring-mybatis.xml]; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing SQL Mapper Configuration. Cause: java.io.IOException: Could not find resource src/main/resources/mapper/ArticleMapper.xml
+[ERROR][main][2017-05-27 23:58:39][org.springframework.test.context.TestContextManager] - Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@9629756] to prepare test instance [mapper.UserMapperUnit@25ce9dc4]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:228)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:230)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:249)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:89)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:193)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:160)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:51)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [spring.xml]: Invocation of init method failed; nested exception is org.springframework.core.NestedIOException: Failed to parse config resource: class path resource [spring-mybatis.xml]; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing SQL Mapper Configuration. Cause: java.io.IOException: Could not find resource src/main/resources/mapper/ArticleMapper.xml
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1578)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:545)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:753)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:839)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:538)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:125)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:109)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:261)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116)
+	... 24 more
+Caused by: org.springframework.core.NestedIOException: Failed to parse config resource: class path resource [spring-mybatis.xml]; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing SQL Mapper Configuration. Cause: java.io.IOException: Could not find resource src/main/resources/mapper/ArticleMapper.xml
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:434)
+	at org.mybatis.spring.SqlSessionFactoryBean.afterPropertiesSet(SqlSessionFactoryBean.java:340)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1637)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1574)
+	... 39 more
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing SQL Mapper Configuration. Cause: java.io.IOException: Could not find resource src/main/resources/mapper/ArticleMapper.xml
+	at org.apache.ibatis.builder.xml.XMLConfigBuilder.parseConfiguration(XMLConfigBuilder.java:109)
+	at org.apache.ibatis.builder.xml.XMLConfigBuilder.parse(XMLConfigBuilder.java:92)
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:428)
+	... 42 more
+Caused by: java.io.IOException: Could not find resource src/main/resources/mapper/ArticleMapper.xml
+	at org.apache.ibatis.io.Resources.getResourceAsStream(Resources.java:110)
+	at org.apache.ibatis.io.Resources.getResourceAsStream(Resources.java:97)
+	at org.apache.ibatis.builder.xml.XMLConfigBuilder.mapperElement(XMLConfigBuilder.java:320)
+	at org.apache.ibatis.builder.xml.XMLConfigBuilder.parseConfiguration(XMLConfigBuilder.java:107)
+	... 44 more
+[INFO][main][2017-05-28 00:03:02][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO][main][2017-05-28 00:03:03][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@51081592, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@7f9a81e8, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@9629756, org.springframework.test.context.support.DirtiesContextTestExecutionListener@62ee68d8, org.springframework.test.context.transaction.TransactionalTestExecutionListener@735b5592, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@58651fd0]
+[INFO][main][2017-05-28 00:03:03][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring.xml]
+[INFO][main][2017-05-28 00:03:03][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO][main][2017-05-28 00:03:03][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO][main][2017-05-28 00:03:06][org.springframework.context.support.AbstractApplicationContext] - Refreshing org.springframework.context.support.GenericApplicationContext@4f7d0008: startup date [Sun May 28 00:03:06 CST 2017]; root of context hierarchy
+[INFO][main][2017-05-28 00:03:06][org.springframework.core.io.support.PropertiesLoaderSupport] - Loading properties file from class path resource [jdbc.properties]
+[INFO][main][2017-05-28 00:03:06][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO][main][2017-05-28 00:03:06][org.springframework.jdbc.datasource.DriverManagerDataSource] - Loaded JDBC driver: com.mysql.jdbc.Driver
+[INFO][main][2017-05-28 00:03:06][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/configure]}" onto public java.lang.String cn.sumi.controller.UserController.configure()
+[INFO][main][2017-05-28 00:03:06][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/login],methods=[POST]}" onto public java.lang.String cn.sumi.controller.UserController.login(cn.sumi.pojo.User,org.springframework.ui.Model)
+[INFO][main][2017-05-28 00:03:06][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/postlist/{category}]}" onto public java.lang.String cn.sumi.controller.UserController.postlist(java.lang.String)
+[INFO][main][2017-05-28 00:03:06][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/details/{aid}]}" onto public org.springframework.web.servlet.ModelAndView cn.sumi.controller.ArticleController.details(int)
+[INFO][main][2017-05-28 00:03:06][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/delete/{aid}]}" onto public org.springframework.web.servlet.ModelAndView cn.sumi.controller.ArticleController.delete(int)
+[INFO][main][2017-05-28 00:03:06][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/category]}" onto public org.springframework.web.servlet.ModelAndView cn.sumi.controller.CategoryController.category()
+[INFO][main][2017-05-28 00:03:06][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/category/add]}" onto public org.springframework.web.servlet.ModelAndView cn.sumi.controller.CategoryController.add(java.lang.String)
+[INFO][main][2017-05-28 00:03:07][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@4f7d0008: startup date [Sun May 28 00:03:06 CST 2017]; root of context hierarchy
+[INFO][main][2017-05-28 00:03:07][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@4f7d0008: startup date [Sun May 28 00:03:06 CST 2017]; root of context hierarchy
+[INFO][main][2017-05-28 00:03:07][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/article] onto handler '/article'
+[INFO][Thread-0][2017-05-28 00:03:07][org.springframework.context.support.AbstractApplicationContext] - Closing org.springframework.context.support.GenericApplicationContext@4f7d0008: startup date [Sun May 28 00:03:06 CST 2017]; root of context hierarchy
+[INFO][main][2017-05-28 00:09:57][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO][main][2017-05-28 00:09:57][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@51081592, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@7f9a81e8, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@9629756, org.springframework.test.context.support.DirtiesContextTestExecutionListener@62ee68d8, org.springframework.test.context.transaction.TransactionalTestExecutionListener@735b5592, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@58651fd0]
+[INFO][main][2017-05-28 00:09:58][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring.xml]
+[INFO][main][2017-05-28 00:09:58][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO][main][2017-05-28 00:09:58][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO][main][2017-05-28 00:10:06][org.springframework.context.support.AbstractApplicationContext] - Refreshing org.springframework.context.support.GenericApplicationContext@4f7d0008: startup date [Sun May 28 00:10:06 CST 2017]; root of context hierarchy
+[INFO][main][2017-05-28 00:10:06][org.springframework.core.io.support.PropertiesLoaderSupport] - Loading properties file from class path resource [jdbc.properties]
+[INFO][main][2017-05-28 00:10:06][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO][main][2017-05-28 00:10:06][org.springframework.jdbc.datasource.DriverManagerDataSource] - Loaded JDBC driver: com.mysql.jdbc.Driver
+[INFO][main][2017-05-28 00:10:07][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/configure]}" onto public java.lang.String cn.sumi.controller.UserController.configure()
+[INFO][main][2017-05-28 00:10:07][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/login],methods=[POST]}" onto public java.lang.String cn.sumi.controller.UserController.login(cn.sumi.pojo.User,org.springframework.ui.Model)
+[INFO][main][2017-05-28 00:10:07][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/postlist/{category}]}" onto public java.lang.String cn.sumi.controller.UserController.postlist(java.lang.String)
+[INFO][main][2017-05-28 00:10:07][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/details/{aid}]}" onto public org.springframework.web.servlet.ModelAndView cn.sumi.controller.ArticleController.details(int)
+[INFO][main][2017-05-28 00:10:07][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/delete/{aid}]}" onto public org.springframework.web.servlet.ModelAndView cn.sumi.controller.ArticleController.delete(int)
+[INFO][main][2017-05-28 00:10:07][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/category]}" onto public org.springframework.web.servlet.ModelAndView cn.sumi.controller.CategoryController.category()
+[INFO][main][2017-05-28 00:10:07][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/category/add]}" onto public org.springframework.web.servlet.ModelAndView cn.sumi.controller.CategoryController.add(java.lang.String)
+[INFO][main][2017-05-28 00:10:07][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@4f7d0008: startup date [Sun May 28 00:10:06 CST 2017]; root of context hierarchy
+[INFO][main][2017-05-28 00:10:07][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@4f7d0008: startup date [Sun May 28 00:10:06 CST 2017]; root of context hierarchy
+[INFO][main][2017-05-28 00:10:07][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/article] onto handler '/article'
+[DEBUG][main][2017-05-28 00:10:08][org.apache.ibatis.logging.jdbc.BaseJdbcLogger] - ==>  Preparing: select uid, account, passwd, nickname, email from usr where uid = ? 
+[DEBUG][main][2017-05-28 00:10:08][org.apache.ibatis.logging.jdbc.BaseJdbcLogger] - ==> Parameters: 1(Integer)
+[DEBUG][main][2017-05-28 00:10:08][org.apache.ibatis.logging.jdbc.BaseJdbcLogger] - <==      Total: 0
+[INFO][Thread-0][2017-05-28 00:10:08][org.springframework.context.support.AbstractApplicationContext] - Closing org.springframework.context.support.GenericApplicationContext@4f7d0008: startup date [Sun May 28 00:10:06 CST 2017]; root of context hierarchy
+[INFO][main][2017-05-28 00:18:17][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO][main][2017-05-28 00:18:17][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@51081592, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@7f9a81e8, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@9629756, org.springframework.test.context.support.DirtiesContextTestExecutionListener@62ee68d8, org.springframework.test.context.transaction.TransactionalTestExecutionListener@735b5592, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@58651fd0]
+[INFO][main][2017-05-28 00:18:17][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring.xml]
+[INFO][main][2017-05-28 00:18:17][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO][main][2017-05-28 00:18:18][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO][main][2017-05-28 00:18:20][org.springframework.context.support.AbstractApplicationContext] - Refreshing org.springframework.context.support.GenericApplicationContext@4f7d0008: startup date [Sun May 28 00:18:20 CST 2017]; root of context hierarchy
+[INFO][main][2017-05-28 00:18:20][org.springframework.core.io.support.PropertiesLoaderSupport] - Loading properties file from class path resource [jdbc.properties]
+[INFO][main][2017-05-28 00:18:20][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO][main][2017-05-28 00:18:20][org.springframework.jdbc.datasource.DriverManagerDataSource] - Loaded JDBC driver: com.mysql.jdbc.Driver
+[INFO][main][2017-05-28 00:18:21][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/configure]}" onto public java.lang.String cn.sumi.controller.UserController.configure()
+[INFO][main][2017-05-28 00:18:21][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/login],methods=[POST]}" onto public java.lang.String cn.sumi.controller.UserController.login(cn.sumi.pojo.User,org.springframework.ui.Model)
+[INFO][main][2017-05-28 00:18:21][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/postlist/{category}]}" onto public java.lang.String cn.sumi.controller.UserController.postlist(java.lang.String)
+[INFO][main][2017-05-28 00:18:21][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/details/{aid}]}" onto public org.springframework.web.servlet.ModelAndView cn.sumi.controller.ArticleController.details(int)
+[INFO][main][2017-05-28 00:18:21][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/delete/{aid}]}" onto public org.springframework.web.servlet.ModelAndView cn.sumi.controller.ArticleController.delete(int)
+[INFO][main][2017-05-28 00:18:21][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/category]}" onto public org.springframework.web.servlet.ModelAndView cn.sumi.controller.CategoryController.category()
+[INFO][main][2017-05-28 00:18:21][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/category/add]}" onto public org.springframework.web.servlet.ModelAndView cn.sumi.controller.CategoryController.add(java.lang.String)
+[INFO][main][2017-05-28 00:18:21][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@4f7d0008: startup date [Sun May 28 00:18:20 CST 2017]; root of context hierarchy
+[INFO][main][2017-05-28 00:18:21][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@4f7d0008: startup date [Sun May 28 00:18:20 CST 2017]; root of context hierarchy
+[INFO][main][2017-05-28 00:18:21][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/article] onto handler '/article'
+[DEBUG][main][2017-05-28 00:18:22][org.apache.ibatis.logging.jdbc.BaseJdbcLogger] - ==>  Preparing: insert into usr (uid, account, passwd, nickname, email) values (?, ?, ?, ?, ?) 
+[DEBUG][main][2017-05-28 00:18:22][org.apache.ibatis.logging.jdbc.BaseJdbcLogger] - ==> Parameters: null, gonghf95(String), 123(String), null, null
+[INFO][main][2017-05-28 00:18:22][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+[INFO][main][2017-05-28 00:18:22][org.springframework.jdbc.support.SQLErrorCodesFactory] - SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase, Hana]
+[INFO][Thread-0][2017-05-28 00:18:22][org.springframework.context.support.AbstractApplicationContext] - Closing org.springframework.context.support.GenericApplicationContext@4f7d0008: startup date [Sun May 28 00:18:20 CST 2017]; root of context hierarchy
+[INFO][main][2017-05-28 00:25:11][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO][main][2017-05-28 00:25:11][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@51081592, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@7f9a81e8, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@9629756, org.springframework.test.context.support.DirtiesContextTestExecutionListener@62ee68d8, org.springframework.test.context.transaction.TransactionalTestExecutionListener@735b5592, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@58651fd0]
+[INFO][main][2017-05-28 00:25:11][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring.xml]
+[INFO][main][2017-05-28 00:25:11][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO][main][2017-05-28 00:25:12][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO][main][2017-05-28 00:25:18][org.springframework.context.support.AbstractApplicationContext] - Refreshing org.springframework.context.support.GenericApplicationContext@4f7d0008: startup date [Sun May 28 00:25:18 CST 2017]; root of context hierarchy
+[INFO][main][2017-05-28 00:25:18][org.springframework.core.io.support.PropertiesLoaderSupport] - Loading properties file from class path resource [jdbc.properties]
+[INFO][main][2017-05-28 00:25:18][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO][main][2017-05-28 00:25:19][org.springframework.jdbc.datasource.DriverManagerDataSource] - Loaded JDBC driver: com.mysql.jdbc.Driver
+[INFO][main][2017-05-28 00:25:19][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/configure]}" onto public java.lang.String cn.sumi.controller.UserController.configure()
+[INFO][main][2017-05-28 00:25:19][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/postlist/{category}]}" onto public java.lang.String cn.sumi.controller.UserController.postlist(java.lang.String)
+[INFO][main][2017-05-28 00:25:19][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/login],methods=[POST]}" onto public java.lang.String cn.sumi.controller.UserController.login(cn.sumi.pojo.User,org.springframework.ui.Model)
+[INFO][main][2017-05-28 00:25:19][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/details/{aid}]}" onto public org.springframework.web.servlet.ModelAndView cn.sumi.controller.ArticleController.details(int)
+[INFO][main][2017-05-28 00:25:19][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/delete/{aid}]}" onto public org.springframework.web.servlet.ModelAndView cn.sumi.controller.ArticleController.delete(int)
+[INFO][main][2017-05-28 00:25:19][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/category]}" onto public org.springframework.web.servlet.ModelAndView cn.sumi.controller.CategoryController.category()
+[INFO][main][2017-05-28 00:25:19][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/category/add]}" onto public org.springframework.web.servlet.ModelAndView cn.sumi.controller.CategoryController.add(java.lang.String)
+[INFO][main][2017-05-28 00:25:20][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@4f7d0008: startup date [Sun May 28 00:25:18 CST 2017]; root of context hierarchy
+[INFO][main][2017-05-28 00:25:20][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@4f7d0008: startup date [Sun May 28 00:25:18 CST 2017]; root of context hierarchy
+[INFO][main][2017-05-28 00:25:20][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/article] onto handler '/article'
+[DEBUG][main][2017-05-28 00:25:20][org.apache.ibatis.logging.jdbc.BaseJdbcLogger] - ==>  Preparing: insert into usr (uid, account, passwd, nickname, email) values (?, ?, ?, ?, ?) 
+[DEBUG][main][2017-05-28 00:25:20][org.apache.ibatis.logging.jdbc.BaseJdbcLogger] - ==> Parameters: null, gonghf95(String), 123(String), null, null
+[DEBUG][main][2017-05-28 00:25:20][org.apache.ibatis.logging.jdbc.BaseJdbcLogger] - <==    Updates: 1
+[INFO][Thread-0][2017-05-28 00:25:20][org.springframework.context.support.AbstractApplicationContext] - Closing org.springframework.context.support.GenericApplicationContext@4f7d0008: startup date [Sun May 28 00:25:18 CST 2017]; root of context hierarchy
+[INFO][main][2017-05-28 00:34:14][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO][main][2017-05-28 00:34:14][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@51081592, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@7f9a81e8, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@9629756, org.springframework.test.context.support.DirtiesContextTestExecutionListener@62ee68d8, org.springframework.test.context.transaction.TransactionalTestExecutionListener@735b5592, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@58651fd0]
+[INFO][main][2017-05-28 00:34:14][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring.xml]
+[INFO][main][2017-05-28 00:34:14][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO][main][2017-05-28 00:34:15][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO][main][2017-05-28 00:34:17][org.springframework.context.support.AbstractApplicationContext] - Refreshing org.springframework.context.support.GenericApplicationContext@4f7d0008: startup date [Sun May 28 00:34:17 CST 2017]; root of context hierarchy
+[INFO][main][2017-05-28 00:34:17][org.springframework.core.io.support.PropertiesLoaderSupport] - Loading properties file from class path resource [jdbc.properties]
+[INFO][main][2017-05-28 00:34:17][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO][main][2017-05-28 00:34:17][org.springframework.jdbc.datasource.DriverManagerDataSource] - Loaded JDBC driver: com.mysql.jdbc.Driver
+[INFO][main][2017-05-28 00:34:18][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/configure]}" onto public java.lang.String cn.sumi.controller.UserController.configure()
+[INFO][main][2017-05-28 00:34:18][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/login],methods=[POST]}" onto public java.lang.String cn.sumi.controller.UserController.login(cn.sumi.pojo.User,org.springframework.ui.Model)
+[INFO][main][2017-05-28 00:34:18][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/postlist/{category}]}" onto public java.lang.String cn.sumi.controller.UserController.postlist(java.lang.String)
+[INFO][main][2017-05-28 00:34:18][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/details/{aid}]}" onto public org.springframework.web.servlet.ModelAndView cn.sumi.controller.ArticleController.details(int)
+[INFO][main][2017-05-28 00:34:18][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/delete/{aid}]}" onto public org.springframework.web.servlet.ModelAndView cn.sumi.controller.ArticleController.delete(int)
+[INFO][main][2017-05-28 00:34:18][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/category]}" onto public org.springframework.web.servlet.ModelAndView cn.sumi.controller.CategoryController.category()
+[INFO][main][2017-05-28 00:34:18][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/category/add]}" onto public org.springframework.web.servlet.ModelAndView cn.sumi.controller.CategoryController.add(java.lang.String)
+[INFO][main][2017-05-28 00:34:18][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@4f7d0008: startup date [Sun May 28 00:34:17 CST 2017]; root of context hierarchy
+[INFO][main][2017-05-28 00:34:18][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@4f7d0008: startup date [Sun May 28 00:34:17 CST 2017]; root of context hierarchy
+[INFO][main][2017-05-28 00:34:18][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/article] onto handler '/article'
+[DEBUG][main][2017-05-28 00:34:19][org.apache.ibatis.logging.jdbc.BaseJdbcLogger] - ==>  Preparing: select account, passwd, nickname, email from usr where account = ? 
+[DEBUG][main][2017-05-28 00:34:19][org.apache.ibatis.logging.jdbc.BaseJdbcLogger] - ==> Parameters: gonghf95(String)
+[DEBUG][main][2017-05-28 00:34:19][org.apache.ibatis.logging.jdbc.BaseJdbcLogger] - <==      Total: 0
+[INFO][Thread-0][2017-05-28 00:34:19][org.springframework.context.support.AbstractApplicationContext] - Closing org.springframework.context.support.GenericApplicationContext@4f7d0008: startup date [Sun May 28 00:34:17 CST 2017]; root of context hierarchy
+[INFO][main][2017-05-28 00:34:43][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO][main][2017-05-28 00:34:43][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@51081592, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@7f9a81e8, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@9629756, org.springframework.test.context.support.DirtiesContextTestExecutionListener@62ee68d8, org.springframework.test.context.transaction.TransactionalTestExecutionListener@735b5592, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@58651fd0]
+[INFO][main][2017-05-28 00:34:43][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring.xml]
+[INFO][main][2017-05-28 00:34:43][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO][main][2017-05-28 00:34:44][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO][main][2017-05-28 00:34:45][org.springframework.context.support.AbstractApplicationContext] - Refreshing org.springframework.context.support.GenericApplicationContext@4f7d0008: startup date [Sun May 28 00:34:45 CST 2017]; root of context hierarchy
+[INFO][main][2017-05-28 00:34:46][org.springframework.core.io.support.PropertiesLoaderSupport] - Loading properties file from class path resource [jdbc.properties]
+[INFO][main][2017-05-28 00:34:46][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO][main][2017-05-28 00:34:46][org.springframework.jdbc.datasource.DriverManagerDataSource] - Loaded JDBC driver: com.mysql.jdbc.Driver
+[INFO][main][2017-05-28 00:34:46][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/configure]}" onto public java.lang.String cn.sumi.controller.UserController.configure()
+[INFO][main][2017-05-28 00:34:46][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/login],methods=[POST]}" onto public java.lang.String cn.sumi.controller.UserController.login(cn.sumi.pojo.User,org.springframework.ui.Model)
+[INFO][main][2017-05-28 00:34:46][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/postlist/{category}]}" onto public java.lang.String cn.sumi.controller.UserController.postlist(java.lang.String)
+[INFO][main][2017-05-28 00:34:46][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/details/{aid}]}" onto public org.springframework.web.servlet.ModelAndView cn.sumi.controller.ArticleController.details(int)
+[INFO][main][2017-05-28 00:34:46][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/delete/{aid}]}" onto public org.springframework.web.servlet.ModelAndView cn.sumi.controller.ArticleController.delete(int)
+[INFO][main][2017-05-28 00:34:46][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/category]}" onto public org.springframework.web.servlet.ModelAndView cn.sumi.controller.CategoryController.category()
+[INFO][main][2017-05-28 00:34:46][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/category/add]}" onto public org.springframework.web.servlet.ModelAndView cn.sumi.controller.CategoryController.add(java.lang.String)
+[INFO][main][2017-05-28 00:34:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@4f7d0008: startup date [Sun May 28 00:34:45 CST 2017]; root of context hierarchy
+[INFO][main][2017-05-28 00:34:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@4f7d0008: startup date [Sun May 28 00:34:45 CST 2017]; root of context hierarchy
+[INFO][main][2017-05-28 00:34:47][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/article] onto handler '/article'
+[DEBUG][main][2017-05-28 00:34:47][org.apache.ibatis.logging.jdbc.BaseJdbcLogger] - ==>  Preparing: insert into usr (account, passwd, nickname, email) values (?, ?, ?, ?) 
+[DEBUG][main][2017-05-28 00:34:47][org.apache.ibatis.logging.jdbc.BaseJdbcLogger] - ==> Parameters: gonghf95(String), 123(String), null, null
+[DEBUG][main][2017-05-28 00:34:48][org.apache.ibatis.logging.jdbc.BaseJdbcLogger] - <==    Updates: 1
+[INFO][Thread-0][2017-05-28 00:34:48][org.springframework.context.support.AbstractApplicationContext] - Closing org.springframework.context.support.GenericApplicationContext@4f7d0008: startup date [Sun May 28 00:34:45 CST 2017]; root of context hierarchy
+[INFO][main][2017-05-28 00:34:59][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO][main][2017-05-28 00:34:59][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@51081592, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@7f9a81e8, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@9629756, org.springframework.test.context.support.DirtiesContextTestExecutionListener@62ee68d8, org.springframework.test.context.transaction.TransactionalTestExecutionListener@735b5592, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@58651fd0]
+[INFO][main][2017-05-28 00:34:59][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring.xml]
+[INFO][main][2017-05-28 00:34:59][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO][main][2017-05-28 00:34:59][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO][main][2017-05-28 00:35:01][org.springframework.context.support.AbstractApplicationContext] - Refreshing org.springframework.context.support.GenericApplicationContext@4f7d0008: startup date [Sun May 28 00:35:01 CST 2017]; root of context hierarchy
+[INFO][main][2017-05-28 00:35:02][org.springframework.core.io.support.PropertiesLoaderSupport] - Loading properties file from class path resource [jdbc.properties]
+[INFO][main][2017-05-28 00:35:02][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO][main][2017-05-28 00:35:02][org.springframework.jdbc.datasource.DriverManagerDataSource] - Loaded JDBC driver: com.mysql.jdbc.Driver
+[INFO][main][2017-05-28 00:35:02][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/configure]}" onto public java.lang.String cn.sumi.controller.UserController.configure()
+[INFO][main][2017-05-28 00:35:02][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/login],methods=[POST]}" onto public java.lang.String cn.sumi.controller.UserController.login(cn.sumi.pojo.User,org.springframework.ui.Model)
+[INFO][main][2017-05-28 00:35:02][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/postlist/{category}]}" onto public java.lang.String cn.sumi.controller.UserController.postlist(java.lang.String)
+[INFO][main][2017-05-28 00:35:02][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/details/{aid}]}" onto public org.springframework.web.servlet.ModelAndView cn.sumi.controller.ArticleController.details(int)
+[INFO][main][2017-05-28 00:35:02][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/delete/{aid}]}" onto public org.springframework.web.servlet.ModelAndView cn.sumi.controller.ArticleController.delete(int)
+[INFO][main][2017-05-28 00:35:02][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/category]}" onto public org.springframework.web.servlet.ModelAndView cn.sumi.controller.CategoryController.category()
+[INFO][main][2017-05-28 00:35:02][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/category/add]}" onto public org.springframework.web.servlet.ModelAndView cn.sumi.controller.CategoryController.add(java.lang.String)
+[INFO][main][2017-05-28 00:35:03][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@4f7d0008: startup date [Sun May 28 00:35:01 CST 2017]; root of context hierarchy
+[INFO][main][2017-05-28 00:35:03][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@4f7d0008: startup date [Sun May 28 00:35:01 CST 2017]; root of context hierarchy
+[INFO][main][2017-05-28 00:35:03][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/article] onto handler '/article'
+[DEBUG][main][2017-05-28 00:35:03][org.apache.ibatis.logging.jdbc.BaseJdbcLogger] - ==>  Preparing: select account, passwd, nickname, email from usr where account = ? 
+[DEBUG][main][2017-05-28 00:35:03][org.apache.ibatis.logging.jdbc.BaseJdbcLogger] - ==> Parameters: gonghf95(String)
+[TRACE][main][2017-05-28 00:35:03][org.apache.ibatis.logging.jdbc.BaseJdbcLogger] - <==    Columns: account, passwd, nickname, email
+[TRACE][main][2017-05-28 00:35:03][org.apache.ibatis.logging.jdbc.BaseJdbcLogger] - <==        Row: gonghf95, 123, null, null
+[DEBUG][main][2017-05-28 00:35:03][org.apache.ibatis.logging.jdbc.BaseJdbcLogger] - <==      Total: 1
+[INFO][Thread-0][2017-05-28 00:35:03][org.springframework.context.support.AbstractApplicationContext] - Closing org.springframework.context.support.GenericApplicationContext@4f7d0008: startup date [Sun May 28 00:35:01 CST 2017]; root of context hierarchy
+[INFO][main][2017-05-28 00:37:03][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO][main][2017-05-28 00:37:03][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@51081592, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@7f9a81e8, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@9629756, org.springframework.test.context.support.DirtiesContextTestExecutionListener@62ee68d8, org.springframework.test.context.transaction.TransactionalTestExecutionListener@735b5592, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@58651fd0]
+[INFO][main][2017-05-28 00:37:03][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring.xml]
+[INFO][main][2017-05-28 00:37:03][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO][main][2017-05-28 00:37:04][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO][main][2017-05-28 00:37:10][org.springframework.context.support.AbstractApplicationContext] - Refreshing org.springframework.context.support.GenericApplicationContext@4f7d0008: startup date [Sun May 28 00:37:10 CST 2017]; root of context hierarchy
+[INFO][main][2017-05-28 00:37:11][org.springframework.core.io.support.PropertiesLoaderSupport] - Loading properties file from class path resource [jdbc.properties]
+[INFO][main][2017-05-28 00:37:11][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO][main][2017-05-28 00:37:11][org.springframework.jdbc.datasource.DriverManagerDataSource] - Loaded JDBC driver: com.mysql.jdbc.Driver
+[INFO][main][2017-05-28 00:37:11][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/configure]}" onto public java.lang.String cn.sumi.controller.UserController.configure()
+[INFO][main][2017-05-28 00:37:11][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/postlist/{category}]}" onto public java.lang.String cn.sumi.controller.UserController.postlist(java.lang.String)
+[INFO][main][2017-05-28 00:37:11][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/login],methods=[POST]}" onto public java.lang.String cn.sumi.controller.UserController.login(cn.sumi.pojo.User,org.springframework.ui.Model)
+[INFO][main][2017-05-28 00:37:11][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/details/{aid}]}" onto public org.springframework.web.servlet.ModelAndView cn.sumi.controller.ArticleController.details(int)
+[INFO][main][2017-05-28 00:37:11][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/delete/{aid}]}" onto public org.springframework.web.servlet.ModelAndView cn.sumi.controller.ArticleController.delete(int)
+[INFO][main][2017-05-28 00:37:11][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/category]}" onto public org.springframework.web.servlet.ModelAndView cn.sumi.controller.CategoryController.category()
+[INFO][main][2017-05-28 00:37:11][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/category/add]}" onto public org.springframework.web.servlet.ModelAndView cn.sumi.controller.CategoryController.add(java.lang.String)
+[INFO][main][2017-05-28 00:37:12][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@4f7d0008: startup date [Sun May 28 00:37:10 CST 2017]; root of context hierarchy
+[INFO][main][2017-05-28 00:37:12][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@4f7d0008: startup date [Sun May 28 00:37:10 CST 2017]; root of context hierarchy
+[INFO][main][2017-05-28 00:37:12][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/article] onto handler '/article'
+[DEBUG][main][2017-05-28 00:37:12][org.apache.ibatis.logging.jdbc.BaseJdbcLogger] - ==>  Preparing: delete from usr where account = ? 
+[DEBUG][main][2017-05-28 00:37:12][org.apache.ibatis.logging.jdbc.BaseJdbcLogger] - ==> Parameters: gonghf95(String)
+[DEBUG][main][2017-05-28 00:37:12][org.apache.ibatis.logging.jdbc.BaseJdbcLogger] - <==    Updates: 1
+[INFO][Thread-0][2017-05-28 00:37:12][org.springframework.context.support.AbstractApplicationContext] - Closing org.springframework.context.support.GenericApplicationContext@4f7d0008: startup date [Sun May 28 00:37:10 CST 2017]; root of context hierarchy
+[INFO][main][2017-05-28 00:38:42][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO][main][2017-05-28 00:38:42][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@51081592, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@7f9a81e8, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@9629756, org.springframework.test.context.support.DirtiesContextTestExecutionListener@62ee68d8, org.springframework.test.context.transaction.TransactionalTestExecutionListener@735b5592, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@58651fd0]
+[INFO][main][2017-05-28 00:38:42][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring.xml]
+[INFO][main][2017-05-28 00:38:42][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO][main][2017-05-28 00:38:43][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO][main][2017-05-28 00:38:44][org.springframework.context.support.AbstractApplicationContext] - Refreshing org.springframework.context.support.GenericApplicationContext@4f7d0008: startup date [Sun May 28 00:38:44 CST 2017]; root of context hierarchy
+[INFO][main][2017-05-28 00:38:44][org.springframework.core.io.support.PropertiesLoaderSupport] - Loading properties file from class path resource [jdbc.properties]
+[INFO][main][2017-05-28 00:38:44][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO][main][2017-05-28 00:38:45][org.springframework.jdbc.datasource.DriverManagerDataSource] - Loaded JDBC driver: com.mysql.jdbc.Driver
+[INFO][main][2017-05-28 00:38:45][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/configure]}" onto public java.lang.String cn.sumi.controller.UserController.configure()
+[INFO][main][2017-05-28 00:38:45][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/login],methods=[POST]}" onto public java.lang.String cn.sumi.controller.UserController.login(cn.sumi.pojo.User,org.springframework.ui.Model)
+[INFO][main][2017-05-28 00:38:45][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/postlist/{category}]}" onto public java.lang.String cn.sumi.controller.UserController.postlist(java.lang.String)
+[INFO][main][2017-05-28 00:38:45][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/details/{aid}]}" onto public org.springframework.web.servlet.ModelAndView cn.sumi.controller.ArticleController.details(int)
+[INFO][main][2017-05-28 00:38:45][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/delete/{aid}]}" onto public org.springframework.web.servlet.ModelAndView cn.sumi.controller.ArticleController.delete(int)
+[INFO][main][2017-05-28 00:38:45][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/category]}" onto public org.springframework.web.servlet.ModelAndView cn.sumi.controller.CategoryController.category()
+[INFO][main][2017-05-28 00:38:45][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/category/add]}" onto public org.springframework.web.servlet.ModelAndView cn.sumi.controller.CategoryController.add(java.lang.String)
+[INFO][main][2017-05-28 00:38:46][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@4f7d0008: startup date [Sun May 28 00:38:44 CST 2017]; root of context hierarchy
+[INFO][main][2017-05-28 00:38:46][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@4f7d0008: startup date [Sun May 28 00:38:44 CST 2017]; root of context hierarchy
+[INFO][main][2017-05-28 00:38:46][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/article] onto handler '/article'
+[DEBUG][main][2017-05-28 00:38:46][org.apache.ibatis.logging.jdbc.BaseJdbcLogger] - ==>  Preparing: update usr SET passwd = ? where account = ? 
+[DEBUG][main][2017-05-28 00:38:46][org.apache.ibatis.logging.jdbc.BaseJdbcLogger] - ==> Parameters: 888(String), gonghf95(String)
+[DEBUG][main][2017-05-28 00:38:46][org.apache.ibatis.logging.jdbc.BaseJdbcLogger] - <==    Updates: 0
+[INFO][Thread-0][2017-05-28 00:38:46][org.springframework.context.support.AbstractApplicationContext] - Closing org.springframework.context.support.GenericApplicationContext@4f7d0008: startup date [Sun May 28 00:38:44 CST 2017]; root of context hierarchy
+[INFO][main][2017-05-28 00:39:57][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO][main][2017-05-28 00:39:57][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@51081592, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@7f9a81e8, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@9629756, org.springframework.test.context.support.DirtiesContextTestExecutionListener@62ee68d8, org.springframework.test.context.transaction.TransactionalTestExecutionListener@735b5592, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@58651fd0]
+[INFO][main][2017-05-28 00:39:57][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring.xml]
+[INFO][main][2017-05-28 00:39:57][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO][main][2017-05-28 00:39:58][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO][main][2017-05-28 00:40:00][org.springframework.context.support.AbstractApplicationContext] - Refreshing org.springframework.context.support.GenericApplicationContext@4f7d0008: startup date [Sun May 28 00:40:00 CST 2017]; root of context hierarchy
+[INFO][main][2017-05-28 00:40:00][org.springframework.core.io.support.PropertiesLoaderSupport] - Loading properties file from class path resource [jdbc.properties]
+[INFO][main][2017-05-28 00:40:00][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO][main][2017-05-28 00:40:00][org.springframework.jdbc.datasource.DriverManagerDataSource] - Loaded JDBC driver: com.mysql.jdbc.Driver
+[INFO][main][2017-05-28 00:40:01][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/configure]}" onto public java.lang.String cn.sumi.controller.UserController.configure()
+[INFO][main][2017-05-28 00:40:01][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/login],methods=[POST]}" onto public java.lang.String cn.sumi.controller.UserController.login(cn.sumi.pojo.User,org.springframework.ui.Model)
+[INFO][main][2017-05-28 00:40:01][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/postlist/{category}]}" onto public java.lang.String cn.sumi.controller.UserController.postlist(java.lang.String)
+[INFO][main][2017-05-28 00:40:01][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/details/{aid}]}" onto public org.springframework.web.servlet.ModelAndView cn.sumi.controller.ArticleController.details(int)
+[INFO][main][2017-05-28 00:40:01][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/delete/{aid}]}" onto public org.springframework.web.servlet.ModelAndView cn.sumi.controller.ArticleController.delete(int)
+[INFO][main][2017-05-28 00:40:01][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/category]}" onto public org.springframework.web.servlet.ModelAndView cn.sumi.controller.CategoryController.category()
+[INFO][main][2017-05-28 00:40:01][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/category/add]}" onto public org.springframework.web.servlet.ModelAndView cn.sumi.controller.CategoryController.add(java.lang.String)
+[INFO][main][2017-05-28 00:40:01][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@4f7d0008: startup date [Sun May 28 00:40:00 CST 2017]; root of context hierarchy
+[INFO][main][2017-05-28 00:40:01][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@4f7d0008: startup date [Sun May 28 00:40:00 CST 2017]; root of context hierarchy
+[INFO][main][2017-05-28 00:40:01][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/article] onto handler '/article'
+[DEBUG][main][2017-05-28 00:40:02][org.apache.ibatis.logging.jdbc.BaseJdbcLogger] - ==>  Preparing: update usr set passwd = ?, nickname = ?, email = ? where account = ? 
+[DEBUG][main][2017-05-28 00:40:02][org.apache.ibatis.logging.jdbc.BaseJdbcLogger] - ==> Parameters: null, null, gonghf95@gmail.com(String), gonghf95(String)
+[DEBUG][main][2017-05-28 00:40:02][org.apache.ibatis.logging.jdbc.BaseJdbcLogger] - <==    Updates: 0
+[INFO][Thread-0][2017-05-28 00:40:02][org.springframework.context.support.AbstractApplicationContext] - Closing org.springframework.context.support.GenericApplicationContext@4f7d0008: startup date [Sun May 28 00:40:00 CST 2017]; root of context hierarchy

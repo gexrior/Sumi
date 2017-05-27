@@ -1,22 +1,28 @@
 package cn.sumi.pojo;
 
 public class BlogConfigure {
-    private int userId;
+    private String account;
+
     private String title;
+
     private String signature;
 
-    public BlogConfigure(int userId, String title, String signature) {
-        this.userId = userId;
+    public BlogConfigure(String account, String title, String signature) {
+        this.account = account;
         this.title = title;
         this.signature = signature;
     }
 
-    public int getUserId() {
-        return userId;
+    public BlogConfigure() {
+        super();
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public String getAccount() {
+        return account;
+    }
+
+    public void setAccount(String account) {
+        this.account = account == null ? null : account.trim();
     }
 
     public String getTitle() {
@@ -24,7 +30,7 @@ public class BlogConfigure {
     }
 
     public void setTitle(String title) {
-        this.title = title;
+        this.title = title == null ? null : title.trim();
     }
 
     public String getSignature() {
@@ -32,6 +38,6 @@ public class BlogConfigure {
     }
 
     public void setSignature(String signature) {
-        this.signature = signature;
+        this.signature = signature == null ? null : signature.trim();
     }
 }

@@ -7,7 +7,7 @@ public class Article {
 
     private String title;
 
-    private Integer uid;
+    private String author;
 
     private Integer cid;
 
@@ -19,10 +19,10 @@ public class Article {
 
     private String contents;
 
-    public Article(Integer aid, String title, Integer uid, Integer cid, Date publishDate, Integer comments, Integer views, String contents) {
+    public Article(Integer aid, String title, String author, Integer cid, Date publishDate, Integer comments, Integer views, String contents) {
         this.aid = aid;
         this.title = title;
-        this.uid = uid;
+        this.author = author;
         this.cid = cid;
         this.publishDate = publishDate;
         this.comments = comments;
@@ -50,12 +50,12 @@ public class Article {
         this.title = title == null ? null : title.trim();
     }
 
-    public Integer getUid() {
-        return uid;
+    public String getAuthor() {
+        return author;
     }
 
-    public void setUid(Integer uid) {
-        this.uid = uid;
+    public void setAuthor(String author) {
+        this.author = author == null ? null : author.trim();
     }
 
     public Integer getCid() {

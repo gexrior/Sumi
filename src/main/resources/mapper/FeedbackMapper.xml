@@ -1,404 +1,84 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.sumi.mapper.FeedbackMapper">
-  <resultMap id="BaseResultMap" type="cn.sumi.pojo.Feedback">
-    <constructor>
-      <idArg column="fid" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="aid" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="contents" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="reply_id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.sumi.mapper.FeedbackMapper" >
+  <resultMap id="BaseResultMap" type="cn.sumi.pojo.Feedback" >
+    <constructor >
+      <idArg column="fid" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="aid" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="contents" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="reply_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
     </constructor>
   </resultMap>
-  <sql id="Base_Column_List">
+  <sql id="Base_Column_List" >
     fid, aid, contents, reply_id
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
     from feedback
     where fid = #{fid,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from feedback
     where fid = #{fid,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="cn.sumi.pojo.Feedback">
+  <insert id="insert" parameterType="cn.sumi.pojo.Feedback" >
     insert into feedback (fid, aid, contents, 
       reply_id)
     values (#{fid,jdbcType=INTEGER}, #{aid,jdbcType=INTEGER}, #{contents,jdbcType=VARCHAR}, 
       #{replyId,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="cn.sumi.pojo.Feedback">
+  <insert id="insertSelective" parameterType="cn.sumi.pojo.Feedback" >
     insert into feedback
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="fid != null">
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="fid != null" >
         fid,
       </if>
-      <if test="aid != null">
+      <if test="aid != null" >
         aid,
       </if>
-      <if test="contents != null">
+      <if test="contents != null" >
         contents,
       </if>
-      <if test="replyId != null">
+      <if test="replyId != null" >
         reply_id,
       </if>
     </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="fid != null">
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="fid != null" >
         #{fid,jdbcType=INTEGER},
       </if>
-      <if test="aid != null">
+      <if test="aid != null" >
         #{aid,jdbcType=INTEGER},
       </if>
-      <if test="contents != null">
+      <if test="contents != null" >
         #{contents,jdbcType=VARCHAR},
       </if>
-      <if test="replyId != null">
+      <if test="replyId != null" >
         #{replyId,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="cn.sumi.pojo.Feedback">
+  <update id="updateByPrimaryKeySelective" parameterType="cn.sumi.pojo.Feedback" >
     update feedback
-    <set>
-      <if test="aid != null">
+    <set >
+      <if test="aid != null" >
         aid = #{aid,jdbcType=INTEGER},
       </if>
-      <if test="contents != null">
+      <if test="contents != null" >
         contents = #{contents,jdbcType=VARCHAR},
       </if>
-      <if test="replyId != null">
+      <if test="replyId != null" >
         reply_id = #{replyId,jdbcType=INTEGER},
       </if>
     </set>
     where fid = #{fid,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="cn.sumi.pojo.Feedback">
+  <update id="updateByPrimaryKey" parameterType="cn.sumi.pojo.Feedback" >
     update feedback
     set aid = #{aid,jdbcType=INTEGER},
       contents = #{contents,jdbcType=VARCHAR},
       reply_id = #{replyId,jdbcType=INTEGER}
-    where fid = #{fid,jdbcType=INTEGER}
-  </update>
-  <resultMap id="BaseResultMap" type="cn.sumi.pojo.Feedback">
-    <constructor>
-      <idArg column="fid" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="aid" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="contents" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="reply_id" javaType="java.lang.Integer" jdbcType="INTEGER" />
-    </constructor>
-  </resultMap>
-  <sql id="Base_Column_List">
-    fid, aid, contents, reply_id
-  </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from feedback
-    where fid = #{fid,jdbcType=INTEGER}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from feedback
-    where fid = #{fid,jdbcType=INTEGER}
-  </delete>
-  <insert id="insert" parameterType="cn.sumi.pojo.Feedback">
-    insert into feedback (fid, aid, contents, 
-      reply_id)
-    values (#{fid,jdbcType=INTEGER}, #{aid,jdbcType=INTEGER}, #{contents,jdbcType=VARCHAR}, 
-      #{replyId,jdbcType=INTEGER})
-  </insert>
-  <insert id="insertSelective" parameterType="cn.sumi.pojo.Feedback">
-    insert into feedback
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="fid != null">
-        fid,
-      </if>
-      <if test="aid != null">
-        aid,
-      </if>
-      <if test="contents != null">
-        contents,
-      </if>
-      <if test="replyId != null">
-        reply_id,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="fid != null">
-        #{fid,jdbcType=INTEGER},
-      </if>
-      <if test="aid != null">
-        #{aid,jdbcType=INTEGER},
-      </if>
-      <if test="contents != null">
-        #{contents,jdbcType=VARCHAR},
-      </if>
-      <if test="replyId != null">
-        #{replyId,jdbcType=INTEGER},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="cn.sumi.pojo.Feedback">
-    update feedback
-    <set>
-      <if test="aid != null">
-        aid = #{aid,jdbcType=INTEGER},
-      </if>
-      <if test="contents != null">
-        contents = #{contents,jdbcType=VARCHAR},
-      </if>
-      <if test="replyId != null">
-        reply_id = #{replyId,jdbcType=INTEGER},
-      </if>
-    </set>
-    where fid = #{fid,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="cn.sumi.pojo.Feedback">
-    update feedback
-    set aid = #{aid,jdbcType=INTEGER},
-      contents = #{contents,jdbcType=VARCHAR},
-      reply_id = #{replyId,jdbcType=INTEGER}
-    where fid = #{fid,jdbcType=INTEGER}
-  </update>
-  <resultMap id="BaseResultMap" type="cn.sumi.pojo.Feedback">
-    <constructor>
-      <idArg column="fid" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="aid" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="contents" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="reply_id" javaType="java.lang.Integer" jdbcType="INTEGER" />
-    </constructor>
-  </resultMap>
-  <sql id="Base_Column_List">
-    fid, aid, contents, reply_id
-  </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from feedback
-    where fid = #{fid,jdbcType=INTEGER}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from feedback
-    where fid = #{fid,jdbcType=INTEGER}
-  </delete>
-  <insert id="insert" parameterType="cn.sumi.pojo.Feedback">
-    insert into feedback (fid, aid, contents, 
-      reply_id)
-    values (#{fid,jdbcType=INTEGER}, #{aid,jdbcType=INTEGER}, #{contents,jdbcType=VARCHAR}, 
-      #{replyId,jdbcType=INTEGER})
-  </insert>
-  <insert id="insertSelective" parameterType="cn.sumi.pojo.Feedback">
-    insert into feedback
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="fid != null">
-        fid,
-      </if>
-      <if test="aid != null">
-        aid,
-      </if>
-      <if test="contents != null">
-        contents,
-      </if>
-      <if test="replyId != null">
-        reply_id,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="fid != null">
-        #{fid,jdbcType=INTEGER},
-      </if>
-      <if test="aid != null">
-        #{aid,jdbcType=INTEGER},
-      </if>
-      <if test="contents != null">
-        #{contents,jdbcType=VARCHAR},
-      </if>
-      <if test="replyId != null">
-        #{replyId,jdbcType=INTEGER},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="cn.sumi.pojo.Feedback">
-    update feedback
-    <set>
-      <if test="aid != null">
-        aid = #{aid,jdbcType=INTEGER},
-      </if>
-      <if test="contents != null">
-        contents = #{contents,jdbcType=VARCHAR},
-      </if>
-      <if test="replyId != null">
-        reply_id = #{replyId,jdbcType=INTEGER},
-      </if>
-    </set>
-    where fid = #{fid,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="cn.sumi.pojo.Feedback">
-    update feedback
-    set aid = #{aid,jdbcType=INTEGER},
-      contents = #{contents,jdbcType=VARCHAR},
-      reply_id = #{replyId,jdbcType=INTEGER}
-    where fid = #{fid,jdbcType=INTEGER}
-  </update>
-  <resultMap id="BaseResultMap" type="cn.sumi.pojo.Feedback">
-    <constructor>
-      <idArg column="fid" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="aid" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="contents" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="ffid" javaType="java.lang.Integer" jdbcType="INTEGER" />
-    </constructor>
-  </resultMap>
-  <sql id="Base_Column_List">
-    fid, aid, contents, ffid
-  </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from feedback
-    where fid = #{fid,jdbcType=INTEGER}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from feedback
-    where fid = #{fid,jdbcType=INTEGER}
-  </delete>
-  <insert id="insert" parameterType="cn.sumi.pojo.Feedback">
-    insert into feedback (fid, aid, contents, 
-      ffid)
-    values (#{fid,jdbcType=INTEGER}, #{aid,jdbcType=INTEGER}, #{contents,jdbcType=VARCHAR}, 
-      #{ffid,jdbcType=INTEGER})
-  </insert>
-  <insert id="insertSelective" parameterType="cn.sumi.pojo.Feedback">
-    insert into feedback
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="fid != null">
-        fid,
-      </if>
-      <if test="aid != null">
-        aid,
-      </if>
-      <if test="contents != null">
-        contents,
-      </if>
-      <if test="ffid != null">
-        ffid,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="fid != null">
-        #{fid,jdbcType=INTEGER},
-      </if>
-      <if test="aid != null">
-        #{aid,jdbcType=INTEGER},
-      </if>
-      <if test="contents != null">
-        #{contents,jdbcType=VARCHAR},
-      </if>
-      <if test="ffid != null">
-        #{ffid,jdbcType=INTEGER},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="cn.sumi.pojo.Feedback">
-    update feedback
-    <set>
-      <if test="aid != null">
-        aid = #{aid,jdbcType=INTEGER},
-      </if>
-      <if test="contents != null">
-        contents = #{contents,jdbcType=VARCHAR},
-      </if>
-      <if test="ffid != null">
-        ffid = #{ffid,jdbcType=INTEGER},
-      </if>
-    </set>
-    where fid = #{fid,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="cn.sumi.pojo.Feedback">
-    update feedback
-    set aid = #{aid,jdbcType=INTEGER},
-      contents = #{contents,jdbcType=VARCHAR},
-      ffid = #{ffid,jdbcType=INTEGER}
-    where fid = #{fid,jdbcType=INTEGER}
-  </update>
-  <resultMap id="BaseResultMap" type="cn.sumi.pojo.Feedback">
-    <constructor>
-      <idArg column="fid" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="aid" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="contents" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="ffid" javaType="java.lang.Integer" jdbcType="INTEGER" />
-    </constructor>
-  </resultMap>
-  <sql id="Base_Column_List">
-    fid, aid, contents, ffid
-  </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from feedback
-    where fid = #{fid,jdbcType=INTEGER}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from feedback
-    where fid = #{fid,jdbcType=INTEGER}
-  </delete>
-  <insert id="insert" parameterType="cn.sumi.pojo.Feedback">
-    insert into feedback (fid, aid, contents, 
-      ffid)
-    values (#{fid,jdbcType=INTEGER}, #{aid,jdbcType=INTEGER}, #{contents,jdbcType=VARCHAR}, 
-      #{ffid,jdbcType=INTEGER})
-  </insert>
-  <insert id="insertSelective" parameterType="cn.sumi.pojo.Feedback">
-    insert into feedback
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="fid != null">
-        fid,
-      </if>
-      <if test="aid != null">
-        aid,
-      </if>
-      <if test="contents != null">
-        contents,
-      </if>
-      <if test="ffid != null">
-        ffid,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="fid != null">
-        #{fid,jdbcType=INTEGER},
-      </if>
-      <if test="aid != null">
-        #{aid,jdbcType=INTEGER},
-      </if>
-      <if test="contents != null">
-        #{contents,jdbcType=VARCHAR},
-      </if>
-      <if test="ffid != null">
-        #{ffid,jdbcType=INTEGER},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="cn.sumi.pojo.Feedback">
-    update feedback
-    <set>
-      <if test="aid != null">
-        aid = #{aid,jdbcType=INTEGER},
-      </if>
-      <if test="contents != null">
-        contents = #{contents,jdbcType=VARCHAR},
-      </if>
-      <if test="ffid != null">
-        ffid = #{ffid,jdbcType=INTEGER},
-      </if>
-    </set>
-    where fid = #{fid,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="cn.sumi.pojo.Feedback">
-    update feedback
-    set aid = #{aid,jdbcType=INTEGER},
-      contents = #{contents,jdbcType=VARCHAR},
-      ffid = #{ffid,jdbcType=INTEGER}
     where fid = #{fid,jdbcType=INTEGER}
   </update>
 </mapper>

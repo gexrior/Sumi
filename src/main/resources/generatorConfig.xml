@@ -97,7 +97,7 @@
 
         </table>
 
-        <table tableName="blogconfig" domainObjectName="BlogConfigure"  enableCountByExample="false" enableUpdateByExample="false"
+        <table tableName="blogconfigure" domainObjectName="BlogConfigure"  enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false">
 

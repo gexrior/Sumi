@@ -1,8 +1,6 @@
 package cn.sumi.pojo;
 
 public class User {
-    private Integer uid;
-
     private String account;
 
     private String passwd;
@@ -11,8 +9,7 @@ public class User {
 
     private String email;
 
-    public User(Integer uid, String account, String passwd, String nickname, String email) {
-        this.uid = uid;
+    public User(String account, String passwd, String nickname, String email) {
         this.account = account;
         this.passwd = passwd;
         this.nickname = nickname;
@@ -21,14 +18,6 @@ public class User {
 
     public User() {
         super();
-    }
-
-    public Integer getUid() {
-        return uid;
-    }
-
-    public void setUid(Integer uid) {
-        this.uid = uid;
     }
 
     public String getAccount() {
