@@ -19,6 +19,6 @@ public class FeedbackController {
      */
     @RequestMapping("/feedback")
     public String feedback(Model model) {
-        return "feedback";
+        return null;
     }
 }

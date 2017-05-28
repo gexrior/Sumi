@@ -30,12 +30,12 @@ public class UserController {
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String login(User user, Model model) {
         logger.info(user.toString());
-        return "postlist";
+        return null;
     }
 
     @RequestMapping("/postlist")
     public String postlist(){
-        return "postlist";
+        return null;
     }
 
     /**
@@ -46,7 +46,7 @@ public class UserController {
      */
     @RequestMapping("/postlist/{category}")
     public String postlist(@RequestParam String category) {
-        return "postlist";
+        return null;
     }
 
     /**
@@ -56,6 +56,6 @@ public class UserController {
      */
     @RequestMapping("/configure")
     public String configure() {
-        return "configure";
+        return null;
     }
 }
