@@ -11,12 +11,13 @@ import java.util.List;
  * Created by gonghf95 on 5/24/17.
  */
 public interface ArticleService {
+
     /**
      * 获取用户的文章列表
      *
      * @param user 待查找用户
      */
-    List<Article> findAll(User user);
+    List<Article> getAll(User user);
 
     /**
      * 添加新文章
@@ -30,14 +31,14 @@ public interface ArticleService {
      *
      * @param article 待编辑的文章
      */
-    void edit(Article article);
+    void editArticle(Article article);
 
     /**
      * 删除文章
      *
      * @param articleId 待删除文章Id
      */
-    void delete(int articleId);
+    void deleteArticle(int articleId);
 
 
     /**
@@ -47,5 +48,11 @@ public interface ArticleService {
      */
     void addFeedback(Feedback feedback);
 
+    /**
+     * 删除评论
+     *
+     * @param fid 评论id
+     * @author gonghf95
+     */
     void deleteFeedbackById(int fid);
 }

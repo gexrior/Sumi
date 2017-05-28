@@ -7,7 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 /**
  * 文章控制层
- * Created by 龚洪富 on 5/24/17.
+ * Created by gonghf95 on 5/24/17.
  */
 @Controller("/article")
 public class ArticleController {
@@ -16,10 +16,10 @@ public class ArticleController {
      * 删除文章
      *
      * @param aid 文章id
-     * @author 龚洪富
+     * @author gonghf95
      */
     @RequestMapping("/delete/{aid}")
-    public ModelAndView delete(@RequestParam int aid) {
+    public String delete(@RequestParam int aid){
         return null;
     }
 
@@ -27,7 +27,7 @@ public class ArticleController {
      * 文章详情
      *
      * @param aid 文章id
-     * @author 龚洪富
+     * @author gonghf95
      */
     @RequestMapping("/details/{aid}")
     public ModelAndView details(int aid) {

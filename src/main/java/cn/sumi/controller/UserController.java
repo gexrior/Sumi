@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * User Controller layer
- * Created by 龚洪富 on 5/24/17.
+ * Created by gonghf95 on 5/24/17.
  */
 @Controller
 public class UserController {
@@ -25,32 +25,37 @@ public class UserController {
      * 用户登录
      *
      * @param user 表单和用户实体映射
-     * @author 龚洪富
+     * @author gonghf95
      */
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String login(User user, Model model) {
         logger.info(user.toString());
-        return "main";
+        return "postlist";
+    }
+
+    @RequestMapping("/postlist")
+    public String postlist(){
+        return "postlist";
     }
 
     /**
      * 文章管理
      *
      * @param category 类别
-     * @author 龚洪富
+     * @author gonghf95
      */
     @RequestMapping("/postlist/{category}")
     public String postlist(@RequestParam String category) {
-        return null;
+        return "postlist";
     }
 
     /**
      * 用户配置
      *
-     * @author 龚洪富
+     * @author gonghf95
      */
-    @RequestMapping("configure")
+    @RequestMapping("/configure")
     public String configure() {
-        return null;
+        return "configure";
     }
 }

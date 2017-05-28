@@ -54,8 +54,4 @@ public class UserMapperUnit extends BaseConfiguration {
         userMapper.updateByPrimaryKey(user);
     }
 
-    @After
-    public void after() {
-        System.out.println("after");
-    }
 }

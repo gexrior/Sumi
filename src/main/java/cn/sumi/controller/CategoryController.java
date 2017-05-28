@@ -1,6 +1,7 @@
 package cn.sumi.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -15,21 +16,20 @@ public class CategoryController {
      * 添加类别
      *
      * @param category 类别名
-     * @author 龚洪富
+     * @author gonghf95
      */
     @RequestMapping("/category/add")
-    public ModelAndView add(String category) {
+    public String add(Model model, String category) {
         return null;
     }
 
     /**
      * 获取类别栏目
      *
-     * @author 龚洪富
+     * @author gonghf95
      */
     @RequestMapping("/category")
-    public
-    ModelAndView category() {
+    public String category(Model model) {
 
         return null;
     }

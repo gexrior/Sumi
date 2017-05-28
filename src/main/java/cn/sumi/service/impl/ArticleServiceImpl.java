@@ -13,7 +13,8 @@ import java.util.List;
  */
 public class ArticleServiceImpl implements ArticleService{
 
-    public List<Article> findAll(User user) {
+
+    public List<Article> getAll(User user) {
         return null;
     }
 
@@ -21,11 +22,11 @@ public class ArticleServiceImpl implements ArticleService{
 
     }
 
-    public void edit(Article article) {
+    public void editArticle(Article article) {
 
     }
 
-    public void delete(int articleId) {
+    public void deleteArticle(int articleId) {
 
     }
 

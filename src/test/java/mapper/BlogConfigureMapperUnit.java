@@ -19,10 +19,13 @@ public class BlogConfigureMapperUnit extends BaseConfiguration{
 
     @Test
     public void insert(){
+        BlogConfigure blogConfigure = new BlogConfigure("gonghf95","hello","123");
+        blogConfigureMapper.insert(blogConfigure);
     }
 
     @Test
-    public void find(){
-
+    public void insertSelective(){
+        BlogConfigure blogConfigure = new BlogConfigure("gonghf95","hello","123");
+        blogConfigureMapper.insertSelective(blogConfigure);
     }
 }
