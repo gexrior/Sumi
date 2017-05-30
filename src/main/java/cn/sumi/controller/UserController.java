@@ -2,6 +2,9 @@ package cn.sumi.controller;
 
 import cn.sumi.pojo.User;
 import cn.sumi.service.UserService;
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,6 +12,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.File;
+import java.io.PrintWriter;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * User Controller layer
@@ -34,7 +44,7 @@ public class UserController {
     }
 
     @RequestMapping("/postlist")
-    public String postlist(){
+    public String postlist() {
         return null;
     }
 
@@ -58,4 +68,5 @@ public class UserController {
     public String configure() {
         return null;
     }
+
 }

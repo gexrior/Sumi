@@ -8,17 +8,18 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
-    <title>写新文章</title>
-    <link href="css/postedit.css" rel="stylesheet">
+    <title>新文章</title>
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet">
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.ckeditor.com/4.7.0/full-all/ckeditor.js"></script>
+    <link href="css/postedit.css" rel="stylesheet">
+    <script src="https://cdn.ckeditor.com/4.7.0/standard-all/ckeditor.js"></script>
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <script src="js/postedit.js"></script>
 </head>
 
 <body>
 
-<div class="home-masthead navbar-fixed-top">
+<div class="home-masthead">
     <div class="container">
         <nav class="home-nav">
             <a class="home-nav-item glyphicon glyphicon-home" href=""> 起始页</a>
@@ -33,74 +34,31 @@
 </div>
 
 <div class="container">
-    <p class="subtit">文章标题</p>
-    <div class="input-group">
-        <div class="input-group-btn">
-            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                    aria-expanded="false">请选择 <span class="caret"></span></button>
-            <ul class="dropdown-menu">
-                <li><a href="#">C++</a></li>
-                <li><a href="#">C</a></li>
-                <li><a href="#">Java</a></li>
-            </ul>
-        </div><!-- /btn-group -->
-        <input type="text" class="form-control" style="max-width: 560px;">
-    </div>
+
+    <p class="subtit" style="margin-top: 20px">文章标题</p>
+    <input type="text" id="title" class="form-control" style="width: 560px;height: 26px;">
+
     <p class="subtit">文章内容</p>
     <textarea cols="80" id="editor" name="editor" rows="10"></textarea>
 
-    <fieldset style="margin-top: 10px; padding:4px 10px 10px 10px;">
-        <legend>上传图片</legend>
-        <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
-            <tr>
-                <td valign="top">
-                    <ol></ol>
-                    <p></p>
-                </td>
-                <td rowspan="2" valign="top" style="width:240px;">
-                    <div style="border: solid 1px #999;background-color: #f0f0f0;font-size: 11px;padding-left: 10px;">
-                        <br>
-                        <p>
-                            1.图片大小不能超过<b>2M</b>
-                        </p>
-                        <p>
-                            2.支持格式:.jpg&nbsp;.git&nbsp;.png&nbsp;.bmp
-                        </p>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td valign="bottom">
-                    <input type="file" class="file" style="display: inline;">
-                    <input type="button" class="btn btn-default" value="上传">
-                </td>
-            </tr>
-        </table>
-    </fieldset>
-    <p class="subtit"></p>
-    <p style="text-indent:2em;text-align: center;">提示：请不要发布任何推广、广告（包括招聘）、政治、低俗等方面的内容，不要把博客当作SEO工具，否则可能会影响到您的使用。</p>
-    <div class="btn_area">
-        <input type="button" class="btn btn-primary input_btn" value="发表文章">
-        <input type="button" class="btn btn-primary input_btn" value="立即保存">
-        <input type="button" class="btn btn-primary input_btn" value="舍弃">
+    <p class="subtit">文章分类</p>
+    <div>
+        <input id="txtTag" type="text" class="form-control" style="width:60%;display: inline;height: 26px;"
+               maxlength="100"
+               autocomplete="off">
+        （多个分类之间用“,”分隔）
     </div>
 
-    <div style="display: block;min-height: 70px;" id="content"></div>
+    <p style="text-indent:2em;text-align: center;margin-top: 40px;">
+        提示：请不要发布任何推广、广告（包括招聘）、政治、低俗等方面的内容，不要把博客当作SEO工具，否则可能会影响到您的使用。</p>
+    <div class="btn_area">
+        <input type="button" class="btn btn-primary input_btn" value="发表文章" id="btn-publish">
+        <input type="button" class="btn btn-primary input_btn" value="立即保存" id="draftBtn">
+        <input type="button" class="btn btn-primary input_btn" value="舍弃" id="cancelBtn">
+    </div>
 
+    <div style="display: block;height: 70px;" id="content"></div>
     <script>
-        CKEDITOR.replace('editor', {
-            height: 400
-        });
-        $("#button").click(function () {
-            if (CKEDITOR.instances.editor.getData() === "") {
-                alert("内容不能为空！");
-                return false;
-            } else {
-                var res = CKEDITOR.instances.editor.getData();
-                $("#content").html(res);
-                document.write($("#content").html());
-            }
-        });
     </script>
 
 </div><!-- /.container -->

@@ -16,6 +16,7 @@
     <mvc:resources location="/css/" mapping="/css/**"></mvc:resources>
     <mvc:resources location="/js/" mapping="/js/**"></mvc:resources>
     <mvc:annotation-driven/>
+    <mvc:default-servlet-handler/>
     <!-- ViewResolver -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
