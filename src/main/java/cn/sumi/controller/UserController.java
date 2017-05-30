@@ -45,6 +45,7 @@ public class UserController {
 
     /**
      * 访问主页
+     * @author gonghf95
      * */
     @RequestMapping("/home")
     public String home(){
