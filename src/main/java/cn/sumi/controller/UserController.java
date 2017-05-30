@@ -43,6 +43,14 @@ public class UserController {
         return null;
     }
 
+    /**
+     * 访问主页
+     * */
+    @RequestMapping("/home")
+    public String home(){
+        return "home";
+    }
+
     @RequestMapping("/postlist")
     public String postlist() {
         return null;
