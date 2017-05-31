@@ -20,7 +20,15 @@ public class UserServiceImpl implements UserService {
     private UserMapper userMapper;
 
 
+    public User getAccountInfo(String account) {
+        return userMapper.selectByPrimaryKey(account);
+    }
+
     public boolean login(User user) {
+        User res = userMapper.selectByPrimaryKey(user.getAccount());
+        if (res.getPasswd().equals(user.getPasswd())) {
+            return true;
+        }
         return false;
     }
 

@@ -2,23 +2,15 @@ package cn.sumi.controller;
 
 import cn.sumi.pojo.User;
 import cn.sumi.service.UserService;
-import org.apache.commons.fileupload.FileItem;
-import org.apache.commons.fileupload.disk.DiskFileItemFactory;
-import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import cn.sumi.utils.JSONCapsule;
+import com.alibaba.fastjson.JSON;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.File;
-import java.io.PrintWriter;
-import java.util.Iterator;
-import java.util.List;
 
 /**
  * User Controller layer
@@ -34,23 +26,54 @@ public class UserController {
     /**
      * 用户登录
      *
-     * @param user 表单和用户实体映射
+     * @param request HttpServletRequest
+     * @param user    表单和用户实体映射
      * @author gonghf95
      */
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public String login(User user, Model model) {
-        logger.info(user.toString());
-        return null;
+    public @ResponseBody
+    String login(HttpServletRequest request, User user) {
+        logger.info(user);
+        JSONCapsule jsonCapsule;
+        if (userService.login(user)) {
+            jsonCapsule = new JSONCapsule(user.getAccount(), JSONCapsule.SUCCESS);
+            return JSON.toJSONString(jsonCapsule);
+        }
+        jsonCapsule = new JSONCapsule("Incorrect username or password.", JSONCapsule.FAILURE);
+        return JSON.toJSONString(jsonCapsule);
     }
 
     /**
      * 访问主页
+     *
      * @author gonghf95
-     * */
+     */
     @RequestMapping("/home")
-    public String home(){
+    public String home(Model model) {
+
         return "home";
     }
+
+    /**
+     * 用户后台管理
+     * @author gonghf95
+     * */
+    @RequestMapping("/administrator/{account}")
+    public String root(Model model,@PathVariable String account) {
+        model.addAttribute("user",userService.getAccountInfo(account));
+        return "administrator";
+    }
+
+    /**
+     * 文章编辑
+     * @author gonghf95
+     * */
+    @RequestMapping("/postedit")
+    public String postedit(Model model){
+        model.addAttribute("post",1);
+        return "postedit";
+    }
+
 
     @RequestMapping("/postlist")
     public String postlist() {
