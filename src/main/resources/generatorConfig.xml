@@ -85,13 +85,13 @@
             
         </table>
         
-        <table tableName="article" domainObjectName="Article" enableCountByExample="false" enableUpdateByExample="false"
+        <table tableName="post" domainObjectName="Post" enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false">
             
         </table>
         
-        <table tableName="feedback" domainObjectName="Feedback" enableCountByExample="false" enableUpdateByExample="false"
+        <table tableName="comment" domainObjectName="Comment" enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false">
 

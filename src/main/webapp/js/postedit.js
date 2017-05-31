@@ -11,7 +11,7 @@ $(document).ready(function () {
         language:'zh-ch',
         extraPlugins: 'codesnippet',
         codeSnippet_theme: 'rainbow',
-        filebrowserUploadUrl:'/article/upload',
+        filebrowserUploadUrl:'/post/upload',
         toolbarCanCollapse:true,
         disableObjectResizing:true
     });
@@ -32,7 +32,7 @@ $(document).ready(function () {
 
         $.ajax({
             type: "POST",
-            url: "/article/add",
+            url: "/post/add",
             data: {title: title, contents: contents},
             datatype: "json",//"xml", "html", "script", "json", "jsonp", "text".
             beforeSend: function () {

@@ -3,11 +3,24 @@
 <mapper namespace="cn.sumi.mapper.BlogConfigureMapper" >
   <resultMap id="BaseResultMap" type="cn.sumi.pojo.BlogConfigure" >
     <constructor >
-      <arg column="account" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <idArg column="account" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="title" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="signature" jdbcType="VARCHAR" javaType="java.lang.String" />
     </constructor>
   </resultMap>
+  <sql id="Base_Column_List" >
+    account, title, signature
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from blogconfigure
+    where account = #{account,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from blogconfigure
+    where account = #{account,jdbcType=VARCHAR}
+  </delete>
   <insert id="insert" parameterType="cn.sumi.pojo.BlogConfigure" >
     insert into blogconfigure (account, title, signature
       )
@@ -39,4 +52,22 @@
       </if>
     </trim>
   </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.sumi.pojo.BlogConfigure" >
+    update blogconfigure
+    <set >
+      <if test="title != null" >
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="signature != null" >
+        signature = #{signature,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where account = #{account,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.sumi.pojo.BlogConfigure" >
+    update blogconfigure
+    set title = #{title,jdbcType=VARCHAR},
+      signature = #{signature,jdbcType=VARCHAR}
+    where account = #{account,jdbcType=VARCHAR}
+  </update>
 </mapper>

@@ -2,8 +2,8 @@ package cn.sumi.pojo;
 
 import java.util.Date;
 
-public class Article {
-    private Integer aid;
+public class Post {
+    private Integer pid;
 
     private String title;
 
@@ -19,8 +19,8 @@ public class Article {
 
     private String contents;
 
-    public Article(Integer aid, String title, String author, Integer cid, Date publishDate, Integer comments, Integer views, String contents) {
-        this.aid = aid;
+    public Post(Integer pid, String title, String author, Integer cid, Date publishDate, Integer comments, Integer views, String contents) {
+        this.pid = pid;
         this.title = title;
         this.author = author;
         this.cid = cid;
@@ -30,16 +30,16 @@ public class Article {
         this.contents = contents;
     }
 
-    public Article() {
+    public Post() {
         super();
     }
 
-    public Integer getAid() {
-        return aid;
+    public Integer getPid() {
+        return pid;
     }
 
-    public void setAid(Integer aid) {
-        this.aid = aid;
+    public void setPid(Integer pid) {
+        this.pid = pid;
     }
 
     public String getTitle() {
@@ -96,19 +96,5 @@ public class Article {
 
     public void setContents(String contents) {
         this.contents = contents == null ? null : contents.trim();
-    }
-
-    @Override
-    public String toString() {
-        return "Article{" +
-                "aid=" + aid +
-                ", title='" + title + '\'' +
-                ", author='" + author + '\'' +
-                ", cid=" + cid +
-                ", publishDate=" + publishDate +
-                ", comments=" + comments +
-                ", views=" + views +
-                ", contents='" + contents + '\'' +
-                '}';
     }
 }

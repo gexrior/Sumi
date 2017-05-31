@@ -51,14 +51,4 @@ public class User {
     public void setEmail(String email) {
         this.email = email == null ? null : email.trim();
     }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "account='" + account + '\'' +
-                ", passwd='" + passwd + '\'' +
-                ", nickname='" + nickname + '\'' +
-                ", email='" + email + '\'' +
-                '}';
-    }
 }

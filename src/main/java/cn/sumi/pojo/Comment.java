@@ -1,39 +1,39 @@
 package cn.sumi.pojo;
 
-public class Feedback {
-    private Integer fid;
+public class Comment {
+    private Integer cid;
 
-    private Integer aid;
+    private Integer pid;
 
     private String contents;
 
     private Integer replyId;
 
-    public Feedback(Integer fid, Integer aid, String contents, Integer replyId) {
-        this.fid = fid;
-        this.aid = aid;
+    public Comment(Integer cid, Integer pid, String contents, Integer replyId) {
+        this.cid = cid;
+        this.pid = pid;
         this.contents = contents;
         this.replyId = replyId;
     }
 
-    public Feedback() {
+    public Comment() {
         super();
     }
 
-    public Integer getFid() {
-        return fid;
+    public Integer getCid() {
+        return cid;
     }
 
-    public void setFid(Integer fid) {
-        this.fid = fid;
+    public void setCid(Integer cid) {
+        this.cid = cid;
     }
 
-    public Integer getAid() {
-        return aid;
+    public Integer getPid() {
+        return pid;
     }
 
-    public void setAid(Integer aid) {
-        this.aid = aid;
+    public void setPid(Integer pid) {
+        this.pid = pid;
     }
 
     public String getContents() {

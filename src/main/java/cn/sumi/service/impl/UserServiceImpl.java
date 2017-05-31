@@ -26,7 +26,7 @@ public class UserServiceImpl implements UserService {
 
     public boolean login(User user) {
         User res = userMapper.selectByPrimaryKey(user.getAccount());
-        if (res.getPasswd().equals(user.getPasswd())) {
+        if (res != null && res.getPasswd().equals(user.getPasswd())) {
             return true;
         }
         return false;

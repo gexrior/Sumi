@@ -3,7 +3,6 @@ package mapper;
 import base.BaseConfiguration;
 import cn.sumi.mapper.UserMapper;
 import cn.sumi.pojo.User;
-import org.junit.After;
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
