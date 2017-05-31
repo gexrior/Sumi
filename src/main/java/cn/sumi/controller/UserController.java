@@ -75,6 +75,10 @@ public class UserController {
     }
 
 
+    /**
+     * 文章列表
+     * @author gonghf95
+     * */
     @RequestMapping("/postlist")
     public String postlist() {
         return null;
