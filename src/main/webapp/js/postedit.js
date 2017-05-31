@@ -31,19 +31,13 @@ $(document).ready(function () {
         }
 
         $.ajax({
-            //提交数据的类型 POST GET
             type: "POST",
-            //提交的网址
             url: "/article/add",
-            //提交的数据
             data: {title: title, contents: contents},
-            //返回数据的格式
             datatype: "json",//"xml", "html", "script", "json", "jsonp", "text".
-            //在请求之前调用的函数
             beforeSend: function () {
 
             },
-            //成功返回之后调用的函数
             success: function (data) {
                 $("#msg").html(data);
             },

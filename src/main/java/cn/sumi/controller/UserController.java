@@ -56,42 +56,38 @@ public class UserController {
 
     /**
      * 用户后台管理
+     *
+     * @param model
+     * @param account 当前用户
      * @author gonghf95
-     * */
-    @RequestMapping("/administrator/{account}")
-    public String root(Model model,@PathVariable String account) {
-        model.addAttribute("user",userService.getAccountInfo(account));
-        return "administrator";
+     */
+    @RequestMapping("/root/{account}")
+    public String root(Model model, @PathVariable String account) {
+        model.addAttribute("user", userService.getAccountInfo(account));
+        return "root";
     }
 
     /**
-     * 文章编辑
+     * 新文章
+     *
+     * @param model
+     * @param account 当前账户
      * @author gonghf95
-     * */
-    @RequestMapping("/postedit")
-    public String postedit(Model model){
-        model.addAttribute("post",1);
+     */
+    @RequestMapping("/root/{account}/postedit")
+    public String postedit(Model model, @PathVariable String account) {
+        model.addAttribute("user", userService.getAccountInfo(account));
         return "postedit";
     }
 
 
     /**
      * 文章列表
-     * @author gonghf95
-     * */
-    @RequestMapping("/postlist")
-    public String postlist() {
-        return null;
-    }
-
-    /**
-     * 文章管理
      *
-     * @param category 类别
      * @author gonghf95
      */
-    @RequestMapping("/postlist/{category}")
-    public String postlist(@RequestParam String category) {
+    @RequestMapping("/{account}/postlist")
+    public String postlist(@PathVariable String account) {
         return null;
     }
 
@@ -100,8 +96,8 @@ public class UserController {
      *
      * @author gonghf95
      */
-    @RequestMapping("/configure")
-    public String configure() {
+    @RequestMapping("/{account}/configure")
+    public String configure(@PathVariable String account) {
         return null;
     }
 

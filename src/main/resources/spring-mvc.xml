@@ -11,12 +11,12 @@
        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
     <context:component-scan base-package="cn.sumi"/>
-    <mvc:resources location="/images/" mapping="/image/**"></mvc:resources>
-    <mvc:resources location="/fonts/" mapping="/fonts/**"></mvc:resources>
-    <mvc:resources location="/css/" mapping="/css/**"></mvc:resources>
-    <mvc:resources location="/js/" mapping="/js/**"></mvc:resources>
-    <mvc:annotation-driven/>
+    <mvc:resources location="/images/" mapping="/image/**"/>
+    <mvc:resources location="/fonts/" mapping="/fonts/**"/>
+    <mvc:resources location="/css/" mapping="/css/**"/>
+    <mvc:resources location="/js/" mapping="/js/**"/>
     <mvc:default-servlet-handler/>
+    <mvc:annotation-driven/>
     <!-- ViewResolver -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>

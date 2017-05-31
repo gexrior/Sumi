@@ -1,6 +1,4 @@
-/**
- * Created by gonghf95 on 5/30/17.
- */
+
 $(document).ready(function () {
     $("#signin").click(function () {
         var account = $("#username").val();
@@ -16,8 +14,8 @@ $(document).ready(function () {
             success: function (data) {
                 var res = jQuery.parseJSON(data);
                 if (res.state === 1) {
-                    var root="/administrator/"+res.message;
-                    window.location.href=root;
+                    var path = "/root/"+res.message;
+                    window.location.href=path;
                 }else{
                     var show_err = $("#p_err");
                     show_err.css("visibility","visible");

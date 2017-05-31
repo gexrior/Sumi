@@ -1,11 +1,15 @@
 package cn.sumi.controller;
 
+import cn.sumi.pojo.Article;
+import cn.sumi.service.ArticleService;
 import com.alibaba.fastjson.JSON;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -25,23 +29,22 @@ import java.util.Map;
  * Created by gonghf95 on 5/24/17.
  */
 @Controller
-@RequestMapping("/article")
+@RequestMapping("/root/{account}/article")
 public class ArticleController {
 
     Logger logger = Logger.getLogger(ArticleController.class);
+    @Autowired
+    private ArticleService articleService;
 
     /**
      *
      * */
     @RequestMapping("/add")
     public @ResponseBody
-    String add(@RequestParam String title, @RequestParam String contents) {
-        logger.info("title: " + title + "  password: " + contents);
-        Map<String, Object> map = new HashMap<String, Object>();
-        map.put("state", "ok");
-        map.put("message", "yes, i have already get your message");
-        map.put("data", "");
-        return JSON.toJSONString(map);
+    String add(@PathVariable String account, Article article) {
+        logger.info("title: " + article);
+
+        return null;
     }
 
     /**
@@ -51,7 +54,7 @@ public class ArticleController {
      * @author gonghf95
      */
     @RequestMapping("/delete/{aid}")
-    public String delete(@RequestParam int aid) {
+    public String delete(@PathVariable int aid) {
         return null;
     }
 
@@ -62,7 +65,7 @@ public class ArticleController {
      * @author gonghf95
      */
     @RequestMapping("/details/{aid}")
-    public ModelAndView details(int aid) {
+    public ModelAndView details(@PathVariable int aid) {
 
         return null;
     }

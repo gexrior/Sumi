@@ -97,4 +97,18 @@ public class Article {
     public void setContents(String contents) {
         this.contents = contents == null ? null : contents.trim();
     }
+
+    @Override
+    public String toString() {
+        return "Article{" +
+                "aid=" + aid +
+                ", title='" + title + '\'' +
+                ", author='" + author + '\'' +
+                ", cid=" + cid +
+                ", publishDate=" + publishDate +
+                ", comments=" + comments +
+                ", views=" + views +
+                ", contents='" + contents + '\'' +
+                '}';
+    }
 }
