@@ -65,7 +65,7 @@ public class CommonController {
      * @param articleId 文章id
      * @author gonghf95
      */
-    @RequestMapping("/article/detail/{articleId}")
+    @RequestMapping("/article/details/{articleId}")
     public String articleDetails(@PathVariable int articleId, Model model) {
         Article article = articleService.find(articleId);
         if (article != null) {//文章没找到

@@ -200,7 +200,7 @@
                     success: function (data) {
                         var resp = jQuery.parseJSON(data);
                         if(resp.state===1){
-                            var path = "/article/detail/"+resp.data;
+                            var path = "/article/details/"+resp.data;
                             window.location.href=path;
                         }
                     },
