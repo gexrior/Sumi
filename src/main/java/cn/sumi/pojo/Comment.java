@@ -3,15 +3,15 @@ package cn.sumi.pojo;
 public class Comment {
     private Integer cid;
 
-    private Integer pid;
+    private Integer aid;
 
     private String contents;
 
     private Integer replyId;
 
-    public Comment(Integer cid, Integer pid, String contents, Integer replyId) {
+    public Comment(Integer cid, Integer aid, String contents, Integer replyId) {
         this.cid = cid;
-        this.pid = pid;
+        this.aid = aid;
         this.contents = contents;
         this.replyId = replyId;
     }
@@ -28,12 +28,12 @@ public class Comment {
         this.cid = cid;
     }
 
-    public Integer getPid() {
-        return pid;
+    public Integer getAid() {
+        return aid;
     }
 
-    public void setPid(Integer pid) {
-        this.pid = pid;
+    public void setAid(Integer aid) {
+        this.aid = aid;
     }
 
     public String getContents() {

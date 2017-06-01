@@ -127,13 +127,13 @@
 <div class="home-masthead">
     <div class="container">
         <nav class="home-nav">
-            <a class="home-nav-item glyphicon glyphicon-home" href="/root/${user.account}"> 起始页</a>
+            <a class="home-nav-item glyphicon glyphicon-home" href="/root/${user.account}/main"> 起始页</a>
             <a class="home-nav-item" href="#">文章管理 <span class="badge">${post}</span> </a>
             <a class="home-nav-item" href="#">类别管理 <span class="badge">${post}</span></a>
             <a class="home-nav-item" href="#">评论管理 <span class="badge">${post}</span></a>
             <a class="home-nav-item" href="#">草稿箱 <span class="badge">${post}</span></a>
             <a class="home-nav-item" href="#">回收站 <span class="badge">${post}</span></a>
-            <a class="home-nav-item navbar-right glyphicon glyphicon-edit active" href="/root/${user.account}/postedit">写新文章</a>
+            <a class="home-nav-item navbar-right glyphicon glyphicon-edit active" href="/root/${user.account}/article/postedit">写新文章</a>
         </nav>
     </div>
 </div>
@@ -171,7 +171,7 @@
                 language: 'zh-ch',
                 extraPlugins: 'codesnippet',
                 codeSnippet_theme: 'rainbow',
-                filebrowserUploadUrl: '/root/${user.account}/post/upload',
+                filebrowserUploadUrl: '/root/${user.account}/article/upload',
                 toolbarCanCollapse: true,
                 disableObjectResizing: true
             });
@@ -194,16 +194,13 @@
                 }
                 $.ajax({
                     type: "POST",
-                    url: "/root/${user.account}/post/add",
+                    url: "/root/${user.account}/article/add",
                     data: {title: title, contents: contents},
                     datatype: "json",
-                    beforeSend: function () {
-
-                    },
                     success: function (data) {
                         var resp = jQuery.parseJSON(data);
                         if(resp.state===1){
-                            var path = "/root/"+resp.message+"/post/details/"+resp.data;
+                            var path = "/article/detail/"+resp.data;
                             window.location.href=path;
                         }
                     },

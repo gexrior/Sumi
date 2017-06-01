@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="cn.sumi.mapper.PostMapper" >
-  <resultMap id="BaseResultMap" type="cn.sumi.pojo.Post" >
+<mapper namespace="cn.sumi.mapper.ArticleMapper" >
+  <resultMap id="BaseResultMap" type="cn.sumi.pojo.Article" >
     <constructor >
-      <idArg column="pid" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <idArg column="aid" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="title" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="author" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="cid" jdbcType="INTEGER" javaType="java.lang.Integer" />
@@ -12,9 +12,9 @@
       <arg column="views" jdbcType="INTEGER" javaType="java.lang.Integer" />
     </constructor>
   </resultMap>
-  <resultMap id="ResultMapWithBLOBs" type="cn.sumi.pojo.Post" >
+  <resultMap id="ResultMapWithBLOBs" type="cn.sumi.pojo.Article" >
     <constructor >
-      <idArg column="pid" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <idArg column="aid" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="title" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="author" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="cid" jdbcType="INTEGER" javaType="java.lang.Integer" />
@@ -25,7 +25,7 @@
     </constructor>
   </resultMap>
   <sql id="Base_Column_List" >
-    pid, title, author, cid, publish_date, comments, views
+    aid, title, author, cid, publish_date, comments, views
   </sql>
   <sql id="Blob_Column_List" >
     contents
@@ -35,26 +35,26 @@
     <include refid="Base_Column_List" />
     ,
     <include refid="Blob_Column_List" />
-    from post
-    where pid = #{pid,jdbcType=INTEGER}
+    from article
+    where aid = #{aid,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from post
-    where pid = #{pid,jdbcType=INTEGER}
+    delete from article
+    where aid = #{aid,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="cn.sumi.pojo.Post" useGeneratedKeys="true" keyProperty="pid">
-    insert into post (pid, title, author, 
+  <insert id="insert" useGeneratedKeys="true" keyProperty="aid" parameterType="cn.sumi.pojo.Article">
+    insert into article (aid, title, author, 
       cid, publish_date, comments, 
       views, contents)
-    values (#{pid,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, #{author,jdbcType=VARCHAR}, 
+    values (#{aid,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, #{author,jdbcType=VARCHAR}, 
       #{cid,jdbcType=INTEGER}, #{publishDate,jdbcType=DATE}, #{comments,jdbcType=INTEGER}, 
       #{views,jdbcType=INTEGER}, #{contents,jdbcType=LONGVARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="cn.sumi.pojo.Post" >
-    insert into post
+  <insert id="insertSelective" parameterType="cn.sumi.pojo.Article" >
+    insert into article
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="pid != null" >
-        pid,
+      <if test="aid != null" >
+        aid,
       </if>
       <if test="title != null" >
         title,
@@ -79,8 +79,8 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="pid != null" >
-        #{pid,jdbcType=INTEGER},
+      <if test="aid != null" >
+        #{aid,jdbcType=INTEGER},
       </if>
       <if test="title != null" >
         #{title,jdbcType=VARCHAR},
@@ -105,8 +105,8 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="cn.sumi.pojo.Post" >
-    update post
+  <update id="updateByPrimaryKeySelective" parameterType="cn.sumi.pojo.Article" >
+    update article
     <set >
       <if test="title != null" >
         title = #{title,jdbcType=VARCHAR},
@@ -130,10 +130,10 @@
         contents = #{contents,jdbcType=LONGVARCHAR},
       </if>
     </set>
-    where pid = #{pid,jdbcType=INTEGER}
+    where aid = #{aid,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="cn.sumi.pojo.Post" >
-    update post
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="cn.sumi.pojo.Article" >
+    update article
     set title = #{title,jdbcType=VARCHAR},
       author = #{author,jdbcType=VARCHAR},
       cid = #{cid,jdbcType=INTEGER},
@@ -141,16 +141,16 @@
       comments = #{comments,jdbcType=INTEGER},
       views = #{views,jdbcType=INTEGER},
       contents = #{contents,jdbcType=LONGVARCHAR}
-    where pid = #{pid,jdbcType=INTEGER}
+    where aid = #{aid,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="cn.sumi.pojo.Post" >
-    update post
+  <update id="updateByPrimaryKey" parameterType="cn.sumi.pojo.Article" >
+    update article
     set title = #{title,jdbcType=VARCHAR},
       author = #{author,jdbcType=VARCHAR},
       cid = #{cid,jdbcType=INTEGER},
       publish_date = #{publishDate,jdbcType=DATE},
       comments = #{comments,jdbcType=INTEGER},
       views = #{views,jdbcType=INTEGER}
-    where pid = #{pid,jdbcType=INTEGER}
+    where aid = #{aid,jdbcType=INTEGER}
   </update>
 </mapper>

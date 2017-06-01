@@ -14,7 +14,7 @@ $(document).ready(function () {
             success: function (data) {
                 var res = jQuery.parseJSON(data);
                 if (res.state === 1) {
-                    var path = "/root/"+res.message;
+                    var path = "/root/"+res.message+"/main";
                     window.location.href=path;
                 }else{
                     var show_err = $("#p_err");

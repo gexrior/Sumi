@@ -1,7 +1,9 @@
 package cn.sumi.controller;
 
-import cn.sumi.pojo.Post;
-import cn.sumi.service.PostService;
+import cn.sumi.pojo.Article;
+import cn.sumi.pojo.User;
+import cn.sumi.service.ArticleService;
+import cn.sumi.service.UserService;
 import cn.sumi.utils.JSONCapsule;
 import com.alibaba.fastjson.JSON;
 import org.apache.commons.fileupload.FileItem;
@@ -24,31 +26,45 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * 文章控制层
+ * 用户管理文章控制层
+ * 请求路径形式:/root/{account}/article/操作
  * Created by gonghf95 on 5/24/17.
  */
 @Controller
-@RequestMapping("/root/{account}/post")
-public class PostController {
+@RequestMapping("/root/{account}/article")
+public class ArticleController {
 
-    Logger logger = Logger.getLogger(PostController.class);
+    Logger logger = Logger.getLogger(ArticleController.class);
     @Autowired
-    private PostService postService;
+    private UserService userService;
+    @Autowired
+    private ArticleService articleService;
+
+    /**
+     * 新文章
+     * @param account 当前用户
+     * */
+    @RequestMapping("/postedit")
+    public String newArticle(@PathVariable String account,Model model){
+        User user = userService.getAccountInfo(account);
+        model.addAttribute("user",user);
+        return "postedit";
+    }
 
     /**
      * 文章添加
      *
      * @param account 当前用户
-     * @param post    添加帖子
+     * @param article 添加帖子
      * @author gonghf95
      */
     @RequestMapping("/add")
     public @ResponseBody
-    String add(@PathVariable String account, Post post) {
-        logger.info("post: " + post);
+    String add(@PathVariable String account, Article article) {
+        logger.info("article: " + article);
         JSONCapsule jsonCapsule = new JSONCapsule();
         try {
-            int postId = postService.newPost(post, account);
+            int postId = articleService.newArticle(article, account);
             jsonCapsule.setState(JSONCapsule.SUCCESS);
             jsonCapsule.setMessage(account);
             jsonCapsule.setData(postId);
@@ -73,26 +89,6 @@ public class PostController {
     }
 
     /**
-     * 文章详情
-     *
-     * @param postId 文章id
-     * @author gonghf95
-     */
-    @RequestMapping("/details/{postId}")
-    public String details(@PathVariable int postId, Model model) {
-        Post post = postService.find(postId);
-        if (post != null){//文章没找到
-            model.addAttribute("post",post);
-            return "details";
-        }
-        JSONCapsule capsule = new JSONCapsule();
-        capsule.setState(JSONCapsule.FAILURE);
-        capsule.setMessage("查看文章详情失败。出错原因可能是该文章id不存在。");
-        model.addAttribute("capsule",capsule);
-        return "error";
-    }
-
-    /**
      * 用户上传图片
      *
      * @param request  HttpServletRequest
@@ -109,17 +105,12 @@ public class PostController {
             if (!repo.exists()) {
                 repo.mkdirs();
             }
-            // Create a factory for disk-based file items
             DiskFileItemFactory factory = new DiskFileItemFactory();
-            // Set factory constraints
             factory.setSizeThreshold(1024 * 1024 * 10);
             factory.setRepository(repo);
-            // Create a new file upload handler
             ServletFileUpload upload = new ServletFileUpload(factory);
             upload.setFileSizeMax(3 * 1024 * 1024);
-            // Parse the request
             List<FileItem> items = upload.parseRequest(request);
-            // Process the uploaded items
             Iterator<FileItem> iter = items.iterator();
             while (iter.hasNext()) {
                 FileItem item = iter.next();
@@ -135,18 +126,12 @@ public class PostController {
     }
 
     private void processFormField(FileItem item) {
-        String name = item.getFieldName();
-        String value = item.getString();
-        logger.info("Upload form field: name: " + name + " value: " + value);
+        logger.info("processFormField: "+item);
     }
 
     private void processUploadedFile(FileItem item, String savePath, HttpServletRequest request, HttpServletResponse response) throws Exception {
         String fieldName = item.getFieldName();
         String fileName = item.getName();
-        String contentType = item.getContentType();
-        boolean isInMemory = item.isInMemory();
-        long sizeInBytes = item.getSize();
-        logger.info("fieldName : " + fieldName + " fileName: " + fileName + " contentType: " + contentType + " isInMemory: " + isInMemory + " sizeInBytes: " + sizeInBytes);
         item.write(new File(savePath + File.separator + fileName));
 
         String imgPath = request.getContextPath() + File.separator + fieldName + File.separator + fileName;

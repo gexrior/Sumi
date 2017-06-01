@@ -1,70 +1,70 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="cn.sumi.mapper.BlogConfigureMapper" >
-  <resultMap id="BaseResultMap" type="cn.sumi.pojo.BlogConfigure" >
-    <constructor >
-      <idArg column="account" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="title" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="signature" jdbcType="VARCHAR" javaType="java.lang.String" />
-    </constructor>
-  </resultMap>
-  <sql id="Base_Column_List" >
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.sumi.mapper.BlogConfigureMapper">
+    <resultMap id="BaseResultMap" type="cn.sumi.pojo.BlogConfigure">
+        <constructor>
+            <idArg column="account" javaType="java.lang.String" jdbcType="VARCHAR"/>
+            <arg column="title" javaType="java.lang.String" jdbcType="VARCHAR"/>
+            <arg column="signature" javaType="java.lang.String" jdbcType="VARCHAR"/>
+        </constructor>
+    </resultMap>
+    <sql id="Base_Column_List">
     account, title, signature
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
-    select 
-    <include refid="Base_Column_List" />
-    from blogconfigure
-    where account = #{account,jdbcType=VARCHAR}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from blogconfigure
+        where account = #{account,jdbcType=VARCHAR}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     delete from blogconfigure
     where account = #{account,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="cn.sumi.pojo.BlogConfigure" >
+    <insert id="insert" parameterType="cn.sumi.pojo.BlogConfigure">
     insert into blogconfigure (account, title, signature
       )
     values (#{account,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, #{signature,jdbcType=VARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="cn.sumi.pojo.BlogConfigure" >
-    insert into blogconfigure
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="account != null" >
-        account,
-      </if>
-      <if test="title != null" >
-        title,
-      </if>
-      <if test="signature != null" >
-        signature,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="account != null" >
-        #{account,jdbcType=VARCHAR},
-      </if>
-      <if test="title != null" >
-        #{title,jdbcType=VARCHAR},
-      </if>
-      <if test="signature != null" >
-        #{signature,jdbcType=VARCHAR},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="cn.sumi.pojo.BlogConfigure" >
-    update blogconfigure
-    <set >
-      <if test="title != null" >
-        title = #{title,jdbcType=VARCHAR},
-      </if>
-      <if test="signature != null" >
-        signature = #{signature,jdbcType=VARCHAR},
-      </if>
-    </set>
-    where account = #{account,jdbcType=VARCHAR}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="cn.sumi.pojo.BlogConfigure" >
+    <insert id="insertSelective" parameterType="cn.sumi.pojo.BlogConfigure">
+        insert into blogconfigure
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="account != null">
+                account,
+            </if>
+            <if test="title != null">
+                title,
+            </if>
+            <if test="signature != null">
+                signature,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="account != null">
+                #{account,jdbcType=VARCHAR},
+            </if>
+            <if test="title != null">
+                #{title,jdbcType=VARCHAR},
+            </if>
+            <if test="signature != null">
+                #{signature,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="cn.sumi.pojo.BlogConfigure">
+        update blogconfigure
+        <set>
+            <if test="title != null">
+                title = #{title,jdbcType=VARCHAR},
+            </if>
+            <if test="signature != null">
+                signature = #{signature,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where account = #{account,jdbcType=VARCHAR}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="cn.sumi.pojo.BlogConfigure">
     update blogconfigure
     set title = #{title,jdbcType=VARCHAR},
       signature = #{signature,jdbcType=VARCHAR}

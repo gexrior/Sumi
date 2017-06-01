@@ -95,14 +95,14 @@
 <div class="home-masthead">
     <div class="container">
         <nav class="home-nav">
-            <a class="home-nav-item glyphicon glyphicon-home active" href="/root/${user.account}"> 起始页</a>
+            <a class="home-nav-item glyphicon glyphicon-home active" href="/root/${user.account}/main"> 起始页</a>
             <a class="home-nav-item" href="#">文章管理 <span class="badge">${post}</span> </a>
             <a class="home-nav-item" href="#">类别管理 <span class="badge">${post}</span></a>
             <a class="home-nav-item" href="#">评论管理 <span class="badge">${post}</span></a>
             <a class="home-nav-item" href="#">草稿箱 <span class="badge">${post}</span></a>
             <a class="home-nav-item" href="#">回收站 <span class="badge">${post}</span></a>
             <a class="home-nav-item navbar-right glyphicon glyphicon-edit"
-               href="/root/${user.account}/postedit">写新文章</a>
+               href="/root/${user.account}/article/postedit">写新文章</a>
         </nav>
     </div>
 </div>

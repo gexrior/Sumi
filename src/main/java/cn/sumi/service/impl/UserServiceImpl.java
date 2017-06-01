@@ -25,6 +25,7 @@ public class UserServiceImpl implements UserService {
     }
 
     public boolean login(User user) {
+        //查找该账户，不存在该账户返回空
         User res = userMapper.selectByPrimaryKey(user.getAccount());
         if (res != null && res.getPasswd().equals(user.getPasswd())) {
             return true;
