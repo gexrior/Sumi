@@ -42,7 +42,7 @@
     delete from post
     where pid = #{pid,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="cn.sumi.pojo.Post" >
+  <insert id="insert" parameterType="cn.sumi.pojo.Post" useGeneratedKeys="true" keyProperty="pid">
     insert into post (pid, title, author, 
       cid, publish_date, comments, 
       views, contents)

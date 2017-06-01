@@ -18,14 +18,15 @@ public interface PostService {
      *
      * @param user 待查找用户
      */
-    List<Post> getAll(User user);
+    List<Post> findAll(User user);
 
     /**
      * 添加新文章
      *
      * @param post 待添加文章
+     * @return 插入后的id
      */
-    void newPost(Post post);
+    int newPost(Post post, String author);
 
     /**
      * 编辑文章
@@ -41,6 +42,14 @@ public interface PostService {
      */
     void deletePost(int postId);
 
+
+    /**
+     * 文章详情
+     *
+     * @param postId 文章id
+     * @author gonghf95
+     */
+    Post find(int postId);
 
     /**
      * 添加评论

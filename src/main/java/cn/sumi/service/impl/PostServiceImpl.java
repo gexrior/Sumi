@@ -21,15 +21,20 @@ public class PostServiceImpl implements PostService {
     @Autowired
     private PostMapper postMapper;
 
-    public List<Post> getAll(User user) {
+    public List<Post> findAll(User user) {
         return null;
     }
 
-    public void newPost(Post post) throws DataAccessException {
+    public int newPost(Post post, String author) throws DataAccessException {
         post.setPublishDate(new Date());
         post.setComments(0);
         post.setViews(0);
-        postMapper.insert(post);
+        post.setAuthor(author);
+        return postMapper.insert(post);
+    }
+
+    public Post find(int postId) {
+        return postMapper.selectByPrimaryKey(postId);
     }
 
     public void editPost(Post postId) {

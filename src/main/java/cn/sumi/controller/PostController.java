@@ -2,16 +2,19 @@ package cn.sumi.controller;
 
 import cn.sumi.pojo.Post;
 import cn.sumi.service.PostService;
+import cn.sumi.utils.JSONCapsule;
+import com.alibaba.fastjson.JSON;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -33,14 +36,29 @@ public class PostController {
     private PostService postService;
 
     /**
+     * 文章添加
      *
-     * */
+     * @param account 当前用户
+     * @param post    添加帖子
+     * @author gonghf95
+     */
     @RequestMapping("/add")
     public @ResponseBody
     String add(@PathVariable String account, Post post) {
-        logger.info("title: " + post);
-        postService.newPost(null);
-        return null;
+        logger.info("post: " + post);
+        JSONCapsule jsonCapsule = new JSONCapsule();
+        try {
+            int postId = postService.newPost(post, account);
+            jsonCapsule.setState(JSONCapsule.SUCCESS);
+            jsonCapsule.setMessage(account);
+            jsonCapsule.setData(postId);
+            return JSON.toJSONString(jsonCapsule);
+        } catch (DataAccessException e) {
+            logger.error(e.toString());
+        }
+        jsonCapsule.setState(JSONCapsule.FAILURE);
+        jsonCapsule.setMessage("账户不存在,发表文章失败");
+        return JSON.toJSONString(jsonCapsule);
     }
 
     /**
@@ -57,13 +75,21 @@ public class PostController {
     /**
      * 文章详情
      *
-     * @param aid 文章id
+     * @param postId 文章id
      * @author gonghf95
      */
-    @RequestMapping("/details/{aid}")
-    public ModelAndView details(@PathVariable int aid) {
-
-        return null;
+    @RequestMapping("/details/{postId}")
+    public String details(@PathVariable int postId, Model model) {
+        Post post = postService.find(postId);
+        if (post != null){//文章没找到
+            model.addAttribute("post",post);
+            return "details";
+        }
+        JSONCapsule capsule = new JSONCapsule();
+        capsule.setState(JSONCapsule.FAILURE);
+        capsule.setMessage("查看文章详情失败。出错原因可能是该文章id不存在。");
+        model.addAttribute("capsule",capsule);
+        return "error";
     }
 
     /**

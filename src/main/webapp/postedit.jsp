@@ -171,18 +171,18 @@
                 language: 'zh-ch',
                 extraPlugins: 'codesnippet',
                 codeSnippet_theme: 'rainbow',
-                filebrowserUploadUrl: '/root/${user.account}/article/upload',
+                filebrowserUploadUrl: '/root/${user.account}/post/upload',
                 toolbarCanCollapse: true,
                 disableObjectResizing: true
             });
             /*提交按鈕事件响应*/
-            $("#publishBtn").click(function () {
+            $("#publish").click(function () {
                 var title = $("#title").val();
                 if (title===""){
                     alert("标题不能为空");
                     return false;
                 }
-                var contents = $("#content").val();
+                var contents = CKEDITOR.instances.editor.getData();
                 if (contents===""){
                     alert("文章内容不能为空");
                     return false;
@@ -194,19 +194,22 @@
                 }
                 $.ajax({
                     type: "POST",
-                    url: "/article/add",
+                    url: "/root/${user.account}/post/add",
                     data: {title: title, contents: contents},
                     datatype: "json",
                     beforeSend: function () {
 
                     },
                     success: function (data) {
-                        $("#msg").html(data);
+                        var resp = jQuery.parseJSON(data);
+                        if(resp.state===1){
+                            var path = "/root/"+resp.message+"/post/details/"+resp.data;
+                            window.location.href=path;
+                        }
                     },
                     //调用执行后调用的函数
                     complete: function (XMLHttpRequest, textStatus) {
-                        alert(XMLHttpRequest.responseText);
-                        alert(textStatus);
+
                     },
                     //调用出错执行的函数
                     error: function () {

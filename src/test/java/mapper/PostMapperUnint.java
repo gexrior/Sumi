@@ -3,6 +3,7 @@ package mapper;
 import base.BaseConfiguration;
 import cn.sumi.mapper.PostMapper;
 import cn.sumi.pojo.Post;
+import org.apache.log4j.Logger;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -13,6 +14,7 @@ import java.util.Date;
  */
 public class PostMapperUnint extends BaseConfiguration {
 
+    Logger logger = Logger.getLogger(PostMapperUnint.class);
     @Autowired
     private PostMapper postMapper;
 
@@ -30,7 +32,8 @@ public class PostMapperUnint extends BaseConfiguration {
         post.setContents("contents");
         post.setPublishDate(new Date());
         postMapper.insert(post);
-
+        int id = post.getPid();
+        logger.info(id+"");
         //post.setAuthor("NotExistAccount");
         //postMapper.insert(post);
     }
