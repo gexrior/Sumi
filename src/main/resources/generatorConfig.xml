@@ -66,41 +66,11 @@
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 
-        <table tableName="usr" domainObjectName="User" enableCountByExample="false" enableUpdateByExample="false"
-               enableDeleteByExample="false" enableSelectByExample="false"
-               selectByExampleQueryId="false">
-
-        </table>
-
-        <table tableName="category" domainObjectName="Category" enableCountByExample="false"
-               enableUpdateByExample="false"
-               enableDeleteByExample="false" enableSelectByExample="false"
-               selectByExampleQueryId="false">
-
-        </table>
-
-        <table tableName="visitor" domainObjectName="Visitor" enableCountByExample="false" enableUpdateByExample="false"
-               enableDeleteByExample="false" enableSelectByExample="false"
-               selectByExampleQueryId="false">
-            
-        </table>
-        
         <table tableName="article" domainObjectName="Article" enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false">
             
         </table>
-        
-        <table tableName="comments" domainObjectName="Comment" enableCountByExample="false" enableUpdateByExample="false"
-               enableDeleteByExample="false" enableSelectByExample="false"
-               selectByExampleQueryId="false">
 
-        </table>
-
-        <table tableName="blogconfigure" domainObjectName="BlogConfigure"  enableCountByExample="false" enableUpdateByExample="false"
-               enableDeleteByExample="false" enableSelectByExample="false"
-               selectByExampleQueryId="false">
-
-        </table>
     </context>
 </generatorConfiguration>

@@ -1,6 +1,7 @@
 package cn.sumi.controller;
 
 import cn.sumi.pojo.Article;
+import cn.sumi.pojo.BlogConfigure;
 import cn.sumi.pojo.User;
 import cn.sumi.service.ArticleService;
 import cn.sumi.service.UserService;
@@ -14,6 +15,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.Collections;
+import java.util.List;
 
 /**
  * 公共杂七杂八的东西
@@ -36,7 +40,12 @@ public class CommonController {
      */
     @RequestMapping("/home")
     public String home(Model model) {
-
+        String account = "gonghf95";
+        List<Article> articleList = articleService.findAll(account);
+        BlogConfigure blogConfigure = userService.getAccountConfigure(account);
+        Collections.reverse(articleList);
+        model.addAttribute("articleList",articleList);
+        model.addAttribute("blogconfigure",blogConfigure);
         return "home";
     }
 

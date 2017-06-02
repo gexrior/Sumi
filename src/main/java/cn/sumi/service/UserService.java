@@ -1,5 +1,6 @@
 package cn.sumi.service;
 
+import cn.sumi.pojo.BlogConfigure;
 import cn.sumi.pojo.User;
 
 /**
@@ -8,6 +9,7 @@ import cn.sumi.pojo.User;
  */
 public interface UserService {
     User getAccountInfo(String account);
+    BlogConfigure getAccountConfigure(String account);
     boolean login(User user);
     boolean register(User user);
 }

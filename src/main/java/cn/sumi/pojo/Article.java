@@ -1,7 +1,5 @@
 package cn.sumi.pojo;
 
-import java.util.Date;
-
 public class Article {
     private Integer aid;
 
@@ -9,9 +7,11 @@ public class Article {
 
     private String author;
 
+    private String digest;
+
     private Integer cid;
 
-    private Date publishDate;
+    private String publishDate;
 
     private Integer comments;
 
@@ -19,10 +19,11 @@ public class Article {
 
     private String contents;
 
-    public Article(Integer aid, String title, String author, Integer cid, Date publishDate, Integer comments, Integer views, String contents) {
+    public Article(Integer aid, String title, String author, String digest, Integer cid, String publishDate, Integer comments, Integer views, String contents) {
         this.aid = aid;
         this.title = title;
         this.author = author;
+        this.digest = digest;
         this.cid = cid;
         this.publishDate = publishDate;
         this.comments = comments;
@@ -58,6 +59,14 @@ public class Article {
         this.author = author == null ? null : author.trim();
     }
 
+    public String getDigest() {
+        return digest;
+    }
+
+    public void setDigest(String digest) {
+        this.digest = digest == null ? null : digest.trim();
+    }
+
     public Integer getCid() {
         return cid;
     }
@@ -66,12 +75,12 @@ public class Article {
         this.cid = cid;
     }
 
-    public Date getPublishDate() {
+    public String getPublishDate() {
         return publishDate;
     }
 
-    public void setPublishDate(Date publishDate) {
-        this.publishDate = publishDate;
+    public void setPublishDate(String publishDate) {
+        this.publishDate = publishDate == null ? null : publishDate.trim();
     }
 
     public Integer getComments() {
@@ -96,5 +105,20 @@ public class Article {
 
     public void setContents(String contents) {
         this.contents = contents == null ? null : contents.trim();
+    }
+
+    @Override
+    public String toString() {
+        return "Article{" +
+                "aid=" + aid +
+                ", title='" + title + '\'' +
+                ", author='" + author + '\'' +
+                ", digest='" + digest + '\'' +
+                ", cid=" + cid +
+                ", publishDate='" + publishDate + '\'' +
+                ", comments=" + comments +
+                ", views=" + views +
+                ", contents='" + contents + '\'' +
+                '}';
     }
 }

@@ -1,0 +1,790 @@
+[INFO][main][2017-06-01 21:33:13][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO][main][2017-06-01 21:33:13][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@396a51ab, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@51081592, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@7f9a81e8, org.springframework.test.context.support.DirtiesContextTestExecutionListener@9629756, org.springframework.test.context.transaction.TransactionalTestExecutionListener@62ee68d8, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@735b5592]
+[INFO][main][2017-06-01 21:33:13][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring.xml]
+[INFO][main][2017-06-01 21:33:14][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO][main][2017-06-01 21:33:14][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO][main][2017-06-01 21:33:17][org.springframework.context.support.AbstractApplicationContext] - Refreshing org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Thu Jun 01 21:33:17 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-01 21:33:18][org.springframework.core.io.support.PropertiesLoaderSupport] - Loading properties file from class path resource [jdbc.properties]
+[INFO][main][2017-06-01 21:33:18][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO][main][2017-06-01 21:33:18][org.springframework.jdbc.datasource.DriverManagerDataSource] - Loaded JDBC driver: com.mysql.jdbc.Driver
+[INFO][main][2017-06-01 21:33:18][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/image/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[INFO][main][2017-06-01 21:33:18][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/fonts/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#1'
+[INFO][main][2017-06-01 21:33:18][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/css/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#2'
+[INFO][main][2017-06-01 21:33:18][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/js/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#3'
+[INFO][main][2017-06-01 21:33:18][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/**] onto handler 'org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler#0'
+[INFO][main][2017-06-01 21:33:18][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/home]}" onto public java.lang.String cn.sumi.controller.CommonController.home(org.springframework.ui.Model)
+[INFO][main][2017-06-01 21:33:18][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/login],methods=[POST]}" onto public java.lang.String cn.sumi.controller.CommonController.login(cn.sumi.pojo.User)
+[INFO][main][2017-06-01 21:33:18][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/article/details/{articleId}]}" onto public java.lang.String cn.sumi.controller.CommonController.articleDetails(int,org.springframework.ui.Model)
+[INFO][main][2017-06-01 21:33:18][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/configure]}" onto public java.lang.String cn.sumi.controller.UserController.configure(java.lang.String)
+[INFO][main][2017-06-01 21:33:18][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/postedit]}" onto public java.lang.String cn.sumi.controller.UserController.postedit(org.springframework.ui.Model,java.lang.String)
+[INFO][main][2017-06-01 21:33:18][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/postlist]}" onto public java.lang.String cn.sumi.controller.UserController.postlist(java.lang.String)
+[INFO][main][2017-06-01 21:33:18][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/main]}" onto public java.lang.String cn.sumi.controller.UserController.main(org.springframework.ui.Model,java.lang.String)
+[INFO][main][2017-06-01 21:33:18][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/postedit]}" onto public java.lang.String cn.sumi.controller.ArticleController.newArticle(java.lang.String,org.springframework.ui.Model)
+[INFO][main][2017-06-01 21:33:18][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/upload]}" onto public void cn.sumi.controller.ArticleController.upload(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception
+[INFO][main][2017-06-01 21:33:18][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/add]}" onto public java.lang.String cn.sumi.controller.ArticleController.add(java.lang.String,cn.sumi.pojo.Article)
+[INFO][main][2017-06-01 21:33:18][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/delete/{aid}]}" onto public java.lang.String cn.sumi.controller.ArticleController.delete(int)
+[INFO][main][2017-06-01 21:33:19][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Thu Jun 01 21:33:17 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-01 21:33:19][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Thu Jun 01 21:33:17 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-01 21:33:19][service.ArticleServiceUnint] - sdfsd
+[INFO][Thread-0][2017-06-01 21:33:19][org.springframework.context.support.AbstractApplicationContext] - Closing org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Thu Jun 01 21:33:17 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-01 21:34:06][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO][main][2017-06-01 21:34:06][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@396a51ab, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@51081592, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@7f9a81e8, org.springframework.test.context.support.DirtiesContextTestExecutionListener@9629756, org.springframework.test.context.transaction.TransactionalTestExecutionListener@62ee68d8, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@735b5592]
+[INFO][main][2017-06-01 21:34:06][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring.xml]
+[INFO][main][2017-06-01 21:34:07][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO][main][2017-06-01 21:34:07][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO][main][2017-06-01 21:34:12][org.springframework.context.support.AbstractApplicationContext] - Refreshing org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Thu Jun 01 21:34:12 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-01 21:34:13][org.springframework.core.io.support.PropertiesLoaderSupport] - Loading properties file from class path resource [jdbc.properties]
+[INFO][main][2017-06-01 21:34:13][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO][main][2017-06-01 21:34:13][org.springframework.jdbc.datasource.DriverManagerDataSource] - Loaded JDBC driver: com.mysql.jdbc.Driver
+[INFO][main][2017-06-01 21:34:13][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/image/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[INFO][main][2017-06-01 21:34:13][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/fonts/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#1'
+[INFO][main][2017-06-01 21:34:13][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/css/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#2'
+[INFO][main][2017-06-01 21:34:13][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/js/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#3'
+[INFO][main][2017-06-01 21:34:13][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/**] onto handler 'org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler#0'
+[INFO][main][2017-06-01 21:34:13][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/home]}" onto public java.lang.String cn.sumi.controller.CommonController.home(org.springframework.ui.Model)
+[INFO][main][2017-06-01 21:34:13][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/login],methods=[POST]}" onto public java.lang.String cn.sumi.controller.CommonController.login(cn.sumi.pojo.User)
+[INFO][main][2017-06-01 21:34:13][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/article/details/{articleId}]}" onto public java.lang.String cn.sumi.controller.CommonController.articleDetails(int,org.springframework.ui.Model)
+[INFO][main][2017-06-01 21:34:13][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/configure]}" onto public java.lang.String cn.sumi.controller.UserController.configure(java.lang.String)
+[INFO][main][2017-06-01 21:34:13][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/postedit]}" onto public java.lang.String cn.sumi.controller.UserController.postedit(org.springframework.ui.Model,java.lang.String)
+[INFO][main][2017-06-01 21:34:13][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/postlist]}" onto public java.lang.String cn.sumi.controller.UserController.postlist(java.lang.String)
+[INFO][main][2017-06-01 21:34:13][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/main]}" onto public java.lang.String cn.sumi.controller.UserController.main(org.springframework.ui.Model,java.lang.String)
+[INFO][main][2017-06-01 21:34:13][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/postedit]}" onto public java.lang.String cn.sumi.controller.ArticleController.newArticle(java.lang.String,org.springframework.ui.Model)
+[INFO][main][2017-06-01 21:34:13][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/upload]}" onto public void cn.sumi.controller.ArticleController.upload(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception
+[INFO][main][2017-06-01 21:34:13][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/add]}" onto public java.lang.String cn.sumi.controller.ArticleController.add(java.lang.String,cn.sumi.pojo.Article)
+[INFO][main][2017-06-01 21:34:13][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/delete/{aid}]}" onto public java.lang.String cn.sumi.controller.ArticleController.delete(int)
+[INFO][main][2017-06-01 21:34:14][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Thu Jun 01 21:34:12 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-01 21:34:14][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Thu Jun 01 21:34:12 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-01 21:34:14][service.ArticleServiceUnint] - sdfs d
+[INFO][Thread-0][2017-06-01 21:34:14][org.springframework.context.support.AbstractApplicationContext] - Closing org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Thu Jun 01 21:34:12 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-01 21:35:30][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO][main][2017-06-01 21:35:30][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@396a51ab, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@51081592, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@7f9a81e8, org.springframework.test.context.support.DirtiesContextTestExecutionListener@9629756, org.springframework.test.context.transaction.TransactionalTestExecutionListener@62ee68d8, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@735b5592]
+[INFO][main][2017-06-01 21:35:30][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring.xml]
+[INFO][main][2017-06-01 21:35:30][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO][main][2017-06-01 21:35:30][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO][main][2017-06-01 21:35:35][org.springframework.context.support.AbstractApplicationContext] - Refreshing org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Thu Jun 01 21:35:35 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-01 21:35:35][org.springframework.core.io.support.PropertiesLoaderSupport] - Loading properties file from class path resource [jdbc.properties]
+[INFO][main][2017-06-01 21:35:35][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO][main][2017-06-01 21:35:35][org.springframework.jdbc.datasource.DriverManagerDataSource] - Loaded JDBC driver: com.mysql.jdbc.Driver
+[INFO][main][2017-06-01 21:35:36][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/image/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[INFO][main][2017-06-01 21:35:36][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/fonts/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#1'
+[INFO][main][2017-06-01 21:35:36][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/css/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#2'
+[INFO][main][2017-06-01 21:35:36][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/js/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#3'
+[INFO][main][2017-06-01 21:35:36][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/**] onto handler 'org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler#0'
+[INFO][main][2017-06-01 21:35:36][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/home]}" onto public java.lang.String cn.sumi.controller.CommonController.home(org.springframework.ui.Model)
+[INFO][main][2017-06-01 21:35:36][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/article/details/{articleId}]}" onto public java.lang.String cn.sumi.controller.CommonController.articleDetails(int,org.springframework.ui.Model)
+[INFO][main][2017-06-01 21:35:36][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/login],methods=[POST]}" onto public java.lang.String cn.sumi.controller.CommonController.login(cn.sumi.pojo.User)
+[INFO][main][2017-06-01 21:35:36][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/configure]}" onto public java.lang.String cn.sumi.controller.UserController.configure(java.lang.String)
+[INFO][main][2017-06-01 21:35:36][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/postedit]}" onto public java.lang.String cn.sumi.controller.UserController.postedit(org.springframework.ui.Model,java.lang.String)
+[INFO][main][2017-06-01 21:35:36][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/postlist]}" onto public java.lang.String cn.sumi.controller.UserController.postlist(java.lang.String)
+[INFO][main][2017-06-01 21:35:36][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/main]}" onto public java.lang.String cn.sumi.controller.UserController.main(org.springframework.ui.Model,java.lang.String)
+[INFO][main][2017-06-01 21:35:36][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/upload]}" onto public void cn.sumi.controller.ArticleController.upload(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception
+[INFO][main][2017-06-01 21:35:36][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/postedit]}" onto public java.lang.String cn.sumi.controller.ArticleController.newArticle(java.lang.String,org.springframework.ui.Model)
+[INFO][main][2017-06-01 21:35:36][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/add]}" onto public java.lang.String cn.sumi.controller.ArticleController.add(java.lang.String,cn.sumi.pojo.Article)
+[INFO][main][2017-06-01 21:35:36][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/delete/{aid}]}" onto public java.lang.String cn.sumi.controller.ArticleController.delete(int)
+[INFO][main][2017-06-01 21:35:36][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Thu Jun 01 21:35:35 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-01 21:35:36][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Thu Jun 01 21:35:35 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-01 21:35:36][service.ArticleServiceUnint] - sdfs d
+[INFO][Thread-0][2017-06-01 21:35:36][org.springframework.context.support.AbstractApplicationContext] - Closing org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Thu Jun 01 21:35:35 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-01 21:44:31][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO][main][2017-06-01 21:44:31][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@396a51ab, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@51081592, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@7f9a81e8, org.springframework.test.context.support.DirtiesContextTestExecutionListener@9629756, org.springframework.test.context.transaction.TransactionalTestExecutionListener@62ee68d8, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@735b5592]
+[INFO][main][2017-06-01 21:44:32][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring.xml]
+[INFO][main][2017-06-01 21:44:32][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO][main][2017-06-01 21:44:32][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO][main][2017-06-01 21:44:34][org.springframework.context.support.AbstractApplicationContext] - Refreshing org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Thu Jun 01 21:44:34 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-01 21:44:34][org.springframework.core.io.support.PropertiesLoaderSupport] - Loading properties file from class path resource [jdbc.properties]
+[INFO][main][2017-06-01 21:44:34][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO][main][2017-06-01 21:44:34][org.springframework.jdbc.datasource.DriverManagerDataSource] - Loaded JDBC driver: com.mysql.jdbc.Driver
+[INFO][main][2017-06-01 21:44:35][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/image/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[INFO][main][2017-06-01 21:44:35][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/fonts/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#1'
+[INFO][main][2017-06-01 21:44:35][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/css/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#2'
+[INFO][main][2017-06-01 21:44:35][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/js/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#3'
+[INFO][main][2017-06-01 21:44:35][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/**] onto handler 'org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler#0'
+[INFO][main][2017-06-01 21:44:35][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/home]}" onto public java.lang.String cn.sumi.controller.CommonController.home(org.springframework.ui.Model)
+[INFO][main][2017-06-01 21:44:35][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/login],methods=[POST]}" onto public java.lang.String cn.sumi.controller.CommonController.login(cn.sumi.pojo.User)
+[INFO][main][2017-06-01 21:44:35][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/article/details/{articleId}]}" onto public java.lang.String cn.sumi.controller.CommonController.articleDetails(int,org.springframework.ui.Model)
+[INFO][main][2017-06-01 21:44:35][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/configure]}" onto public java.lang.String cn.sumi.controller.UserController.configure(java.lang.String)
+[INFO][main][2017-06-01 21:44:35][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/postedit]}" onto public java.lang.String cn.sumi.controller.UserController.postedit(org.springframework.ui.Model,java.lang.String)
+[INFO][main][2017-06-01 21:44:35][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/postlist]}" onto public java.lang.String cn.sumi.controller.UserController.postlist(java.lang.String)
+[INFO][main][2017-06-01 21:44:35][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/main]}" onto public java.lang.String cn.sumi.controller.UserController.main(org.springframework.ui.Model,java.lang.String)
+[INFO][main][2017-06-01 21:44:35][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/postedit]}" onto public java.lang.String cn.sumi.controller.ArticleController.newArticle(java.lang.String,org.springframework.ui.Model)
+[INFO][main][2017-06-01 21:44:35][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/upload]}" onto public void cn.sumi.controller.ArticleController.upload(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception
+[INFO][main][2017-06-01 21:44:35][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/add]}" onto public java.lang.String cn.sumi.controller.ArticleController.add(java.lang.String,cn.sumi.pojo.Article)
+[INFO][main][2017-06-01 21:44:35][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/delete/{aid}]}" onto public java.lang.String cn.sumi.controller.ArticleController.delete(int)
+[INFO][main][2017-06-01 21:44:36][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Thu Jun 01 21:44:34 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-01 21:44:36][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Thu Jun 01 21:44:34 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-01 21:44:36][service.ArticleServiceUnint] - sdfsd
+[INFO][Thread-0][2017-06-01 21:44:36][org.springframework.context.support.AbstractApplicationContext] - Closing org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Thu Jun 01 21:44:34 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-01 21:45:13][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO][main][2017-06-01 21:45:13][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@396a51ab, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@51081592, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@7f9a81e8, org.springframework.test.context.support.DirtiesContextTestExecutionListener@9629756, org.springframework.test.context.transaction.TransactionalTestExecutionListener@62ee68d8, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@735b5592]
+[INFO][main][2017-06-01 21:45:13][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring.xml]
+[INFO][main][2017-06-01 21:45:14][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO][main][2017-06-01 21:45:14][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO][main][2017-06-01 21:45:16][org.springframework.context.support.AbstractApplicationContext] - Refreshing org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Thu Jun 01 21:45:16 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-01 21:45:16][org.springframework.core.io.support.PropertiesLoaderSupport] - Loading properties file from class path resource [jdbc.properties]
+[INFO][main][2017-06-01 21:45:16][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO][main][2017-06-01 21:45:16][org.springframework.jdbc.datasource.DriverManagerDataSource] - Loaded JDBC driver: com.mysql.jdbc.Driver
+[INFO][main][2017-06-01 21:45:17][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/image/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[INFO][main][2017-06-01 21:45:17][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/fonts/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#1'
+[INFO][main][2017-06-01 21:45:17][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/css/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#2'
+[INFO][main][2017-06-01 21:45:17][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/js/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#3'
+[INFO][main][2017-06-01 21:45:17][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/**] onto handler 'org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler#0'
+[INFO][main][2017-06-01 21:45:17][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/home]}" onto public java.lang.String cn.sumi.controller.CommonController.home(org.springframework.ui.Model)
+[INFO][main][2017-06-01 21:45:17][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/login],methods=[POST]}" onto public java.lang.String cn.sumi.controller.CommonController.login(cn.sumi.pojo.User)
+[INFO][main][2017-06-01 21:45:17][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/article/details/{articleId}]}" onto public java.lang.String cn.sumi.controller.CommonController.articleDetails(int,org.springframework.ui.Model)
+[INFO][main][2017-06-01 21:45:17][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/configure]}" onto public java.lang.String cn.sumi.controller.UserController.configure(java.lang.String)
+[INFO][main][2017-06-01 21:45:17][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/postedit]}" onto public java.lang.String cn.sumi.controller.UserController.postedit(org.springframework.ui.Model,java.lang.String)
+[INFO][main][2017-06-01 21:45:17][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/postlist]}" onto public java.lang.String cn.sumi.controller.UserController.postlist(java.lang.String)
+[INFO][main][2017-06-01 21:45:17][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/main]}" onto public java.lang.String cn.sumi.controller.UserController.main(org.springframework.ui.Model,java.lang.String)
+[INFO][main][2017-06-01 21:45:17][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/postedit]}" onto public java.lang.String cn.sumi.controller.ArticleController.newArticle(java.lang.String,org.springframework.ui.Model)
+[INFO][main][2017-06-01 21:45:17][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/upload]}" onto public void cn.sumi.controller.ArticleController.upload(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception
+[INFO][main][2017-06-01 21:45:17][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/add]}" onto public java.lang.String cn.sumi.controller.ArticleController.add(java.lang.String,cn.sumi.pojo.Article)
+[INFO][main][2017-06-01 21:45:17][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/delete/{aid}]}" onto public java.lang.String cn.sumi.controller.ArticleController.delete(int)
+[INFO][main][2017-06-01 21:45:17][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Thu Jun 01 21:45:16 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-01 21:45:17][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Thu Jun 01 21:45:16 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-01 21:45:17][service.ArticleServiceUnint] - sdfsd
+[INFO][Thread-0][2017-06-01 21:45:17][org.springframework.context.support.AbstractApplicationContext] - Closing org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Thu Jun 01 21:45:16 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-01 21:45:41][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO][main][2017-06-01 21:45:41][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@396a51ab, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@51081592, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@7f9a81e8, org.springframework.test.context.support.DirtiesContextTestExecutionListener@9629756, org.springframework.test.context.transaction.TransactionalTestExecutionListener@62ee68d8, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@735b5592]
+[INFO][main][2017-06-01 21:45:42][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring.xml]
+[INFO][main][2017-06-01 21:45:42][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO][main][2017-06-01 21:45:42][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO][main][2017-06-01 21:45:47][org.springframework.context.support.AbstractApplicationContext] - Refreshing org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Thu Jun 01 21:45:47 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-01 21:45:47][org.springframework.core.io.support.PropertiesLoaderSupport] - Loading properties file from class path resource [jdbc.properties]
+[INFO][main][2017-06-01 21:45:47][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO][main][2017-06-01 21:45:47][org.springframework.jdbc.datasource.DriverManagerDataSource] - Loaded JDBC driver: com.mysql.jdbc.Driver
+[INFO][main][2017-06-01 21:45:48][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/image/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[INFO][main][2017-06-01 21:45:48][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/fonts/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#1'
+[INFO][main][2017-06-01 21:45:48][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/css/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#2'
+[INFO][main][2017-06-01 21:45:48][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/js/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#3'
+[INFO][main][2017-06-01 21:45:48][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/**] onto handler 'org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler#0'
+[INFO][main][2017-06-01 21:45:48][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/home]}" onto public java.lang.String cn.sumi.controller.CommonController.home(org.springframework.ui.Model)
+[INFO][main][2017-06-01 21:45:48][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/login],methods=[POST]}" onto public java.lang.String cn.sumi.controller.CommonController.login(cn.sumi.pojo.User)
+[INFO][main][2017-06-01 21:45:48][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/article/details/{articleId}]}" onto public java.lang.String cn.sumi.controller.CommonController.articleDetails(int,org.springframework.ui.Model)
+[INFO][main][2017-06-01 21:45:48][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/configure]}" onto public java.lang.String cn.sumi.controller.UserController.configure(java.lang.String)
+[INFO][main][2017-06-01 21:45:48][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/postedit]}" onto public java.lang.String cn.sumi.controller.UserController.postedit(org.springframework.ui.Model,java.lang.String)
+[INFO][main][2017-06-01 21:45:48][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/postlist]}" onto public java.lang.String cn.sumi.controller.UserController.postlist(java.lang.String)
+[INFO][main][2017-06-01 21:45:48][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/main]}" onto public java.lang.String cn.sumi.controller.UserController.main(org.springframework.ui.Model,java.lang.String)
+[INFO][main][2017-06-01 21:45:48][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/postedit]}" onto public java.lang.String cn.sumi.controller.ArticleController.newArticle(java.lang.String,org.springframework.ui.Model)
+[INFO][main][2017-06-01 21:45:48][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/upload]}" onto public void cn.sumi.controller.ArticleController.upload(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception
+[INFO][main][2017-06-01 21:45:48][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/add]}" onto public java.lang.String cn.sumi.controller.ArticleController.add(java.lang.String,cn.sumi.pojo.Article)
+[INFO][main][2017-06-01 21:45:48][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/delete/{aid}]}" onto public java.lang.String cn.sumi.controller.ArticleController.delete(int)
+[INFO][main][2017-06-01 21:45:48][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Thu Jun 01 21:45:47 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-01 21:45:48][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Thu Jun 01 21:45:47 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-01 21:45:48][service.ArticleServiceUnint] - sdfsd
+[INFO][Thread-0][2017-06-01 21:45:48][org.springframework.context.support.AbstractApplicationContext] - Closing org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Thu Jun 01 21:45:47 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-01 21:46:10][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO][main][2017-06-01 21:46:10][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@396a51ab, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@51081592, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@7f9a81e8, org.springframework.test.context.support.DirtiesContextTestExecutionListener@9629756, org.springframework.test.context.transaction.TransactionalTestExecutionListener@62ee68d8, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@735b5592]
+[INFO][main][2017-06-01 21:46:10][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring.xml]
+[INFO][main][2017-06-01 21:46:10][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO][main][2017-06-01 21:46:11][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO][main][2017-06-01 21:46:12][org.springframework.context.support.AbstractApplicationContext] - Refreshing org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Thu Jun 01 21:46:12 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-01 21:46:12][org.springframework.core.io.support.PropertiesLoaderSupport] - Loading properties file from class path resource [jdbc.properties]
+[INFO][main][2017-06-01 21:46:12][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO][main][2017-06-01 21:46:13][org.springframework.jdbc.datasource.DriverManagerDataSource] - Loaded JDBC driver: com.mysql.jdbc.Driver
+[INFO][main][2017-06-01 21:46:13][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/image/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[INFO][main][2017-06-01 21:46:13][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/fonts/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#1'
+[INFO][main][2017-06-01 21:46:13][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/css/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#2'
+[INFO][main][2017-06-01 21:46:13][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/js/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#3'
+[INFO][main][2017-06-01 21:46:13][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/**] onto handler 'org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler#0'
+[INFO][main][2017-06-01 21:46:13][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/home]}" onto public java.lang.String cn.sumi.controller.CommonController.home(org.springframework.ui.Model)
+[INFO][main][2017-06-01 21:46:13][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/login],methods=[POST]}" onto public java.lang.String cn.sumi.controller.CommonController.login(cn.sumi.pojo.User)
+[INFO][main][2017-06-01 21:46:13][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/article/details/{articleId}]}" onto public java.lang.String cn.sumi.controller.CommonController.articleDetails(int,org.springframework.ui.Model)
+[INFO][main][2017-06-01 21:46:13][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/configure]}" onto public java.lang.String cn.sumi.controller.UserController.configure(java.lang.String)
+[INFO][main][2017-06-01 21:46:13][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/postedit]}" onto public java.lang.String cn.sumi.controller.UserController.postedit(org.springframework.ui.Model,java.lang.String)
+[INFO][main][2017-06-01 21:46:13][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/postlist]}" onto public java.lang.String cn.sumi.controller.UserController.postlist(java.lang.String)
+[INFO][main][2017-06-01 21:46:13][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/main]}" onto public java.lang.String cn.sumi.controller.UserController.main(org.springframework.ui.Model,java.lang.String)
+[INFO][main][2017-06-01 21:46:13][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/postedit]}" onto public java.lang.String cn.sumi.controller.ArticleController.newArticle(java.lang.String,org.springframework.ui.Model)
+[INFO][main][2017-06-01 21:46:13][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/upload]}" onto public void cn.sumi.controller.ArticleController.upload(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception
+[INFO][main][2017-06-01 21:46:13][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/add]}" onto public java.lang.String cn.sumi.controller.ArticleController.add(java.lang.String,cn.sumi.pojo.Article)
+[INFO][main][2017-06-01 21:46:13][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/delete/{aid}]}" onto public java.lang.String cn.sumi.controller.ArticleController.delete(int)
+[INFO][main][2017-06-01 21:46:14][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Thu Jun 01 21:46:12 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-01 21:46:14][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Thu Jun 01 21:46:12 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-01 21:46:14][service.ArticleServiceUnint] - 你好，世界
+[INFO][Thread-0][2017-06-01 21:46:14][org.springframework.context.support.AbstractApplicationContext] - Closing org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Thu Jun 01 21:46:12 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-01 21:47:21][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO][main][2017-06-01 21:47:21][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@396a51ab, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@51081592, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@7f9a81e8, org.springframework.test.context.support.DirtiesContextTestExecutionListener@9629756, org.springframework.test.context.transaction.TransactionalTestExecutionListener@62ee68d8, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@735b5592]
+[INFO][main][2017-06-01 21:47:21][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring.xml]
+[INFO][main][2017-06-01 21:47:21][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO][main][2017-06-01 21:47:21][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO][main][2017-06-01 21:47:26][org.springframework.context.support.AbstractApplicationContext] - Refreshing org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Thu Jun 01 21:47:25 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-01 21:47:26][org.springframework.core.io.support.PropertiesLoaderSupport] - Loading properties file from class path resource [jdbc.properties]
+[INFO][main][2017-06-01 21:47:26][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO][main][2017-06-01 21:47:26][org.springframework.jdbc.datasource.DriverManagerDataSource] - Loaded JDBC driver: com.mysql.jdbc.Driver
+[INFO][main][2017-06-01 21:47:27][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/image/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[INFO][main][2017-06-01 21:47:27][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/fonts/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#1'
+[INFO][main][2017-06-01 21:47:27][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/css/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#2'
+[INFO][main][2017-06-01 21:47:27][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/js/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#3'
+[INFO][main][2017-06-01 21:47:27][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/**] onto handler 'org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler#0'
+[INFO][main][2017-06-01 21:47:27][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/home]}" onto public java.lang.String cn.sumi.controller.CommonController.home(org.springframework.ui.Model)
+[INFO][main][2017-06-01 21:47:27][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/login],methods=[POST]}" onto public java.lang.String cn.sumi.controller.CommonController.login(cn.sumi.pojo.User)
+[INFO][main][2017-06-01 21:47:27][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/article/details/{articleId}]}" onto public java.lang.String cn.sumi.controller.CommonController.articleDetails(int,org.springframework.ui.Model)
+[INFO][main][2017-06-01 21:47:27][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/configure]}" onto public java.lang.String cn.sumi.controller.UserController.configure(java.lang.String)
+[INFO][main][2017-06-01 21:47:27][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/postedit]}" onto public java.lang.String cn.sumi.controller.UserController.postedit(org.springframework.ui.Model,java.lang.String)
+[INFO][main][2017-06-01 21:47:27][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/postlist]}" onto public java.lang.String cn.sumi.controller.UserController.postlist(java.lang.String)
+[INFO][main][2017-06-01 21:47:27][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/main]}" onto public java.lang.String cn.sumi.controller.UserController.main(org.springframework.ui.Model,java.lang.String)
+[INFO][main][2017-06-01 21:47:27][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/postedit]}" onto public java.lang.String cn.sumi.controller.ArticleController.newArticle(java.lang.String,org.springframework.ui.Model)
+[INFO][main][2017-06-01 21:47:27][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/upload]}" onto public void cn.sumi.controller.ArticleController.upload(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception
+[INFO][main][2017-06-01 21:47:27][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/add]}" onto public java.lang.String cn.sumi.controller.ArticleController.add(java.lang.String,cn.sumi.pojo.Article)
+[INFO][main][2017-06-01 21:47:27][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/delete/{aid}]}" onto public java.lang.String cn.sumi.controller.ArticleController.delete(int)
+[INFO][main][2017-06-01 21:47:27][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Thu Jun 01 21:47:25 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-01 21:47:27][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Thu Jun 01 21:47:25 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-01 21:47:27][service.ArticleServiceUnint] - 你好，世界
+[INFO][Thread-0][2017-06-01 21:47:27][org.springframework.context.support.AbstractApplicationContext] - Closing org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Thu Jun 01 21:47:25 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-01 21:47:54][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO][main][2017-06-01 21:47:54][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@396a51ab, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@51081592, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@7f9a81e8, org.springframework.test.context.support.DirtiesContextTestExecutionListener@9629756, org.springframework.test.context.transaction.TransactionalTestExecutionListener@62ee68d8, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@735b5592]
+[INFO][main][2017-06-01 21:47:54][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring.xml]
+[INFO][main][2017-06-01 21:47:54][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO][main][2017-06-01 21:47:55][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO][main][2017-06-01 21:47:59][org.springframework.context.support.AbstractApplicationContext] - Refreshing org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Thu Jun 01 21:47:59 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-01 21:47:59][org.springframework.core.io.support.PropertiesLoaderSupport] - Loading properties file from class path resource [jdbc.properties]
+[INFO][main][2017-06-01 21:47:59][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO][main][2017-06-01 21:47:59][org.springframework.jdbc.datasource.DriverManagerDataSource] - Loaded JDBC driver: com.mysql.jdbc.Driver
+[INFO][main][2017-06-01 21:48:00][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/image/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[INFO][main][2017-06-01 21:48:00][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/fonts/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#1'
+[INFO][main][2017-06-01 21:48:00][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/css/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#2'
+[INFO][main][2017-06-01 21:48:00][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/js/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#3'
+[INFO][main][2017-06-01 21:48:00][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/**] onto handler 'org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler#0'
+[INFO][main][2017-06-01 21:48:00][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/home]}" onto public java.lang.String cn.sumi.controller.CommonController.home(org.springframework.ui.Model)
+[INFO][main][2017-06-01 21:48:00][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/article/details/{articleId}]}" onto public java.lang.String cn.sumi.controller.CommonController.articleDetails(int,org.springframework.ui.Model)
+[INFO][main][2017-06-01 21:48:00][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/login],methods=[POST]}" onto public java.lang.String cn.sumi.controller.CommonController.login(cn.sumi.pojo.User)
+[INFO][main][2017-06-01 21:48:00][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/configure]}" onto public java.lang.String cn.sumi.controller.UserController.configure(java.lang.String)
+[INFO][main][2017-06-01 21:48:00][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/postedit]}" onto public java.lang.String cn.sumi.controller.UserController.postedit(org.springframework.ui.Model,java.lang.String)
+[INFO][main][2017-06-01 21:48:00][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/postlist]}" onto public java.lang.String cn.sumi.controller.UserController.postlist(java.lang.String)
+[INFO][main][2017-06-01 21:48:00][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/main]}" onto public java.lang.String cn.sumi.controller.UserController.main(org.springframework.ui.Model,java.lang.String)
+[INFO][main][2017-06-01 21:48:00][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/upload]}" onto public void cn.sumi.controller.ArticleController.upload(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception
+[INFO][main][2017-06-01 21:48:00][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/postedit]}" onto public java.lang.String cn.sumi.controller.ArticleController.newArticle(java.lang.String,org.springframework.ui.Model)
+[INFO][main][2017-06-01 21:48:00][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/add]}" onto public java.lang.String cn.sumi.controller.ArticleController.add(java.lang.String,cn.sumi.pojo.Article)
+[INFO][main][2017-06-01 21:48:00][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/delete/{aid}]}" onto public java.lang.String cn.sumi.controller.ArticleController.delete(int)
+[INFO][main][2017-06-01 21:48:01][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Thu Jun 01 21:47:59 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-01 21:48:01][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Thu Jun 01 21:47:59 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-01 21:48:01][service.ArticleServiceUnint] - 你好sdfsdfsdsdfsdf，世sdfsdf界
+[INFO][Thread-0][2017-06-01 21:48:01][org.springframework.context.support.AbstractApplicationContext] - Closing org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Thu Jun 01 21:47:59 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-01 21:48:28][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO][main][2017-06-01 21:48:28][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@396a51ab, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@51081592, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@7f9a81e8, org.springframework.test.context.support.DirtiesContextTestExecutionListener@9629756, org.springframework.test.context.transaction.TransactionalTestExecutionListener@62ee68d8, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@735b5592]
+[INFO][main][2017-06-01 21:48:28][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring.xml]
+[INFO][main][2017-06-01 21:48:29][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO][main][2017-06-01 21:48:29][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO][main][2017-06-01 21:48:36][org.springframework.context.support.AbstractApplicationContext] - Refreshing org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Thu Jun 01 21:48:36 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-01 21:48:36][org.springframework.core.io.support.PropertiesLoaderSupport] - Loading properties file from class path resource [jdbc.properties]
+[INFO][main][2017-06-01 21:48:36][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO][main][2017-06-01 21:48:36][org.springframework.jdbc.datasource.DriverManagerDataSource] - Loaded JDBC driver: com.mysql.jdbc.Driver
+[INFO][main][2017-06-01 21:48:36][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/image/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[INFO][main][2017-06-01 21:48:37][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/fonts/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#1'
+[INFO][main][2017-06-01 21:48:37][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/css/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#2'
+[INFO][main][2017-06-01 21:48:37][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/js/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#3'
+[INFO][main][2017-06-01 21:48:37][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/**] onto handler 'org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler#0'
+[INFO][main][2017-06-01 21:48:37][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/home]}" onto public java.lang.String cn.sumi.controller.CommonController.home(org.springframework.ui.Model)
+[INFO][main][2017-06-01 21:48:37][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/article/details/{articleId}]}" onto public java.lang.String cn.sumi.controller.CommonController.articleDetails(int,org.springframework.ui.Model)
+[INFO][main][2017-06-01 21:48:37][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/login],methods=[POST]}" onto public java.lang.String cn.sumi.controller.CommonController.login(cn.sumi.pojo.User)
+[INFO][main][2017-06-01 21:48:37][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/configure]}" onto public java.lang.String cn.sumi.controller.UserController.configure(java.lang.String)
+[INFO][main][2017-06-01 21:48:37][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/postedit]}" onto public java.lang.String cn.sumi.controller.UserController.postedit(org.springframework.ui.Model,java.lang.String)
+[INFO][main][2017-06-01 21:48:37][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/postlist]}" onto public java.lang.String cn.sumi.controller.UserController.postlist(java.lang.String)
+[INFO][main][2017-06-01 21:48:37][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/main]}" onto public java.lang.String cn.sumi.controller.UserController.main(org.springframework.ui.Model,java.lang.String)
+[INFO][main][2017-06-01 21:48:37][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/upload]}" onto public void cn.sumi.controller.ArticleController.upload(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception
+[INFO][main][2017-06-01 21:48:37][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/postedit]}" onto public java.lang.String cn.sumi.controller.ArticleController.newArticle(java.lang.String,org.springframework.ui.Model)
+[INFO][main][2017-06-01 21:48:37][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/add]}" onto public java.lang.String cn.sumi.controller.ArticleController.add(java.lang.String,cn.sumi.pojo.Article)
+[INFO][main][2017-06-01 21:48:37][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/delete/{aid}]}" onto public java.lang.String cn.sumi.controller.ArticleController.delete(int)
+[INFO][main][2017-06-01 21:48:37][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Thu Jun 01 21:48:36 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-01 21:48:37][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Thu Jun 01 21:48:36 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-01 21:48:37][service.ArticleServiceUnint] - 你好sdfsdfsdsdfsdf，世sdfsdf界
+[INFO][Thread-0][2017-06-01 21:48:37][org.springframework.context.support.AbstractApplicationContext] - Closing org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Thu Jun 01 21:48:36 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-01 21:49:40][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO][main][2017-06-01 21:49:40][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@396a51ab, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@51081592, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@7f9a81e8, org.springframework.test.context.support.DirtiesContextTestExecutionListener@9629756, org.springframework.test.context.transaction.TransactionalTestExecutionListener@62ee68d8, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@735b5592]
+[INFO][main][2017-06-01 21:49:40][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring.xml]
+[INFO][main][2017-06-01 21:49:41][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO][main][2017-06-01 21:49:41][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO][main][2017-06-01 21:49:45][org.springframework.context.support.AbstractApplicationContext] - Refreshing org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Thu Jun 01 21:49:45 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-01 21:49:45][org.springframework.core.io.support.PropertiesLoaderSupport] - Loading properties file from class path resource [jdbc.properties]
+[INFO][main][2017-06-01 21:49:45][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO][main][2017-06-01 21:49:45][org.springframework.jdbc.datasource.DriverManagerDataSource] - Loaded JDBC driver: com.mysql.jdbc.Driver
+[INFO][main][2017-06-01 21:49:46][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/image/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[INFO][main][2017-06-01 21:49:46][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/fonts/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#1'
+[INFO][main][2017-06-01 21:49:46][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/css/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#2'
+[INFO][main][2017-06-01 21:49:46][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/js/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#3'
+[INFO][main][2017-06-01 21:49:46][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/**] onto handler 'org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler#0'
+[INFO][main][2017-06-01 21:49:46][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/home]}" onto public java.lang.String cn.sumi.controller.CommonController.home(org.springframework.ui.Model)
+[INFO][main][2017-06-01 21:49:46][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/login],methods=[POST]}" onto public java.lang.String cn.sumi.controller.CommonController.login(cn.sumi.pojo.User)
+[INFO][main][2017-06-01 21:49:46][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/article/details/{articleId}]}" onto public java.lang.String cn.sumi.controller.CommonController.articleDetails(int,org.springframework.ui.Model)
+[INFO][main][2017-06-01 21:49:46][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/configure]}" onto public java.lang.String cn.sumi.controller.UserController.configure(java.lang.String)
+[INFO][main][2017-06-01 21:49:46][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/postedit]}" onto public java.lang.String cn.sumi.controller.UserController.postedit(org.springframework.ui.Model,java.lang.String)
+[INFO][main][2017-06-01 21:49:46][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/postlist]}" onto public java.lang.String cn.sumi.controller.UserController.postlist(java.lang.String)
+[INFO][main][2017-06-01 21:49:46][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/main]}" onto public java.lang.String cn.sumi.controller.UserController.main(org.springframework.ui.Model,java.lang.String)
+[INFO][main][2017-06-01 21:49:46][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/postedit]}" onto public java.lang.String cn.sumi.controller.ArticleController.newArticle(java.lang.String,org.springframework.ui.Model)
+[INFO][main][2017-06-01 21:49:46][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/upload]}" onto public void cn.sumi.controller.ArticleController.upload(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception
+[INFO][main][2017-06-01 21:49:46][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/add]}" onto public java.lang.String cn.sumi.controller.ArticleController.add(java.lang.String,cn.sumi.pojo.Article)
+[INFO][main][2017-06-01 21:49:46][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/delete/{aid}]}" onto public java.lang.String cn.sumi.controller.ArticleController.delete(int)
+[INFO][main][2017-06-01 21:49:46][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Thu Jun 01 21:49:45 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-01 21:49:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Thu Jun 01 21:49:45 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-01 21:49:47][service.ArticleServiceUnint] - 你好，世界
+[INFO][Thread-0][2017-06-01 21:49:47][org.springframework.context.support.AbstractApplicationContext] - Closing org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Thu Jun 01 21:49:45 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-01 21:51:19][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO][main][2017-06-01 21:51:19][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@396a51ab, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@51081592, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@7f9a81e8, org.springframework.test.context.support.DirtiesContextTestExecutionListener@9629756, org.springframework.test.context.transaction.TransactionalTestExecutionListener@62ee68d8, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@735b5592]
+[INFO][main][2017-06-01 21:51:19][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring.xml]
+[INFO][main][2017-06-01 21:51:20][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO][main][2017-06-01 21:51:20][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO][main][2017-06-01 21:51:21][org.springframework.context.support.AbstractApplicationContext] - Refreshing org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Thu Jun 01 21:51:21 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-01 21:51:22][org.springframework.core.io.support.PropertiesLoaderSupport] - Loading properties file from class path resource [jdbc.properties]
+[INFO][main][2017-06-01 21:51:22][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO][main][2017-06-01 21:51:22][org.springframework.jdbc.datasource.DriverManagerDataSource] - Loaded JDBC driver: com.mysql.jdbc.Driver
+[INFO][main][2017-06-01 21:51:23][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/image/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[INFO][main][2017-06-01 21:51:24][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/fonts/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#1'
+[INFO][main][2017-06-01 21:51:24][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/css/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#2'
+[INFO][main][2017-06-01 21:51:24][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/js/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#3'
+[INFO][main][2017-06-01 21:51:24][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/**] onto handler 'org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler#0'
+[INFO][main][2017-06-01 21:51:24][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/home]}" onto public java.lang.String cn.sumi.controller.CommonController.home(org.springframework.ui.Model)
+[INFO][main][2017-06-01 21:51:24][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/login],methods=[POST]}" onto public java.lang.String cn.sumi.controller.CommonController.login(cn.sumi.pojo.User)
+[INFO][main][2017-06-01 21:51:24][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/article/details/{articleId}]}" onto public java.lang.String cn.sumi.controller.CommonController.articleDetails(int,org.springframework.ui.Model)
+[INFO][main][2017-06-01 21:51:24][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/configure]}" onto public java.lang.String cn.sumi.controller.UserController.configure(java.lang.String)
+[INFO][main][2017-06-01 21:51:24][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/postedit]}" onto public java.lang.String cn.sumi.controller.UserController.postedit(org.springframework.ui.Model,java.lang.String)
+[INFO][main][2017-06-01 21:51:24][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/postlist]}" onto public java.lang.String cn.sumi.controller.UserController.postlist(java.lang.String)
+[INFO][main][2017-06-01 21:51:24][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/main]}" onto public java.lang.String cn.sumi.controller.UserController.main(org.springframework.ui.Model,java.lang.String)
+[INFO][main][2017-06-01 21:51:24][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/postedit]}" onto public java.lang.String cn.sumi.controller.ArticleController.newArticle(java.lang.String,org.springframework.ui.Model)
+[INFO][main][2017-06-01 21:51:24][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/upload]}" onto public void cn.sumi.controller.ArticleController.upload(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception
+[INFO][main][2017-06-01 21:51:24][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/add]}" onto public java.lang.String cn.sumi.controller.ArticleController.add(java.lang.String,cn.sumi.pojo.Article)
+[INFO][main][2017-06-01 21:51:24][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/delete/{aid}]}" onto public java.lang.String cn.sumi.controller.ArticleController.delete(int)
+[INFO][main][2017-06-01 21:51:24][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Thu Jun 01 21:51:21 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-01 21:51:24][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Thu Jun 01 21:51:21 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-01 21:51:24][service.ArticleServiceUnint] - 你好，世界
+[INFO][Thread-0][2017-06-01 21:51:24][org.springframework.context.support.AbstractApplicationContext] - Closing org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Thu Jun 01 21:51:21 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-01 22:02:04][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO][main][2017-06-01 22:02:04][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@396a51ab, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@51081592, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@7f9a81e8, org.springframework.test.context.support.DirtiesContextTestExecutionListener@9629756, org.springframework.test.context.transaction.TransactionalTestExecutionListener@62ee68d8, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@735b5592]
+[INFO][main][2017-06-01 22:02:05][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring.xml]
+[INFO][main][2017-06-01 22:02:05][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO][main][2017-06-01 22:02:06][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO][main][2017-06-01 22:02:13][org.springframework.context.support.AbstractApplicationContext] - Refreshing org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Thu Jun 01 22:02:13 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-01 22:02:14][org.springframework.core.io.support.PropertiesLoaderSupport] - Loading properties file from class path resource [jdbc.properties]
+[INFO][main][2017-06-01 22:02:14][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO][main][2017-06-01 22:02:14][org.springframework.jdbc.datasource.DriverManagerDataSource] - Loaded JDBC driver: com.mysql.jdbc.Driver
+[INFO][main][2017-06-01 22:02:14][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/image/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[INFO][main][2017-06-01 22:02:14][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/fonts/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#1'
+[INFO][main][2017-06-01 22:02:14][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/css/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#2'
+[INFO][main][2017-06-01 22:02:14][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/js/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#3'
+[INFO][main][2017-06-01 22:02:14][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/**] onto handler 'org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler#0'
+[INFO][main][2017-06-01 22:02:15][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/home]}" onto public java.lang.String cn.sumi.controller.CommonController.home(org.springframework.ui.Model)
+[INFO][main][2017-06-01 22:02:15][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/login],methods=[POST]}" onto public java.lang.String cn.sumi.controller.CommonController.login(cn.sumi.pojo.User)
+[INFO][main][2017-06-01 22:02:15][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/article/details/{articleId}]}" onto public java.lang.String cn.sumi.controller.CommonController.articleDetails(int,org.springframework.ui.Model)
+[INFO][main][2017-06-01 22:02:15][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/configure]}" onto public java.lang.String cn.sumi.controller.UserController.configure(java.lang.String)
+[INFO][main][2017-06-01 22:02:15][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/postedit]}" onto public java.lang.String cn.sumi.controller.UserController.postedit(org.springframework.ui.Model,java.lang.String)
+[INFO][main][2017-06-01 22:02:15][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/postlist]}" onto public java.lang.String cn.sumi.controller.UserController.postlist(java.lang.String)
+[INFO][main][2017-06-01 22:02:15][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/main]}" onto public java.lang.String cn.sumi.controller.UserController.main(org.springframework.ui.Model,java.lang.String)
+[INFO][main][2017-06-01 22:02:15][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/postedit]}" onto public java.lang.String cn.sumi.controller.ArticleController.newArticle(java.lang.String,org.springframework.ui.Model)
+[INFO][main][2017-06-01 22:02:15][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/upload]}" onto public void cn.sumi.controller.ArticleController.upload(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception
+[INFO][main][2017-06-01 22:02:15][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/add]}" onto public java.lang.String cn.sumi.controller.ArticleController.add(java.lang.String,cn.sumi.pojo.Article)
+[INFO][main][2017-06-01 22:02:15][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/delete/{aid}]}" onto public java.lang.String cn.sumi.controller.ArticleController.delete(int)
+[INFO][main][2017-06-01 22:02:15][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Thu Jun 01 22:02:13 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-01 22:02:15][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Thu Jun 01 22:02:13 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-01 22:02:15][service.ArticleServiceUnint] - 又一年过去了，这一次的总结，有点惭愧。2014，是我浮躁的一年。&nbsp;&nbsp;&nbsp;&nbsp;昨晚看完了《废柴联盟》最后一集，我觉得，我就像里面的废柴们一样，活在一个自己骗自己的世界里。感觉有很多雄心壮志，但是落到实处就焉了。剧里他们的生活挺美好，但是他们追求的目标跟我是不一样的。他们开开心心就好了，没有那么大的压力，很羡慕他们的心态，剧就是剧，人生是人生。&nbsp;&nbsp
+[INFO][Thread-0][2017-06-01 22:02:15][org.springframework.context.support.AbstractApplicationContext] - Closing org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Thu Jun 01 22:02:13 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-01 22:04:40][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO][main][2017-06-01 22:04:40][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@396a51ab, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@51081592, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@7f9a81e8, org.springframework.test.context.support.DirtiesContextTestExecutionListener@9629756, org.springframework.test.context.transaction.TransactionalTestExecutionListener@62ee68d8, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@735b5592]
+[INFO][main][2017-06-01 22:04:40][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring.xml]
+[INFO][main][2017-06-01 22:04:41][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO][main][2017-06-01 22:04:41][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO][main][2017-06-01 22:04:42][org.springframework.context.support.AbstractApplicationContext] - Refreshing org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Thu Jun 01 22:04:42 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-01 22:04:43][org.springframework.core.io.support.PropertiesLoaderSupport] - Loading properties file from class path resource [jdbc.properties]
+[INFO][main][2017-06-01 22:04:43][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO][main][2017-06-01 22:04:43][org.springframework.jdbc.datasource.DriverManagerDataSource] - Loaded JDBC driver: com.mysql.jdbc.Driver
+[INFO][main][2017-06-01 22:04:44][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/image/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[INFO][main][2017-06-01 22:04:44][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/fonts/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#1'
+[INFO][main][2017-06-01 22:04:44][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/css/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#2'
+[INFO][main][2017-06-01 22:04:44][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/js/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#3'
+[INFO][main][2017-06-01 22:04:44][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/**] onto handler 'org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler#0'
+[INFO][main][2017-06-01 22:04:44][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/home]}" onto public java.lang.String cn.sumi.controller.CommonController.home(org.springframework.ui.Model)
+[INFO][main][2017-06-01 22:04:44][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/login],methods=[POST]}" onto public java.lang.String cn.sumi.controller.CommonController.login(cn.sumi.pojo.User)
+[INFO][main][2017-06-01 22:04:44][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/article/details/{articleId}]}" onto public java.lang.String cn.sumi.controller.CommonController.articleDetails(int,org.springframework.ui.Model)
+[INFO][main][2017-06-01 22:04:44][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/configure]}" onto public java.lang.String cn.sumi.controller.UserController.configure(java.lang.String)
+[INFO][main][2017-06-01 22:04:44][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/postedit]}" onto public java.lang.String cn.sumi.controller.UserController.postedit(org.springframework.ui.Model,java.lang.String)
+[INFO][main][2017-06-01 22:04:44][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/postlist]}" onto public java.lang.String cn.sumi.controller.UserController.postlist(java.lang.String)
+[INFO][main][2017-06-01 22:04:44][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/main]}" onto public java.lang.String cn.sumi.controller.UserController.main(org.springframework.ui.Model,java.lang.String)
+[INFO][main][2017-06-01 22:04:44][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/postedit]}" onto public java.lang.String cn.sumi.controller.ArticleController.newArticle(java.lang.String,org.springframework.ui.Model)
+[INFO][main][2017-06-01 22:04:44][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/upload]}" onto public void cn.sumi.controller.ArticleController.upload(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception
+[INFO][main][2017-06-01 22:04:44][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/add]}" onto public java.lang.String cn.sumi.controller.ArticleController.add(java.lang.String,cn.sumi.pojo.Article)
+[INFO][main][2017-06-01 22:04:44][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/delete/{aid}]}" onto public java.lang.String cn.sumi.controller.ArticleController.delete(int)
+[INFO][main][2017-06-01 22:04:44][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Thu Jun 01 22:04:42 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-01 22:04:44][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Thu Jun 01 22:04:42 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-01 22:04:44][service.ArticleServiceUnint] - 又一年过去了，这一次的总结，有点惭愧。2014，是我浮躁的一年。&nbsp;&nbsp;&nbsp;&nbsp;昨晚看完了《废柴联盟》最后一集，我觉得，我就像里面的废柴们一样，活在一个自己骗自己的世界里。感觉有很多雄心壮志，但是落到实处就焉了。剧里他们的生活挺美好，但是他们追求的目标跟我是不一样的。他们开开心心就好了，没有那么大的压力，很羡慕他们的心态，剧就是剧，人生是人生。&nbsp;&nbsp
+[INFO][Thread-0][2017-06-01 22:04:44][org.springframework.context.support.AbstractApplicationContext] - Closing org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Thu Jun 01 22:04:42 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-01 22:05:35][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO][main][2017-06-01 22:05:35][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@396a51ab, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@51081592, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@7f9a81e8, org.springframework.test.context.support.DirtiesContextTestExecutionListener@9629756, org.springframework.test.context.transaction.TransactionalTestExecutionListener@62ee68d8, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@735b5592]
+[INFO][main][2017-06-01 22:05:35][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring.xml]
+[INFO][main][2017-06-01 22:05:35][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO][main][2017-06-01 22:05:36][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO][main][2017-06-01 22:05:37][org.springframework.context.support.AbstractApplicationContext] - Refreshing org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Thu Jun 01 22:05:37 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-01 22:05:37][org.springframework.core.io.support.PropertiesLoaderSupport] - Loading properties file from class path resource [jdbc.properties]
+[INFO][main][2017-06-01 22:05:37][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO][main][2017-06-01 22:05:38][org.springframework.jdbc.datasource.DriverManagerDataSource] - Loaded JDBC driver: com.mysql.jdbc.Driver
+[INFO][main][2017-06-01 22:05:38][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/image/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[INFO][main][2017-06-01 22:05:38][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/fonts/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#1'
+[INFO][main][2017-06-01 22:05:38][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/css/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#2'
+[INFO][main][2017-06-01 22:05:38][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/js/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#3'
+[INFO][main][2017-06-01 22:05:38][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/**] onto handler 'org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler#0'
+[INFO][main][2017-06-01 22:05:38][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/home]}" onto public java.lang.String cn.sumi.controller.CommonController.home(org.springframework.ui.Model)
+[INFO][main][2017-06-01 22:05:38][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/login],methods=[POST]}" onto public java.lang.String cn.sumi.controller.CommonController.login(cn.sumi.pojo.User)
+[INFO][main][2017-06-01 22:05:38][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/article/details/{articleId}]}" onto public java.lang.String cn.sumi.controller.CommonController.articleDetails(int,org.springframework.ui.Model)
+[INFO][main][2017-06-01 22:05:38][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/configure]}" onto public java.lang.String cn.sumi.controller.UserController.configure(java.lang.String)
+[INFO][main][2017-06-01 22:05:38][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/postedit]}" onto public java.lang.String cn.sumi.controller.UserController.postedit(org.springframework.ui.Model,java.lang.String)
+[INFO][main][2017-06-01 22:05:38][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/postlist]}" onto public java.lang.String cn.sumi.controller.UserController.postlist(java.lang.String)
+[INFO][main][2017-06-01 22:05:38][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/main]}" onto public java.lang.String cn.sumi.controller.UserController.main(org.springframework.ui.Model,java.lang.String)
+[INFO][main][2017-06-01 22:05:38][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/postedit]}" onto public java.lang.String cn.sumi.controller.ArticleController.newArticle(java.lang.String,org.springframework.ui.Model)
+[INFO][main][2017-06-01 22:05:38][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/upload]}" onto public void cn.sumi.controller.ArticleController.upload(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception
+[INFO][main][2017-06-01 22:05:38][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/add]}" onto public java.lang.String cn.sumi.controller.ArticleController.add(java.lang.String,cn.sumi.pojo.Article)
+[INFO][main][2017-06-01 22:05:38][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/delete/{aid}]}" onto public java.lang.String cn.sumi.controller.ArticleController.delete(int)
+[INFO][main][2017-06-01 22:05:39][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Thu Jun 01 22:05:37 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-01 22:05:39][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Thu Jun 01 22:05:37 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-01 22:05:39][service.ArticleServiceUnint] - 又一年过去了，这一次的总结，有点惭愧。2014，是我浮躁的一年。昨晚看完了《废柴联盟》最后一集，我觉得，我就像里面的废柴们一样，活在一个自己骗自己的世界里。感觉有很多雄心壮志，但是落到实处就焉了。剧里他们的生活挺美好，但是他们追求的目标跟我是不一样的。他们开开心心就好了，没有那么大的压力，很羡慕他们的心态，剧就是剧，人生是人生。&nbsp
+[INFO][Thread-0][2017-06-01 22:05:39][org.springframework.context.support.AbstractApplicationContext] - Closing org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Thu Jun 01 22:05:37 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-02 08:59:45][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO][main][2017-06-02 08:59:45][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@396a51ab, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@51081592, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@7f9a81e8, org.springframework.test.context.support.DirtiesContextTestExecutionListener@9629756, org.springframework.test.context.transaction.TransactionalTestExecutionListener@62ee68d8, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@735b5592]
+[INFO][main][2017-06-02 09:01:44][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO][main][2017-06-02 09:01:44][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@396a51ab, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@51081592, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@7f9a81e8, org.springframework.test.context.support.DirtiesContextTestExecutionListener@9629756, org.springframework.test.context.transaction.TransactionalTestExecutionListener@62ee68d8, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@735b5592]
+[INFO][main][2017-06-02 09:01:44][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring.xml]
+[INFO][main][2017-06-02 09:01:45][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO][main][2017-06-02 09:01:45][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO][main][2017-06-02 09:01:47][org.springframework.context.support.AbstractApplicationContext] - Refreshing org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Fri Jun 02 09:01:47 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-02 09:01:47][org.springframework.core.io.support.PropertiesLoaderSupport] - Loading properties file from class path resource [jdbc.properties]
+[INFO][main][2017-06-02 09:01:47][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO][main][2017-06-02 09:01:47][org.springframework.jdbc.datasource.DriverManagerDataSource] - Loaded JDBC driver: com.mysql.jdbc.Driver
+[INFO][main][2017-06-02 09:01:48][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/image/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[INFO][main][2017-06-02 09:01:48][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/fonts/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#1'
+[INFO][main][2017-06-02 09:01:48][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/css/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#2'
+[INFO][main][2017-06-02 09:01:48][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/js/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#3'
+[INFO][main][2017-06-02 09:01:48][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/**] onto handler 'org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler#0'
+[INFO][main][2017-06-02 09:01:48][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/home]}" onto public java.lang.String cn.sumi.controller.CommonController.home(org.springframework.ui.Model)
+[INFO][main][2017-06-02 09:01:48][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/login],methods=[POST]}" onto public java.lang.String cn.sumi.controller.CommonController.login(cn.sumi.pojo.User)
+[INFO][main][2017-06-02 09:01:48][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/article/details/{articleId}]}" onto public java.lang.String cn.sumi.controller.CommonController.articleDetails(int,org.springframework.ui.Model)
+[INFO][main][2017-06-02 09:01:48][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/configure]}" onto public java.lang.String cn.sumi.controller.UserController.configure(java.lang.String)
+[INFO][main][2017-06-02 09:01:48][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/postedit]}" onto public java.lang.String cn.sumi.controller.UserController.postedit(org.springframework.ui.Model,java.lang.String)
+[INFO][main][2017-06-02 09:01:48][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/postlist]}" onto public java.lang.String cn.sumi.controller.UserController.postlist(java.lang.String)
+[INFO][main][2017-06-02 09:01:48][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/main]}" onto public java.lang.String cn.sumi.controller.UserController.main(org.springframework.ui.Model,java.lang.String)
+[INFO][main][2017-06-02 09:01:48][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/upload]}" onto public void cn.sumi.controller.ArticleController.upload(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception
+[INFO][main][2017-06-02 09:01:48][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/postedit]}" onto public java.lang.String cn.sumi.controller.ArticleController.newArticle(java.lang.String,org.springframework.ui.Model)
+[INFO][main][2017-06-02 09:01:48][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/add]}" onto public java.lang.String cn.sumi.controller.ArticleController.add(java.lang.String,cn.sumi.pojo.Article)
+[INFO][main][2017-06-02 09:01:48][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/delete/{aid}]}" onto public java.lang.String cn.sumi.controller.ArticleController.delete(int)
+[INFO][main][2017-06-02 09:01:49][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Fri Jun 02 09:01:47 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-02 09:01:49][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Fri Jun 02 09:01:47 CST 2017]; root of context hierarchy
+[DEBUG][main][2017-06-02 09:01:50][org.apache.ibatis.logging.jdbc.BaseJdbcLogger] - ==>  Preparing: select * from article where aid=?; 
+[DEBUG][main][2017-06-02 09:01:50][org.apache.ibatis.logging.jdbc.BaseJdbcLogger] - ==> Parameters: gonghf95(String)
+[DEBUG][main][2017-06-02 09:01:50][org.apache.ibatis.logging.jdbc.BaseJdbcLogger] - <==      Total: 0
+[INFO][Thread-0][2017-06-02 09:01:50][org.springframework.context.support.AbstractApplicationContext] - Closing org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Fri Jun 02 09:01:47 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-02 09:03:56][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO][main][2017-06-02 09:03:56][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@396a51ab, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@51081592, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@7f9a81e8, org.springframework.test.context.support.DirtiesContextTestExecutionListener@9629756, org.springframework.test.context.transaction.TransactionalTestExecutionListener@62ee68d8, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@735b5592]
+[INFO][main][2017-06-02 09:03:56][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring.xml]
+[INFO][main][2017-06-02 09:03:56][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO][main][2017-06-02 09:03:57][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO][main][2017-06-02 09:03:58][org.springframework.context.support.AbstractApplicationContext] - Refreshing org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Fri Jun 02 09:03:58 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-02 09:03:59][org.springframework.core.io.support.PropertiesLoaderSupport] - Loading properties file from class path resource [jdbc.properties]
+[INFO][main][2017-06-02 09:03:59][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO][main][2017-06-02 09:03:59][org.springframework.jdbc.datasource.DriverManagerDataSource] - Loaded JDBC driver: com.mysql.jdbc.Driver
+[INFO][main][2017-06-02 09:03:59][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/image/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[INFO][main][2017-06-02 09:03:59][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/fonts/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#1'
+[INFO][main][2017-06-02 09:03:59][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/css/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#2'
+[INFO][main][2017-06-02 09:03:59][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/js/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#3'
+[INFO][main][2017-06-02 09:03:59][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/**] onto handler 'org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler#0'
+[INFO][main][2017-06-02 09:03:59][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/home]}" onto public java.lang.String cn.sumi.controller.CommonController.home(org.springframework.ui.Model)
+[INFO][main][2017-06-02 09:03:59][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/login],methods=[POST]}" onto public java.lang.String cn.sumi.controller.CommonController.login(cn.sumi.pojo.User)
+[INFO][main][2017-06-02 09:03:59][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/article/details/{articleId}]}" onto public java.lang.String cn.sumi.controller.CommonController.articleDetails(int,org.springframework.ui.Model)
+[INFO][main][2017-06-02 09:03:59][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/configure]}" onto public java.lang.String cn.sumi.controller.UserController.configure(java.lang.String)
+[INFO][main][2017-06-02 09:03:59][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/postedit]}" onto public java.lang.String cn.sumi.controller.UserController.postedit(org.springframework.ui.Model,java.lang.String)
+[INFO][main][2017-06-02 09:03:59][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/postlist]}" onto public java.lang.String cn.sumi.controller.UserController.postlist(java.lang.String)
+[INFO][main][2017-06-02 09:03:59][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/main]}" onto public java.lang.String cn.sumi.controller.UserController.main(org.springframework.ui.Model,java.lang.String)
+[INFO][main][2017-06-02 09:03:59][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/upload]}" onto public void cn.sumi.controller.ArticleController.upload(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception
+[INFO][main][2017-06-02 09:03:59][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/postedit]}" onto public java.lang.String cn.sumi.controller.ArticleController.newArticle(java.lang.String,org.springframework.ui.Model)
+[INFO][main][2017-06-02 09:03:59][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/add]}" onto public java.lang.String cn.sumi.controller.ArticleController.add(java.lang.String,cn.sumi.pojo.Article)
+[INFO][main][2017-06-02 09:03:59][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/delete/{aid}]}" onto public java.lang.String cn.sumi.controller.ArticleController.delete(int)
+[INFO][main][2017-06-02 09:04:00][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Fri Jun 02 09:03:58 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-02 09:04:00][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Fri Jun 02 09:03:58 CST 2017]; root of context hierarchy
+[DEBUG][main][2017-06-02 09:04:01][org.apache.ibatis.logging.jdbc.BaseJdbcLogger] - ==>  Preparing: select aid, title, author, digest, cid, publish_date, comments, views from article where author=?; 
+[DEBUG][main][2017-06-02 09:04:01][org.apache.ibatis.logging.jdbc.BaseJdbcLogger] - ==> Parameters: gonghf95(String)
+[TRACE][main][2017-06-02 09:04:01][org.apache.ibatis.logging.jdbc.BaseJdbcLogger] - <==    Columns: aid, title, author, digest, cid, publish_date, comments, views
+[TRACE][main][2017-06-02 09:04:01][org.apache.ibatis.logging.jdbc.BaseJdbcLogger] - <==        Row: 1, 12312312, gonghf95, 231312
+
+sadasdasd
+
+阿达萨达
+
+qweqweqweqw额qw额qwe qwe 请
+
+eqe qe&nbsp;
+
+qe&nbsp;
+
+qweqweqweqweqwewqweqweqwe请q万恶qqweqwe q万恶qweqwe请额, null, 2017-06-01 09:17:52, 0, 0
+[INFO][main][2017-06-02 09:04:01][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+[INFO][main][2017-06-02 09:04:01][org.springframework.jdbc.support.SQLErrorCodesFactory] - SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase, Hana]
+[INFO][Thread-0][2017-06-02 09:04:01][org.springframework.context.support.AbstractApplicationContext] - Closing org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Fri Jun 02 09:03:58 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-02 09:05:04][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO][main][2017-06-02 09:05:04][org.springframework.test.context.support.AbstractTestContextBootstrapper] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@396a51ab, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@51081592, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@7f9a81e8, org.springframework.test.context.support.DirtiesContextTestExecutionListener@9629756, org.springframework.test.context.transaction.TransactionalTestExecutionListener@62ee68d8, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@735b5592]
+[INFO][main][2017-06-02 09:05:04][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring.xml]
+[INFO][main][2017-06-02 09:05:05][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO][main][2017-06-02 09:05:05][org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO][main][2017-06-02 09:05:07][org.springframework.context.support.AbstractApplicationContext] - Refreshing org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Fri Jun 02 09:05:07 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-02 09:05:07][org.springframework.core.io.support.PropertiesLoaderSupport] - Loading properties file from class path resource [jdbc.properties]
+[INFO][main][2017-06-02 09:05:07][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO][main][2017-06-02 09:05:07][org.springframework.jdbc.datasource.DriverManagerDataSource] - Loaded JDBC driver: com.mysql.jdbc.Driver
+[INFO][main][2017-06-02 09:05:08][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/image/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[INFO][main][2017-06-02 09:05:08][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/fonts/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#1'
+[INFO][main][2017-06-02 09:05:08][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/css/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#2'
+[INFO][main][2017-06-02 09:05:08][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/js/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#3'
+[INFO][main][2017-06-02 09:05:08][org.springframework.web.servlet.handler.AbstractUrlHandlerMapping] - Mapped URL path [/**] onto handler 'org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler#0'
+[INFO][main][2017-06-02 09:05:08][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/home]}" onto public java.lang.String cn.sumi.controller.CommonController.home(org.springframework.ui.Model)
+[INFO][main][2017-06-02 09:05:08][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/login],methods=[POST]}" onto public java.lang.String cn.sumi.controller.CommonController.login(cn.sumi.pojo.User)
+[INFO][main][2017-06-02 09:05:08][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/article/details/{articleId}]}" onto public java.lang.String cn.sumi.controller.CommonController.articleDetails(int,org.springframework.ui.Model)
+[INFO][main][2017-06-02 09:05:08][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/configure]}" onto public java.lang.String cn.sumi.controller.UserController.configure(java.lang.String)
+[INFO][main][2017-06-02 09:05:08][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/postedit]}" onto public java.lang.String cn.sumi.controller.UserController.postedit(org.springframework.ui.Model,java.lang.String)
+[INFO][main][2017-06-02 09:05:08][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/postlist]}" onto public java.lang.String cn.sumi.controller.UserController.postlist(java.lang.String)
+[INFO][main][2017-06-02 09:05:08][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/main]}" onto public java.lang.String cn.sumi.controller.UserController.main(org.springframework.ui.Model,java.lang.String)
+[INFO][main][2017-06-02 09:05:08][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/upload]}" onto public void cn.sumi.controller.ArticleController.upload(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception
+[INFO][main][2017-06-02 09:05:08][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/postedit]}" onto public java.lang.String cn.sumi.controller.ArticleController.newArticle(java.lang.String,org.springframework.ui.Model)
+[INFO][main][2017-06-02 09:05:08][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/add]}" onto public java.lang.String cn.sumi.controller.ArticleController.add(java.lang.String,cn.sumi.pojo.Article)
+[INFO][main][2017-06-02 09:05:08][org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry] - Mapped "{[/root/{account}/article/delete/{aid}]}" onto public java.lang.String cn.sumi.controller.ArticleController.delete(int)
+[INFO][main][2017-06-02 09:05:08][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Fri Jun 02 09:05:07 CST 2017]; root of context hierarchy
+[INFO][main][2017-06-02 09:05:08][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Fri Jun 02 09:05:07 CST 2017]; root of context hierarchy
+[DEBUG][main][2017-06-02 09:05:09][org.apache.ibatis.logging.jdbc.BaseJdbcLogger] - ==>  Preparing: select aid, title, author, digest, cid, publish_date, comments, views , contents from article where author=?; 
+[DEBUG][main][2017-06-02 09:05:09][org.apache.ibatis.logging.jdbc.BaseJdbcLogger] - ==> Parameters: gonghf95(String)
+[TRACE][main][2017-06-02 09:05:09][org.apache.ibatis.logging.jdbc.BaseJdbcLogger] - <==    Columns: aid, title, author, digest, cid, publish_date, comments, views, contents
+[TRACE][main][2017-06-02 09:05:09][org.apache.ibatis.logging.jdbc.BaseJdbcLogger] - <==        Row: 1, 12312312, gonghf95, 231312
+
+sadasdasd
+
+阿达萨达
+
+qweqweqweqw额qw额qwe qwe 请
+
+eqe qe&nbsp;
+
+qe&nbsp;
+
+qweqweqweqweqwewqweqweqwe请q万恶qqweqwe q万恶qweqwe请额, null, 2017-06-01 09:17:52, 0, 0, <<BLOB>>
+[TRACE][main][2017-06-02 09:05:09][org.apache.ibatis.logging.jdbc.BaseJdbcLogger] - <==        Row: 2, 12312312, gonghf95, 阿三大赛大赛的啊啊
+
+是大势大赛的
+
+12321131231
+
+
+34534534, null, 2017-06-01 09:20:18, 0, 0, <<BLOB>>
+[TRACE][main][2017-06-02 09:05:09][org.apache.ibatis.logging.jdbc.BaseJdbcLogger] - <==        Row: 3, 世界，你好, gonghf95, 这
+
+2017年5月30日,国外安全研究人员发现Linux环节下，可以通过sudo实现本地提权漏洞，漏洞编号为CVE-2017-1000367，该漏洞几乎影响了所有Linux系统。具体详情如下:
+
+漏洞编号:
+
+CVE-2017-1000367
+
+漏洞名称:
+
+Sudo本地提权漏洞
+
+官方评级:
+
+高危
+
+漏洞描述:
+
+当确定tty时，Sudo没有正确解析/ proc / [pid] / stat, null, 2017-06-01 09:26:45, 0, 0, <<BLOB>>
+[TRACE][main][2017-06-02 09:05:09][org.apache.ibatis.logging.jdbc.BaseJdbcLogger] - <==        Row: 4, 世界，你好, gonghf95, 2017年5月30日,国外安全研究人员发现Linux环节下，可以通过sudo实现本地提权漏洞，漏洞编号为CVE-2017-1000367，该漏洞几乎影响了所有Linux系统。具体详情如下:漏洞编号:CVE-2017-1000367漏洞名称:Sudo本地提权漏洞官方评级:高危漏洞描述:当确定tty时，Sudo没有正确解析/ proc / [pid] / stat的内容，本地攻击者可能会使用此方法来覆, null, 2017-06-01 09:29:17, 0, 0, <<BLOB>>
+[TRACE][main][2017-06-02 09:05:09][org.apache.ibatis.logging.jdbc.BaseJdbcLogger] - <==        Row: 5, 14已过，15整装待发，准备启航, gonghf95, 又一年过去了，这一次的总结，有点惭愧。2014，是我浮躁的一年。&nbsp;&nbsp;&nbsp;&nbsp;昨晚看完了《废柴联盟》最后一集，我觉得，我就像里面的废柴们一样，活在一个自己骗自己的世界里。感觉有很多雄心壮志，但是落到实处就焉了。剧里他们的生活挺美好，但是他们追求的目标跟我是不一样的。他们开开心心就好了，没有那么大的压力，很羡慕他们的心态，剧就是剧，人生是人生。&nbsp;&nbsp, null, 2017-06-01 09:55:28, 0, 0, <<BLOB>>
+[TRACE][main][2017-06-02 09:05:09][org.apache.ibatis.logging.jdbc.BaseJdbcLogger] - <==        Row: 6, 14已过，15整装待发，准备启航, gonghf95, 又一年过去了，这一次的总结，有点惭愧。2014，是我浮躁的一年。&nbsp;&nbsp;&nbsp;&nbsp;昨晚看完了《废柴联盟》最后一集，我觉得，我就像里面的废柴们一样，活在一个自己骗自己的世界里。感觉有很多雄心壮志，但是落到实处就焉了。剧里他们的生活挺美好，但是他们追求的目标跟我是不一样的。他们开开心心就好了，没有那么大的压力，很羡慕他们的心态，剧就是剧，人生是人生。&nbsp;&nbsp, null, 2017-06-01 09:59:11, 0, 0, <<BLOB>>
+[DEBUG][main][2017-06-02 09:05:09][org.apache.ibatis.logging.jdbc.BaseJdbcLogger] - <==      Total: 6
+[INFO][main][2017-06-02 09:05:09][mapper.ArticleMapperUnint] - Article{aid=1, title='12312312', author='gonghf95', digest='231312
+
+sadasdasd
+
+阿达萨达
+
+qweqweqweqw额qw额qwe qwe 请
+
+eqe qe&nbsp;
+
+qe&nbsp;
+
+qweqweqweqweqwewqweqweqwe请q万恶qqweqwe q万恶qweqwe请额', cid=null, publishDate='2017-06-01 09:17:52', comments=0, views=0, contents='<p>231312</p>
+
+<p>sadasdasd</p>
+
+<p><img alt="" src="/upload/Selection_006.png" style="height:201px; width:250px" />阿达萨达</p>
+
+<h1>qweqweqweqw额qw额qwe qwe 请</h1>
+
+<p>eqe qe&nbsp;</p>
+
+<h1>qe&nbsp;</h1>
+
+<p>qweqweqweqweqwewqweqweqwe请q万恶qqweqwe q万恶qweqwe请额</p>'}
+[INFO][main][2017-06-02 09:05:09][mapper.ArticleMapperUnint] - Article{aid=2, title='12312312', author='gonghf95', digest='阿三大赛大赛的啊啊
+
+是大势大赛的
+
+12321131231
+
+
+34534534', cid=null, publishDate='2017-06-01 09:20:18', comments=0, views=0, contents='<p>阿三大赛大赛的啊啊</p>
+
+<p>是大势大赛的</p>
+
+<p>12321131231</p>
+
+<blockquote>
+<h1>34534534</h1>
+</blockquote>
+
+<p><img alt="" src="/upload/Selection_004.png" style="height:407px; width:413px" /></p>'}
+[INFO][main][2017-06-02 09:05:09][mapper.ArticleMapperUnint] - Article{aid=3, title='世界，你好', author='gonghf95', digest='这
+
+2017年5月30日,国外安全研究人员发现Linux环节下，可以通过sudo实现本地提权漏洞，漏洞编号为CVE-2017-1000367，该漏洞几乎影响了所有Linux系统。具体详情如下:
+
+漏洞编号:
+
+CVE-2017-1000367
+
+漏洞名称:
+
+Sudo本地提权漏洞
+
+官方评级:
+
+高危
+
+漏洞描述:
+
+当确定tty时，Sudo没有正确解析/ proc / [pid] / stat', cid=null, publishDate='2017-06-01 09:26:45', comments=0, views=0, contents='<p>这</p>
+
+<p>2017年5月30日,国外安全研究人员发现Linux环节下，可以通过sudo实现本地提权漏洞，漏洞编号为CVE-2017-1000367，该漏洞几乎影响了所有Linux系统。具体详情如下:</p>
+
+<p><strong>漏洞编号:</strong></p>
+
+<p>CVE-2017-1000367</p>
+
+<p><strong>漏洞名称:</strong></p>
+
+<p>Sudo本地提权漏洞</p>
+
+<p><strong>官方评级:</strong></p>
+
+<p>高危</p>
+
+<p><strong>漏洞描述:</strong></p>
+
+<p>当确定tty时，Sudo没有正确解析/ proc / [pid] / stat的内容，本地攻击者可能会使用此方法来覆盖文件系统上的任何文件，从而绕过预期权限或获取root shell。</p>
+
+<p><strong>漏洞利用条件和方式:</strong></p>
+
+<p>本地利用</p>
+
+<p><strong>漏洞影响范围:</strong></p>
+
+<p>Sudo 1.8.6p7 到 1.8.20</p>
+
+<p>Red Hat Enterprise Linux 6 (sudo)</p>
+
+<p>Red Hat Enterprise Linux 7 (sudo)</p>
+
+<p>Red Hat Enterprise Linux Server (v. 5 ELS) (sudo)</p>
+
+<p>Debian wheezy</p>'}
+[INFO][main][2017-06-02 09:05:09][mapper.ArticleMapperUnint] - Article{aid=4, title='世界，你好', author='gonghf95', digest='2017年5月30日,国外安全研究人员发现Linux环节下，可以通过sudo实现本地提权漏洞，漏洞编号为CVE-2017-1000367，该漏洞几乎影响了所有Linux系统。具体详情如下:漏洞编号:CVE-2017-1000367漏洞名称:Sudo本地提权漏洞官方评级:高危漏洞描述:当确定tty时，Sudo没有正确解析/ proc / [pid] / stat的内容，本地攻击者可能会使用此方法来覆', cid=null, publishDate='2017-06-01 09:29:17', comments=0, views=0, contents='<p>2017年5月30日,国外安全研究人员发现Linux环节下，可以通过sudo实现本地提权漏洞，漏洞编号为CVE-2017-1000367，该漏洞几乎影响了所有Linux系统。具体详情如下:</p>
+
+<p><strong>漏洞编号:</strong></p>
+
+<p>CVE-2017-1000367</p>
+
+<p><strong>漏洞名称:</strong></p>
+
+<p>Sudo本地提权漏洞</p>
+
+<p><strong>官方评级:</strong></p>
+
+<p>高危</p>
+
+<p><strong>漏洞描述:</strong></p>
+
+<p>当确定tty时，Sudo没有正确解析/ proc / [pid] / stat的内容，本地攻击者可能会使用此方法来覆盖文件系统上的任何文件，从而绕过预期权限或获取root shell。</p>
+
+<p><strong>漏洞利用条件和方式:</strong></p>
+
+<p>本地利用</p>
+
+<p><strong>漏洞影响范围:</strong></p>
+
+<p>Sudo 1.8.6p7 到 1.8.20</p>
+
+<p>Red Hat Enterprise Linux 6 (sudo)</p>
+
+<p>Red Hat Enterprise Linux 7 (sudo)</p>
+
+<p>Red Hat Enterprise Linux Server (v. 5 ELS) (sudo)</p>
+
+<p>Debian wheezy</p>'}
+[INFO][main][2017-06-02 09:05:09][mapper.ArticleMapperUnint] - Article{aid=5, title='14已过，15整装待发，准备启航', author='gonghf95', digest='又一年过去了，这一次的总结，有点惭愧。2014，是我浮躁的一年。&nbsp;&nbsp;&nbsp;&nbsp;昨晚看完了《废柴联盟》最后一集，我觉得，我就像里面的废柴们一样，活在一个自己骗自己的世界里。感觉有很多雄心壮志，但是落到实处就焉了。剧里他们的生活挺美好，但是他们追求的目标跟我是不一样的。他们开开心心就好了，没有那么大的压力，很羡慕他们的心态，剧就是剧，人生是人生。&nbsp;&nbsp', cid=null, publishDate='2017-06-01 09:55:28', comments=0, views=0, contents='<p>又一年过去了，这一次的总结，有点惭愧。2014，是我浮躁的一年。</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;昨晚看完了《废柴联盟》最后一集，我觉得，我就像里面的废柴们一样，活在一个自己骗自己的世界里。感觉有很多雄心壮志，但是落到实处就焉了。剧里他们的生活挺美好，但是他们追求的目标跟我是不一样的。他们开开心心就好了，没有那么大的压力，很羡慕他们的心态，剧就是剧，人生是人生。</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;昨晚梦到很多同学出国了，梦里的我好失落，我怎么这么挫呢？我记得当初考研复试的时候，就因为说要背GRE然后被鄙视了，可是到现在GRE也没开始背。</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;2014，庸庸碌碌的一年，寻找方向的一年。</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;进入研二之后，要去南京授课，把大半个学期的时间都荒废了。南京，那个潮湿潮湿加潮湿的城市，带给我了一脸痘和八斤肉。果然不适合在潮湿的南方生活。本来想做linux内核，可是搞过授课后，就放下了，实验室项目没有牵扯这个的。然后就是什么图数据了，没人带，也不知道从哪儿入手，就拖拖拉拉到现在。一边感叹自己好挫，一边放任自己好挫。机器学习搞不懂感觉好虚，扔了。linux内核很实在，看了几章，不知道要研究什么，扔了。cf每天刷一题，坚持了俩星期也扔了。看图数据的论文看了一篇就扔了。Hadoop搭了下，没什么应用的场景，扔了。spark搭了下，不知道下一步干什么，扔了。</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;从什么时候，开始坚持不下去了。我觉得男朋友是个原因，只要他在身边，就很依赖他，这样很不好呢，拖两个人的后腿。理想的状况是应该两个人相互勉励的。怀念本科时候女汉子的那个我，心无旁骛地为一件事情而努力。而不是现在这个，说的比做的多，对一件事情毛毛糙糙，急功近利。男票说我做什么事就想一蹴而就，本来学知识就应该是循循渐进的，但是我总是想很快地学成，但是有些东西就是需要时间去学，我就按耐不下心去慢慢来。我说，这就是我的性格呀，毛毛糙糙，大大咧咧，正好跟你互补。其实就是找借口，自己的生活，自己如果不能把握，那能靠谁呢？</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;还有减肥这个事情，这一年真的是太随意了，控制不了体重何以掌控人生？以后天天健身房走起。要不回家小伙伴们该说我了，呜呜。</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;调整心态，今年，就要找工作了。读研的转折点已经过去了，下一个转折点就是找工作了呢。可是感觉自己还是很菜，要努力要努力。努力减肥，努力充实自己。健健康康，牛牛XX的~</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;拉拉杂杂说了这么多。2015我要好好的，好好减肥，好好努力。定个回家前短期目标：</p>
+
+<p>&nbsp; &nbsp; 1.一月份，天天健身房，把南京那八斤给减掉</p>
+
+<p>&nbsp; &nbsp; 2.耐心找到自己的研究方向</p>
+
+<p>&nbsp; &nbsp; 3.保证git每周至少提交五天</p>
+
+<p>&nbsp; &nbsp;假期任务：</p>
+
+<p>&nbsp; &nbsp; 1.leetcode刷完，为年后找实习做准备</p>
+
+<p>&nbsp; &nbsp; 2.学做烘焙，做好吃的给爸妈吃</p>
+
+<p>&nbsp; &nbsp; 3.每天运动，再减五斤</p>
+
+<p>&nbsp; &nbsp; 4.找到方向后，做一个小项目或者好玩的小东西</p>
+
+<p>&nbsp; &nbsp; 耐心，认真，不骄不躁 ^ ^ 加油加油~~！</p>'}
+[INFO][main][2017-06-02 09:05:09][mapper.ArticleMapperUnint] - Article{aid=6, title='14已过，15整装待发，准备启航', author='gonghf95', digest='又一年过去了，这一次的总结，有点惭愧。2014，是我浮躁的一年。&nbsp;&nbsp;&nbsp;&nbsp;昨晚看完了《废柴联盟》最后一集，我觉得，我就像里面的废柴们一样，活在一个自己骗自己的世界里。感觉有很多雄心壮志，但是落到实处就焉了。剧里他们的生活挺美好，但是他们追求的目标跟我是不一样的。他们开开心心就好了，没有那么大的压力，很羡慕他们的心态，剧就是剧，人生是人生。&nbsp;&nbsp', cid=null, publishDate='2017-06-01 09:59:11', comments=0, views=0, contents='<p>又一年过去了，这一次的总结，有点惭愧。2014，是我浮躁的一年。</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;昨晚看完了《废柴联盟》最后一集，我觉得，我就像里面的废柴们一样，活在一个自己骗自己的世界里。感觉有很多雄心壮志，但是落到实处就焉了。剧里他们的生活挺美好，但是他们追求的目标跟我是不一样的。他们开开心心就好了，没有那么大的压力，很羡慕他们的心态，剧就是剧，人生是人生。</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;昨晚梦到很多同学出国了，梦里的我好失落，我怎么这么挫呢？我记得当初考研复试的时候，就因为说要背GRE然后被鄙视了，可是到现在GRE也没开始背。</p>
+
+<p><img alt="" src="/upload/Selection_002.png" style="height:169px; width:250px" /></p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;2014，庸庸碌碌的一年，寻找方向的一年。</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;进入研二之后，要去南京授课，把大半个学期的时间都荒废了。南京，那个潮湿潮湿加潮湿的城市，带给我了一脸痘和八斤肉。果然不适合在潮湿的南方生活。本来想做linux内核，可是搞过授课后，就放下了，实验室项目没有牵扯这个的。然后就是什么图数据了，没人带，也不知道从哪儿入手，就拖拖拉拉到现在。一边感叹自己好挫，一边放任自己好挫。机器学习搞不懂感觉好虚，扔了。linux内核很实在，看了几章，不知道要研究什么，扔了。cf每天刷一题，坚持了俩星期也扔了。看图数据的论文看了一篇就扔了。Hadoop搭了下，没什么应用的场景，扔了。spark搭了下，不知道下一步干什么，扔了。</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;从什么时候，开始坚持不下去了。我觉得男朋友是个原因，只要他在身边，就很依赖他，这样很不好呢，拖两个人的后腿。理想的状况是应该两个人相互勉励的。怀念本科时候女汉子的那个我，心无旁骛地为一件事情而努力。而不是现在这个，说的比做的多，对一件事情毛毛糙糙，急功近利。男票说我做什么事就想一蹴而就，本来学知识就应该是循循渐进的，但是我总是想很快地学成，但是有些东西就是需要时间去学，我就按耐不下心去慢慢来。我说，这就是我的性格呀，毛毛糙糙，大大咧咧，正好跟你互补。其实就是找借口，自己的生活，自己如果不能把握，那能靠谁呢？</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;还有减肥这个事情，这一年真的是太随意了，控制不了体重何以掌控人生？以后天天健身房走起。要不回家小伙伴们该说我了，呜呜。</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;调整心态，今年，就要找工作了。读研的转折点已经过去了，下一个转折点就是找工作了呢。可是感觉自己还是很菜，要努力要努力。努力减肥，努力充实自己。健健康康，牛牛XX的~</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;拉拉杂杂说了这么多。2015我要好好的，好好减肥，好好努力。定个回家前短期目标：</p>
+
+<p>&nbsp; &nbsp; 1.一月份，天天健身房，把南京那八斤给减掉</p>
+
+<p>&nbsp; &nbsp; 2.耐心找到自己的研究方向</p>
+
+<p>&nbsp; &nbsp; 3.保证git每周至少提交五天</p>
+
+<p>&nbsp; &nbsp;假期任务：</p>
+
+<p>&nbsp; &nbsp; 1.leetcode刷完，为年后找实习做准备</p>
+
+<p>&nbsp; &nbsp; 2.学做烘焙，做好吃的给爸妈吃</p>
+
+<p>&nbsp; &nbsp; 3.每天运动，再减五斤</p>
+
+<p>&nbsp; &nbsp; 4.找到方向后，做一个小项目或者好玩的小东西</p>
+
+<p>&nbsp; &nbsp; 耐心，认真，不骄不躁 ^ ^ 加油加油~~！</p>'}
+[INFO][Thread-0][2017-06-02 09:05:09][org.springframework.context.support.AbstractApplicationContext] - Closing org.springframework.context.support.GenericApplicationContext@553f17c: startup date [Fri Jun 02 09:05:07 CST 2017]; root of context hierarchy

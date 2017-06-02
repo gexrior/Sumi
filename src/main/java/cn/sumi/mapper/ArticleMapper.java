@@ -3,6 +3,8 @@ package cn.sumi.mapper;
 import cn.sumi.pojo.Article;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface ArticleMapper {
     int deleteByPrimaryKey(Integer aid);
@@ -12,6 +14,8 @@ public interface ArticleMapper {
     int insertSelective(Article record);
 
     Article selectByPrimaryKey(Integer aid);
+
+    List<Article> findAll(String account);
 
     int updateByPrimaryKeySelective(Article record);
 

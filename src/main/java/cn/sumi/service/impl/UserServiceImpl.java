@@ -1,8 +1,11 @@
 package cn.sumi.service.impl;
 
+import cn.sumi.mapper.BlogConfigureMapper;
 import cn.sumi.mapper.UserMapper;
+import cn.sumi.pojo.BlogConfigure;
 import cn.sumi.pojo.User;
 import cn.sumi.service.UserService;
+import javafx.scene.effect.Blend;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,10 +21,16 @@ public class UserServiceImpl implements UserService {
     private Logger logger = Logger.getLogger(UserServiceImpl.class);
     @Autowired
     private UserMapper userMapper;
+    @Autowired
+    private BlogConfigureMapper blogConfigure;
 
 
     public User getAccountInfo(String account) {
         return userMapper.selectByPrimaryKey(account);
+    }
+
+    public BlogConfigure getAccountConfigure(String account) {
+        return blogConfigure.selectByPrimaryKey(account);
     }
 
     public boolean login(User user) {
@@ -36,4 +45,5 @@ public class UserServiceImpl implements UserService {
     public boolean register(User user) {
         return false;
     }
+
 }

@@ -19,6 +19,9 @@ h6, .h6 {
     color: #333;
 }
 
+a{
+    color: #428bca;
+}
 
 /*
  * Override Bootstrap's default container.
@@ -99,7 +102,7 @@ h6, .h6 {
  */
 
 .blog-main {
-    font-size: 18px;
+    font-size: 14px;
     line-height: 1.5;
 }
 
@@ -142,11 +145,26 @@ h6, .h6 {
 }
 .blog-post-title {
     margin-bottom: 5px;
-    font-size: 40px;
+    font-size: 18px;
 }
 .blog-post-meta {
     margin-bottom: 20px;
     color: #999;
+    font-size: 16px;
+}
+
+.blog-post-title a:hover{
+    color: #428bca;
+    text-decoration: none;
+}
+
+.blog-post-digest a{
+    color:#555;
+}
+
+.blog-post-digest a:hover{
+    color:#555;
+    text-decoration: none;
 }
 
 

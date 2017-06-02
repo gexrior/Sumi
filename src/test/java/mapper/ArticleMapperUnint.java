@@ -2,11 +2,12 @@ package mapper;
 
 import base.BaseConfiguration;
 import cn.sumi.mapper.ArticleMapper;
+import cn.sumi.pojo.Article;
 import org.apache.log4j.Logger;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.util.Date;
+import java.util.List;
 
 /**
  * Created by gonghf95 on 5/31/17.
@@ -17,6 +18,13 @@ public class ArticleMapperUnint extends BaseConfiguration {
     @Autowired
     private ArticleMapper articleMapper;
 
+    @Test
+    public void findAll() {
+        List<Article> articleList = articleMapper.findAll("gonghf95");
+        for (Article article : articleList) {
+            logger.info(article);
+        }
+    }
 
     @Test
     public void deleteByPrimaryKey() {
