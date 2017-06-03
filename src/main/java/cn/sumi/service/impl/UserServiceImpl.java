@@ -5,6 +5,7 @@ import cn.sumi.mapper.UserMapper;
 import cn.sumi.pojo.BlogConfigure;
 import cn.sumi.pojo.User;
 import cn.sumi.service.UserService;
+import cn.sumi.vo.BadgeVO;
 import javafx.scene.effect.Blend;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;

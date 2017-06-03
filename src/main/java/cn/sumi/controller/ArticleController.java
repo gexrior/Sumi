@@ -4,7 +4,7 @@ import cn.sumi.pojo.Article;
 import cn.sumi.pojo.User;
 import cn.sumi.service.ArticleService;
 import cn.sumi.service.UserService;
-import cn.sumi.utils.JSONCapsule;
+import cn.sumi.vo.JSONResultVO;
 import com.alibaba.fastjson.JSON;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
@@ -46,8 +46,7 @@ public class ArticleController {
      * */
     @RequestMapping("/postedit")
     public String newArticle(@PathVariable String account,Model model){
-        User user = userService.getAccountInfo(account);
-        model.addAttribute("user",user);
+        model.addAttribute("account",account);
         return "postedit";
     }
 
@@ -62,19 +61,19 @@ public class ArticleController {
     public @ResponseBody
     String add(@PathVariable String account, Article article) {
         logger.info("article: " + article);
-        JSONCapsule jsonCapsule = new JSONCapsule();
+        JSONResultVO JSONResultVO = new JSONResultVO();
         try {
             int postId = articleService.newArticle(article, account);
-            jsonCapsule.setState(JSONCapsule.SUCCESS);
-            jsonCapsule.setMessage(account);
-            jsonCapsule.setData(postId);
-            return JSON.toJSONString(jsonCapsule);
+            JSONResultVO.setState(JSONResultVO.SUCCESS);
+            JSONResultVO.setMessage(account);
+            JSONResultVO.setData(postId);
+            return JSON.toJSONString(JSONResultVO);
         } catch (DataAccessException e) {
             logger.error(e.toString());
         }
-        jsonCapsule.setState(JSONCapsule.FAILURE);
-        jsonCapsule.setMessage("账户不存在,发表文章失败");
-        return JSON.toJSONString(jsonCapsule);
+        JSONResultVO.setState(JSONResultVO.FAILURE);
+        JSONResultVO.setMessage("账户不存在,发表文章失败");
+        return JSON.toJSONString(JSONResultVO);
     }
 
     /**

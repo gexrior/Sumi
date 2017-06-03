@@ -22,21 +22,59 @@ public class UserController {
     private UserService userService;
 
     /**
-     * 用户后台管理
+     * 文章管理
      *
      * @param model
      * @param account 当前用户
      * @author gonghf95
      */
-    @RequestMapping("/main")
-    public String main(Model model, @PathVariable String account) {
-        User user = userService.getAccountInfo(account);
-        model.addAttribute("user", user);
-        return "main";
+    @RequestMapping("/postlist")
+    public String manage(Model model, @PathVariable String account) {
+        model.addAttribute("account", account);
+        return "postlist";
     }
 
     /**
-     * 新文章
+     * 类别管理
+     *
+     * @param model
+     * @param account 当前用户
+     * @author gonghf95
+     */
+    @RequestMapping("/category")
+    public String category(Model model, @PathVariable String account) {
+        model.addAttribute("account", account);
+        return "category";
+    }
+
+    /**
+     * 评论管理
+     *
+     * @param model
+     * @param account 当前用户
+     * @author gonghf95
+     */
+    @RequestMapping("/comment")
+    public String comment(Model model, @PathVariable String account) {
+        model.addAttribute("account", account);
+        return "comment";
+    }
+
+    /**
+     * 草稿箱管理
+     *
+     * @param model
+     * @param account 当前用户
+     * @author gonghf95
+     */
+    @RequestMapping("/draft")
+    public String draft(Model model, @PathVariable String account) {
+        model.addAttribute("account", account);
+        return "draft";
+    }
+
+    /**
+     * 编辑文章
      *
      * @param model
      * @param account 当前账户
@@ -44,19 +82,21 @@ public class UserController {
      */
     @RequestMapping("/postedit")
     public String postedit(Model model, @PathVariable String account) {
-        model.addAttribute("user", userService.getAccountInfo(account));
+        model.addAttribute("account",account);
         return "postedit";
     }
 
-
     /**
-     * 文章列表
+     * 回收站
      *
+     * @param model
+     * @param account 当前账户
      * @author gonghf95
      */
-    @RequestMapping("/postlist")
-    public String postlist(@PathVariable String account) {
-        return null;
+    @RequestMapping("/deleted")
+    public String deleted(Model model, @PathVariable String account) {
+        model.addAttribute("account",account);
+        return "deleted";
     }
 
     /**

@@ -5,7 +5,7 @@ import cn.sumi.pojo.BlogConfigure;
 import cn.sumi.pojo.User;
 import cn.sumi.service.ArticleService;
 import cn.sumi.service.UserService;
-import cn.sumi.utils.JSONCapsule;
+import cn.sumi.vo.JSONResultVO;
 import com.alibaba.fastjson.JSON;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,28 +44,28 @@ public class CommonController {
         List<Article> articleList = articleService.findAll(account);
         BlogConfigure blogConfigure = userService.getAccountConfigure(account);
         Collections.reverse(articleList);
-        model.addAttribute("articleList",articleList);
-        model.addAttribute("blogconfigure",blogConfigure);
+        model.addAttribute("articleList", articleList);
+        model.addAttribute("blogconfigure", blogConfigure);
         return "home";
     }
 
     /**
      * 用户登录
      *
-     * @param user    表单和用户实体映射
+     * @param user 表单和用户实体映射
      * @author gonghf95
      */
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public @ResponseBody
     String login(User user) {
         logger.info(user);
-        JSONCapsule jsonCapsule;
+        JSONResultVO JSONResultVO = null;
         if (userService.login(user)) {
-            jsonCapsule = new JSONCapsule(user.getAccount(), JSONCapsule.SUCCESS);
-            return JSON.toJSONString(jsonCapsule);
+            JSONResultVO = new JSONResultVO(user.getAccount(), JSONResultVO.SUCCESS);
+            return JSON.toJSONString(JSONResultVO);
         }
-        jsonCapsule = new JSONCapsule("Incorrect username or password.", JSONCapsule.FAILURE);
-        return JSON.toJSONString(jsonCapsule);
+        JSONResultVO = new JSONResultVO("Incorrect username or password.", JSONResultVO.FAILURE);
+        return JSON.toJSONString(JSONResultVO);
     }
 
     /**
@@ -81,8 +81,8 @@ public class CommonController {
             model.addAttribute("article", article);
             return "details";
         }
-        JSONCapsule capsule = new JSONCapsule();
-        capsule.setState(JSONCapsule.FAILURE);
+        JSONResultVO capsule = new JSONResultVO();
+        capsule.setState(JSONResultVO.FAILURE);
         capsule.setMessage("查看文章详情失败。出错原因可能是该文章id不存在。");
         model.addAttribute("result", capsule);
         return "error";

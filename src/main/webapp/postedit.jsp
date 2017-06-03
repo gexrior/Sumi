@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page isELIgnored="false"%>
 <%@ taglib prefix="s" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -9,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="images/favicon.ico">
-    <title>新文章</title>
+    <title>编辑文章</title>
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet">
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
@@ -127,13 +128,12 @@
 <div class="home-masthead">
     <div class="container">
         <nav class="home-nav">
-            <a class="home-nav-item glyphicon glyphicon-home" href="/root/${user.account}/main"> 起始页</a>
-            <a class="home-nav-item" href="#">文章管理 <span class="badge">${post}</span> </a>
-            <a class="home-nav-item" href="#">类别管理 <span class="badge">${post}</span></a>
-            <a class="home-nav-item" href="#">评论管理 <span class="badge">${post}</span></a>
-            <a class="home-nav-item" href="#">草稿箱 <span class="badge">${post}</span></a>
-            <a class="home-nav-item" href="#">回收站 <span class="badge">${post}</span></a>
-            <a class="home-nav-item navbar-right glyphicon glyphicon-edit active" href="/root/${user.account}/article/postedit">写新文章</a>
+            <a class="home-nav-item" href="/root/${account}/postlist">文章管理 <span class="badge"></span> </a>
+            <a class="home-nav-item" href="/root/${account}/category">类别管理 <span class="badge"></span></a>
+            <a class="home-nav-item" href="/root/${account}/comment">评论管理 <span class="badge"></span></a>
+            <a class="home-nav-item" href="/root/${account}/draft">草稿箱 <span class="badge"></span></a>
+            <a class="home-nav-item" href="/root/${account}/deleted">回收站 <span class="badge"></span></a>
+            <a class="home-nav-item navbar-right glyphicon glyphicon-edit active" href="/root/${account}/article/postedit">写新文章 </a>
         </nav>
     </div>
 </div>
