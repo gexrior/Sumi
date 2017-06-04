@@ -7,10 +7,11 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * 拦截器
- * 用户未登录直接访问/root路径一律不允许
+ * 用户未登录直接访问带/root路径一律不允许
  * Created by gonghf95 on 6/4/17.
  */
 public class AccessHandlerInterceptor implements HandlerInterceptor {
@@ -18,8 +19,8 @@ public class AccessHandlerInterceptor implements HandlerInterceptor {
     Logger logger = Logger.getLogger(AccessHandlerInterceptor.class);
 
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {
-
-        User usr = (User) httpServletRequest.getAttribute("usr");
+        HttpSession session = httpServletRequest.getSession();
+        User usr = (User) session.getAttribute("usr");
         if (usr == null) {//用户没有登录成功，访问路径越界，重定向到登录页面
             logger.info(httpServletRequest.getRemoteHost()+" 正在请求敏感路径...");
             httpServletRequest.getRequestDispatcher("/login.jsp").forward(httpServletRequest,httpServletResponse);

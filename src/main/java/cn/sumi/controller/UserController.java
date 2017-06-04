@@ -30,7 +30,7 @@ public class UserController {
     @RequestMapping("/postlist")
     public String manage(Model model, @PathVariable String account) {
         model.addAttribute("account", account);
-        return "postlist";
+        return "root/postlist";
     }
 
     /**
@@ -43,7 +43,7 @@ public class UserController {
     @RequestMapping("/category")
     public String category(Model model, @PathVariable String account) {
         model.addAttribute("account", account);
-        return "category";
+        return "root/category";
     }
 
     /**
@@ -56,7 +56,7 @@ public class UserController {
     @RequestMapping("/comment")
     public String comment(Model model, @PathVariable String account) {
         model.addAttribute("account", account);
-        return "comment";
+        return "root/comment";
     }
 
     /**
@@ -69,7 +69,7 @@ public class UserController {
     @RequestMapping("/draft")
     public String draft(Model model, @PathVariable String account) {
         model.addAttribute("account", account);
-        return "draft";
+        return "root/draft";
     }
 
     /**
@@ -82,7 +82,7 @@ public class UserController {
     @RequestMapping("/postedit")
     public String postedit(Model model, @PathVariable String account) {
         model.addAttribute("account",account);
-        return "postedit";
+        return "root/postedit";
     }
 
     /**
@@ -95,7 +95,7 @@ public class UserController {
     @RequestMapping("/deleted")
     public String deleted(Model model, @PathVariable String account) {
         model.addAttribute("account",account);
-        return "deleted";
+        return "root/deleted";
     }
 
     /**

@@ -46,7 +46,7 @@ public class ArticleController {
     @RequestMapping("/postedit")
     public String newArticle(@PathVariable String account,Model model){
         model.addAttribute("account",account);
-        return "postedit";
+        return "root/postedit";
     }
 
     /**

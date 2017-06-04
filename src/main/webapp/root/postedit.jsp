@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="images/favicon.ico">
+    <link rel="icon" href="../images/favicon.ico">
     <title>编辑文章</title>
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet">
@@ -171,7 +171,7 @@
                 language: 'zh-ch',
                 extraPlugins: 'codesnippet',
                 codeSnippet_theme: 'rainbow',
-                filebrowserUploadUrl: '/root/${user.account}/article/upload',
+                filebrowserUploadUrl: '/root/${account}/article/upload',
                 toolbarCanCollapse: true,
                 disableObjectResizing: true
             });
@@ -194,13 +194,13 @@
                 }
                 $.ajax({
                     type: "POST",
-                    url: "/root/${user.account}/article/add",
+                    url: "/root/${account}/article/add",
                     data: {title: title, contents: contents},
                     datatype: "json",
                     success: function (data) {
                         var resp = jQuery.parseJSON(data);
                         if(resp.state===1){
-                            var path = "/article/details/"+resp.data;
+                            var path = "/root/${account}/postlist";
                             window.location.href=path;
                         }
                     },
