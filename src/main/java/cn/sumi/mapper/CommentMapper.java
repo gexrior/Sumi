@@ -1,6 +1,6 @@
 package cn.sumi.mapper;
 
-import cn.sumi.pojo.Comment;
+import cn.sumi.po.Comment;
 import org.springframework.stereotype.Repository;
 
 @Repository

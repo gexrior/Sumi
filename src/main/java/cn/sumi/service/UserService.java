@@ -1,7 +1,7 @@
 package cn.sumi.service;
 
-import cn.sumi.pojo.BlogConfigure;
-import cn.sumi.pojo.User;
+import cn.sumi.po.BlogConfigure;
+import cn.sumi.po.User;
 
 /**
  *

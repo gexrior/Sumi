@@ -1,9 +1,8 @@
 package cn.sumi.service.impl;
 
 import cn.sumi.mapper.ArticleMapper;
-import cn.sumi.pojo.Article;
-import cn.sumi.pojo.Comment;
-import cn.sumi.pojo.User;
+import cn.sumi.po.Article;
+import cn.sumi.po.Comment;
 import cn.sumi.service.ArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
@@ -12,8 +11,6 @@ import org.springframework.stereotype.Service;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  *

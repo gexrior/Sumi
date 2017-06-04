@@ -1,6 +1,6 @@
 package cn.sumi.mapper;
 
-import cn.sumi.pojo.Article;
+import cn.sumi.po.Article;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

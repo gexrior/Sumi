@@ -1,11 +1,11 @@
 package cn.sumi.controller;
 
-import cn.sumi.pojo.Article;
-import cn.sumi.pojo.BlogConfigure;
-import cn.sumi.pojo.User;
+import cn.sumi.po.Article;
+import cn.sumi.po.BlogConfigure;
+import cn.sumi.po.User;
 import cn.sumi.service.ArticleService;
 import cn.sumi.service.UserService;
-import cn.sumi.vo.JSONResultVO;
+import cn.sumi.dto.JsonResult;
 import com.alibaba.fastjson.JSON;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.Collections;
 import java.util.List;
 
@@ -52,20 +54,25 @@ public class CommonController {
     /**
      * 用户登录
      *
-     * @param user 表单和用户实体映射
+     * @param httpServletRequest request
+     * @param user               表单和用户实体映射
      * @author gonghf95
      */
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public @ResponseBody
-    String login(User user) {
+    String login(HttpServletRequest httpServletRequest, User user) {
         logger.info(user);
-        JSONResultVO JSONResultVO = null;
+        JsonResult JsonResult = null;
         if (userService.login(user)) {
-            JSONResultVO = new JSONResultVO(user.getAccount(), JSONResultVO.SUCCESS);
-            return JSON.toJSONString(JSONResultVO);
+            JsonResult = new JsonResult(user.getAccount(), JsonResult.SUCCESS);
+            //如果登录成功的话，可以再查该用户了
+            HttpSession session = httpServletRequest.getSession();
+            session.setAttribute("usr", user);
+            session.setMaxInactiveInterval(1800);
+            return JSON.toJSONString(JsonResult);
         }
-        JSONResultVO = new JSONResultVO("Incorrect username or password.", JSONResultVO.FAILURE);
-        return JSON.toJSONString(JSONResultVO);
+        JsonResult = new JsonResult("Incorrect username or password.", JsonResult.FAILURE);
+        return JSON.toJSONString(JsonResult);
     }
 
     /**
@@ -81,8 +88,8 @@ public class CommonController {
             model.addAttribute("article", article);
             return "details";
         }
-        JSONResultVO capsule = new JSONResultVO();
-        capsule.setState(JSONResultVO.FAILURE);
+        JsonResult capsule = new JsonResult();
+        capsule.setState(JsonResult.FAILURE);
         capsule.setMessage("查看文章详情失败。出错原因可能是该文章id不存在。");
         model.addAttribute("result", capsule);
         return "error";

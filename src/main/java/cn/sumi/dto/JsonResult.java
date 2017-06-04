@@ -1,10 +1,10 @@
-package cn.sumi.vo;
+package cn.sumi.dto;
 
 /**
  * JSON 字串封装
  * Created by gonghf95 on 5/30/17.
  */
-public class JSONResultVO {
+public class JsonResult {
     private Object data;
     private String message;
     private int state;
@@ -12,15 +12,15 @@ public class JSONResultVO {
     public static int SUCCESS = 1;
     public static int FAILURE = 0;
 
-    public JSONResultVO() {
+    public JsonResult() {
     }
 
-    public JSONResultVO(String message, int state) {
+    public JsonResult(String message, int state) {
         this.state = state;
         this.message = message;
     }
 
-    public JSONResultVO(Object data, String message, int state) {
+    public JsonResult(Object data, String message, int state) {
         this.state = state;
         this.message = message;
         this.data = data;

@@ -1,4 +1,4 @@
-package cn.sumi.pojo;
+package cn.sumi.po;
 
 public class Comment {
     private Integer cid;

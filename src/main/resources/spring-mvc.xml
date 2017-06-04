@@ -17,6 +17,14 @@
     <mvc:resources location="/js/" mapping="/js/**"/>
     <mvc:default-servlet-handler/>
     <mvc:annotation-driven/>
+    
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/root/**"/>
+            <bean class="cn.sumi.interceptor.AccessHandlerInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+    
     <!-- ViewResolver -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>

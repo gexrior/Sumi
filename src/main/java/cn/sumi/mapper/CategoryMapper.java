@@ -1,6 +1,6 @@
 package cn.sumi.mapper;
 
-import cn.sumi.pojo.Category;
+import cn.sumi.po.Category;
 import org.springframework.stereotype.Repository;
 
 @Repository

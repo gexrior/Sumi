@@ -1,6 +1,6 @@
 package cn.sumi.mapper;
 
-import cn.sumi.pojo.BlogConfigure;
+import cn.sumi.po.BlogConfigure;
 import org.springframework.stereotype.Repository;
 
 @Repository

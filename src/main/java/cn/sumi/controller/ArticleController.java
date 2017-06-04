@@ -1,10 +1,9 @@
 package cn.sumi.controller;
 
-import cn.sumi.pojo.Article;
-import cn.sumi.pojo.User;
+import cn.sumi.po.Article;
 import cn.sumi.service.ArticleService;
 import cn.sumi.service.UserService;
-import cn.sumi.vo.JSONResultVO;
+import cn.sumi.dto.JsonResult;
 import com.alibaba.fastjson.JSON;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
@@ -61,19 +60,19 @@ public class ArticleController {
     public @ResponseBody
     String add(@PathVariable String account, Article article) {
         logger.info("article: " + article);
-        JSONResultVO JSONResultVO = new JSONResultVO();
+        JsonResult JsonResult = new JsonResult();
         try {
             int postId = articleService.newArticle(article, account);
-            JSONResultVO.setState(JSONResultVO.SUCCESS);
-            JSONResultVO.setMessage(account);
-            JSONResultVO.setData(postId);
-            return JSON.toJSONString(JSONResultVO);
+            JsonResult.setState(JsonResult.SUCCESS);
+            JsonResult.setMessage(account);
+            JsonResult.setData(postId);
+            return JSON.toJSONString(JsonResult);
         } catch (DataAccessException e) {
             logger.error(e.toString());
         }
-        JSONResultVO.setState(JSONResultVO.FAILURE);
-        JSONResultVO.setMessage("账户不存在,发表文章失败");
-        return JSON.toJSONString(JSONResultVO);
+        JsonResult.setState(JsonResult.FAILURE);
+        JsonResult.setMessage("账户不存在,发表文章失败");
+        return JSON.toJSONString(JsonResult);
     }
 
     /**

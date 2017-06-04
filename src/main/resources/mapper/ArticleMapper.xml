@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="cn.sumi.mapper.ArticleMapper">
-    <resultMap id="BaseResultMap" type="cn.sumi.pojo.Article">
+    <resultMap id="BaseResultMap" type="cn.sumi.po.Article">
         <constructor>
             <idArg column="aid" jdbcType="INTEGER" javaType="java.lang.Integer"/>
             <arg column="title" jdbcType="VARCHAR" javaType="java.lang.String"/>
@@ -13,7 +13,7 @@
             <arg column="views" jdbcType="INTEGER" javaType="java.lang.Integer"/>
         </constructor>
     </resultMap>
-    <resultMap id="ResultMapWithBLOBs" type="cn.sumi.pojo.Article">
+    <resultMap id="ResultMapWithBLOBs" type="cn.sumi.po.Article">
         <constructor>
             <idArg column="aid" jdbcType="INTEGER" javaType="java.lang.Integer"/>
             <arg column="title" jdbcType="VARCHAR" javaType="java.lang.String"/>
@@ -55,7 +55,7 @@
     delete from article
     where aid = #{aid,jdbcType=INTEGER}
   </delete>
-    <insert id="insert" useGeneratedKeys="true" keyProperty="aid" parameterType="cn.sumi.pojo.Article">
+    <insert id="insert" useGeneratedKeys="true" keyProperty="aid" parameterType="cn.sumi.po.Article">
     insert into article (aid, title, author, 
       digest, cid, publish_date, 
       comments, views, contents
@@ -65,7 +65,7 @@
       #{comments,jdbcType=INTEGER}, #{views,jdbcType=INTEGER}, #{contents,jdbcType=LONGVARCHAR}
       )
   </insert>
-    <insert id="insertSelective" parameterType="cn.sumi.pojo.Article">
+    <insert id="insertSelective" parameterType="cn.sumi.po.Article">
         insert into article
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="aid != null">
@@ -126,7 +126,7 @@
             </if>
         </trim>
     </insert>
-    <update id="updateByPrimaryKeySelective" parameterType="cn.sumi.pojo.Article">
+    <update id="updateByPrimaryKeySelective" parameterType="cn.sumi.po.Article">
         update article
         <set>
             <if test="title != null">
@@ -156,7 +156,7 @@
         </set>
         where aid = #{aid,jdbcType=INTEGER}
     </update>
-    <update id="updateByPrimaryKeyWithBLOBs" parameterType="cn.sumi.pojo.Article">
+    <update id="updateByPrimaryKeyWithBLOBs" parameterType="cn.sumi.po.Article">
     update article
     set title = #{title,jdbcType=VARCHAR},
       author = #{author,jdbcType=VARCHAR},
@@ -168,7 +168,7 @@
       contents = #{contents,jdbcType=LONGVARCHAR}
     where aid = #{aid,jdbcType=INTEGER}
   </update>
-    <update id="updateByPrimaryKey" parameterType="cn.sumi.pojo.Article">
+    <update id="updateByPrimaryKey" parameterType="cn.sumi.po.Article">
     update article
     set title = #{title,jdbcType=VARCHAR},
       author = #{author,jdbcType=VARCHAR},

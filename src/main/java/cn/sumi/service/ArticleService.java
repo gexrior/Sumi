@@ -1,8 +1,7 @@
 package cn.sumi.service;
 
-import cn.sumi.pojo.Article;
-import cn.sumi.pojo.Comment;
-import cn.sumi.pojo.User;
+import cn.sumi.po.Article;
+import cn.sumi.po.Comment;
 
 import java.util.List;
 

@@ -1,6 +1,5 @@
 package cn.sumi.controller;
 
-import cn.sumi.pojo.User;
 import cn.sumi.service.UserService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;

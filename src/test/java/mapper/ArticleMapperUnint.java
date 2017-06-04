@@ -2,7 +2,7 @@ package mapper;
 
 import base.BaseConfiguration;
 import cn.sumi.mapper.ArticleMapper;
-import cn.sumi.pojo.Article;
+import cn.sumi.po.Article;
 import org.apache.log4j.Logger;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;

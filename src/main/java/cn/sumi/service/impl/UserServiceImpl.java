@@ -2,8 +2,8 @@ package cn.sumi.service.impl;
 
 import cn.sumi.mapper.BlogConfigureMapper;
 import cn.sumi.mapper.UserMapper;
-import cn.sumi.pojo.BlogConfigure;
-import cn.sumi.pojo.User;
+import cn.sumi.po.BlogConfigure;
+import cn.sumi.po.User;
 import cn.sumi.service.UserService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;

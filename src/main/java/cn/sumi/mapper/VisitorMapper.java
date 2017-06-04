@@ -1,6 +1,6 @@
 package cn.sumi.mapper;
 
-import cn.sumi.pojo.Visitor;
+import cn.sumi.po.Visitor;
 import org.springframework.stereotype.Repository;
 
 @Repository

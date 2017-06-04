@@ -1,4 +1,4 @@
-package cn.sumi.pojo;
+package cn.sumi.po;
 
 import java.util.Date;
 

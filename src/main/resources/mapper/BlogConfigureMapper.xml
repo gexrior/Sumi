@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.sumi.mapper.BlogConfigureMapper">
-    <resultMap id="BaseResultMap" type="cn.sumi.pojo.BlogConfigure">
+    <resultMap id="BaseResultMap" type="cn.sumi.po.BlogConfigure">
         <constructor>
             <idArg column="account" javaType="java.lang.String" jdbcType="VARCHAR"/>
             <arg column="title" javaType="java.lang.String" jdbcType="VARCHAR"/>
@@ -21,13 +21,13 @@
     delete from blogconfigure
     where account = #{account,jdbcType=VARCHAR}
   </delete>
-    <insert id="insert" parameterType="cn.sumi.pojo.BlogConfigure">
+    <insert id="insert" parameterType="cn.sumi.po.BlogConfigure">
     insert into blogconfigure (account, title, signature
       )
     values (#{account,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, #{signature,jdbcType=VARCHAR}
       )
   </insert>
-    <insert id="insertSelective" parameterType="cn.sumi.pojo.BlogConfigure">
+    <insert id="insertSelective" parameterType="cn.sumi.po.BlogConfigure">
         insert into blogconfigure
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="account != null">
@@ -52,7 +52,7 @@
             </if>
         </trim>
     </insert>
-    <update id="updateByPrimaryKeySelective" parameterType="cn.sumi.pojo.BlogConfigure">
+    <update id="updateByPrimaryKeySelective" parameterType="cn.sumi.po.BlogConfigure">
         update blogconfigure
         <set>
             <if test="title != null">
@@ -64,7 +64,7 @@
         </set>
         where account = #{account,jdbcType=VARCHAR}
     </update>
-    <update id="updateByPrimaryKey" parameterType="cn.sumi.pojo.BlogConfigure">
+    <update id="updateByPrimaryKey" parameterType="cn.sumi.po.BlogConfigure">
     update blogconfigure
     set title = #{title,jdbcType=VARCHAR},
       signature = #{signature,jdbcType=VARCHAR}
