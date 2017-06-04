@@ -30,6 +30,7 @@ public class UserController {
      */
     @RequestMapping("/postlist")
     public String manage(Model model, @PathVariable String account) {
+        //TODO:do your business
         model.addAttribute("account", account);
         return "postlist";
     }
