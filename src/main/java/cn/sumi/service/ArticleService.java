@@ -25,6 +25,12 @@ public interface ArticleService {
     int newArticle(Article article, String author);
 
     /**
+     * 更新文章
+     * @param article 记录
+     * */
+    void updateArticle(Article article);
+
+    /**
      * 编辑文章
      *
      * @param articleId 待编辑的文章

@@ -1,5 +1,6 @@
 package cn.sumi.controller;
 
+import cn.sumi.service.ArticleService;
 import cn.sumi.service.UserService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,8 @@ public class UserController {
     private Logger logger = Logger.getLogger(UserController.class);
     @Autowired
     private UserService userService;
+    @Autowired
+    private ArticleService articleService;
 
     /**
      * 文章管理
@@ -30,6 +33,7 @@ public class UserController {
     @RequestMapping("/postlist")
     public String manage(Model model, @PathVariable String account) {
         model.addAttribute("account", account);
+        model.addAttribute("articleList",articleService.findAll());
         return "root/postlist";
     }
 

@@ -37,6 +37,10 @@ public class ArticleServiceImpl implements ArticleService {
         return article.getAid();
     }
 
+    public void updateArticle(Article article) {
+        articleMapper.updateByPrimaryKey(article);
+    }
+
     public void editArticle(Article articleId) {
 
     }

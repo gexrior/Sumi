@@ -81,10 +81,16 @@ public class CommonController {
      * @author gonghf95
      */
     @RequestMapping("/article/details/{articleId}")
-    public String articleDetails(@PathVariable int articleId, Model model) {
+    public String articleDetails(@PathVariable int articleId, Model model, HttpServletRequest request) {
         Article article = articleService.find(articleId);
         if (article != null) {//文章找到
             model.addAttribute("article", article);
+            HttpSession session = request.getSession();
+            User user = (User) session.getAttribute("usr");
+            if (user == null) {//登录后查看文章不计为浏览
+                article.setViews(article.getViews() + 1);
+            }
+            articleService.updateArticle(article);
             return "details";
         }
         JsonResult capsule = new JsonResult();
