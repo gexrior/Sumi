@@ -10,6 +10,11 @@
     <sql id="Base_Column_List">
     cid, name
   </sql>
+    <select id="findAll" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from category;
+    </select>
     <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List"/>
@@ -20,7 +25,7 @@
     delete from category
     where cid = #{cid,jdbcType=INTEGER}
   </delete>
-    <insert id="insert" parameterType="cn.sumi.pojo.Category">
+    <insert id="insert" useGeneratedKeys="true" keyProperty="cid" parameterType="cn.sumi.pojo.Category">
     insert into category (cid, name)
     values (#{cid,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR})
   </insert>

@@ -1,7 +1,10 @@
 package cn.sumi.mapper;
 
+import cn.sumi.pojo.Article;
 import cn.sumi.pojo.Category;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Repository
 public interface CategoryMapper {
@@ -10,6 +13,8 @@ public interface CategoryMapper {
     int insert(Category record);
 
     int insertSelective(Category record);
+
+    List<Category> findAll();
 
     Category selectByPrimaryKey(Integer cid);
 

@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page isELIgnored="false"%>
-<%@ taglib prefix="s" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -109,6 +109,29 @@
 
 <div class="container">
 
+        <table id="lstBox" cellspacing="0" border="0" align="center">
+            <thead>
+            <tr><td><th class="tdleft" style="width:120px;" >类别</th></td>
+                <td><th style="width:120px;">文章</th></td>
+                <th style="width:100px;">操作</th>
+                <th style="width:100px;">排序</th></tr>
+            </thead>
+
+            <c:forEach items="${categoryInfoList}" var="categoryInfo">
+            <tr><td><th class="Cname"><span> ${categoryInfo.category.name}</span></th></td>
+                <td><th class="ArticleCount" >${categoryInfo.count}</th></td>
+                <td class="operation"><a href='#6931870' name='edit' onclick="javascript:doExec(this,6931870,'edit');return false;">编辑</a>
+                    | <a href='?del=6931870' name='del' onclick="javascript:doExec(this,6931870,'del');return false;">删除</a></td>
+                <td class="sort"></td>
+                </tr>
+
+                <tr>
+                </tr>
+                    </tbody>
+            </c:forEach>
+
+        </table>
+        </table>
 
 </div><!-- /.container -->
 

@@ -29,4 +29,12 @@ public class Category {
     public void setName(String name) {
         this.name = name == null ? null : name.trim();
     }
+
+    @Override
+    public String toString() {
+        return "Category{" +
+                "cid=" + cid +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }
