@@ -1,5 +1,6 @@
 package cn.sumi.service.impl;
 
+import cn.sumi.dto.BlogInfo;
 import cn.sumi.mapper.BlogConfigureMapper;
 import cn.sumi.mapper.UserMapper;
 import cn.sumi.po.BlogConfigure;
@@ -21,19 +22,19 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserMapper userMapper;
     @Autowired
-    private BlogConfigureMapper blogConfigure;
+    private BlogConfigureMapper blogConfigureMapper;
 
 
     public User getAccountInfo(String account) {
         return userMapper.selectByPrimaryKey(account);
     }
 
-    public BlogConfigure getAccountConfigure(String account) {
-        return blogConfigure.selectByPrimaryKey(account);
+    public BlogConfigure getBlogInfo() {
+        return blogConfigureMapper.find();
     }
 
     public boolean login(User user) {
-        //查找该账户，不存在该账户返回空
+        //查找该账户，不存在该账户返回null
         User res = userMapper.selectByPrimaryKey(user.getAccount());
         if (res != null && res.getPasswd().equals(user.getPasswd())) {
             return true;
@@ -41,8 +42,17 @@ public class UserServiceImpl implements UserService {
         return false;
     }
 
-    public boolean register(User user) {
-        return false;
+    public void register(BlogInfo blogInfo) {
+        User user = blogInfo.getUser();
+        User res = userMapper.selectByPrimaryKey(user.getAccount());
+        if (res == null) {
+            BlogConfigure configure = blogInfo.getBlogConfigure();
+            configure.setAccount(user.getAccount());
+            configure.setTitle(configure.getTitle().equals(null)?user.getNickname():configure.getTitle());
+            configure.setSignature(configure.getSignature().equals(null)?"":configure.getSignature());
+            userMapper.insert(user);
+            blogConfigureMapper.insert(configure);
+        }
     }
 
 }

@@ -13,10 +13,8 @@ public interface ArticleService {
 
     /**
      * 获取用户的文章列表
-     *
-     * @param account 待查找用户
      */
-    List<Article> findAll(String account);
+    List<Article> findAll();
 
     /**
      * 添加新文章

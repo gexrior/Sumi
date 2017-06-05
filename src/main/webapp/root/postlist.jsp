@@ -102,7 +102,7 @@
             <a class="home-nav-item" href="/root/${account}/draft">草稿箱 <span class="badge"></span></a>
             <a class="home-nav-item" href="/root/${account}/deleted">回收站 <span class="badge"></span></a>
             <a class="home-nav-item navbar-right glyphicon glyphicon-edit"
-               href="/root/${account}/article/postedit"> 写新文章 </a>
+               href="/root/${account}/article/postedit">写新文章 </a>
         </nav>
     </div>
 </div>

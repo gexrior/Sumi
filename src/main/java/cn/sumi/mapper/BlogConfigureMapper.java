@@ -11,7 +11,7 @@ public interface BlogConfigureMapper {
 
     int insertSelective(BlogConfigure record);
 
-    BlogConfigure selectByPrimaryKey(String account);
+    BlogConfigure find();
 
     int updateByPrimaryKeySelective(BlogConfigure record);
 

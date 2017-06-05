@@ -15,7 +15,7 @@ public interface ArticleMapper {
 
     Article selectByPrimaryKey(Integer aid);
 
-    List<Article> findAll(String account);
+    List<Article> findAll();
 
     int updateByPrimaryKeySelective(Article record);
 

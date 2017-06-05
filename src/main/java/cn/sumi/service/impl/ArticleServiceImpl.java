@@ -22,8 +22,8 @@ public class ArticleServiceImpl implements ArticleService {
     @Autowired
     private ArticleMapper articleMapper;
 
-    public List<Article> findAll(String account) {
-        return articleMapper.findAll(account);
+    public List<Article> findAll() {
+        return articleMapper.findAll();
     }
 
     public int newArticle(Article article, String author) throws DataAccessException {

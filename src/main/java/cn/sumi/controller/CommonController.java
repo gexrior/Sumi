@@ -42,9 +42,8 @@ public class CommonController {
      */
     @RequestMapping("/home")
     public String home(Model model) {
-        String account = "gonghf95";
-        List<Article> articleList = articleService.findAll(account);
-        BlogConfigure blogConfigure = userService.getAccountConfigure(account);
+        List<Article> articleList = articleService.findAll();
+        BlogConfigure blogConfigure = userService.getBlogInfo();
         Collections.reverse(articleList);
         model.addAttribute("articleList", articleList);
         model.addAttribute("blogconfigure", blogConfigure);

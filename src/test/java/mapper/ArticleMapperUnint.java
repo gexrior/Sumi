@@ -20,7 +20,7 @@ public class ArticleMapperUnint extends BaseConfiguration {
 
     @Test
     public void findAll() {
-        List<Article> articleList = articleMapper.findAll("gonghf95");
+        List<Article> articleList = articleMapper.findAll();
         for (Article article : articleList) {
             logger.info(article);
         }

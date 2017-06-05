@@ -11,11 +11,10 @@
     <sql id="Base_Column_List">
     account, title, signature
   </sql>
-    <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    <select id="find" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List"/>
         from blogconfigure
-        where account = #{account,jdbcType=VARCHAR}
     </select>
     <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     delete from blogconfigure
