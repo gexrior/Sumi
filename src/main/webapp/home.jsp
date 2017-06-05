@@ -46,21 +46,22 @@
                                                    title="链接到${article.title}">${article.digest}</a></p>
                 </div><!-- /.blog-post -->
             </s:forEach>
-
+<!--
             <nav>
                 <ul class="pager">
                     <li><a href="#">Previous</a></li>
                     <li><a href="#">Next</a></li>
                 </ul>
             </nav>
-
+-->
         </div><!-- /.blog-main -->
 
         <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
             <div class="sidebar-module sidebar-module-inset">
                 <h4>About</h4>
-                <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet
-                    fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+                <p>就读于桂林理工大学。</p>
+                <p>喜欢算法，也一直在为脱离算法渣渣而奋斗。</p>
+                <p>目前正在考研ing。</p>
             </div>
             <div class="sidebar-module">
                 <h4>Archives</h4>

@@ -83,7 +83,7 @@ public class CommonController {
     @RequestMapping("/article/details/{articleId}")
     public String articleDetails(@PathVariable int articleId, Model model) {
         Article article = articleService.find(articleId);
-        if (article != null) {//文章没找到
+        if (article != null) {//文章找到
             model.addAttribute("article", article);
             return "details";
         }
