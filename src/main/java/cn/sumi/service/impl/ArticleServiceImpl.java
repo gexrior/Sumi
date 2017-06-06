@@ -27,10 +27,11 @@ public class ArticleServiceImpl implements ArticleService {
     }
 
     public int newArticle(Article article, String author) throws DataAccessException {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         article.setPublishDate(sdf.format(new Date()));
         article.setComments(0);
         article.setViews(0);
+        article.setArticleType(0);
         article.setAuthor(author);
         article.setDigest(extractDigest(article.getContents()));
         articleMapper.insert(article);
@@ -67,7 +68,6 @@ public class ArticleServiceImpl implements ArticleService {
     public String extractDigest(String html){
         String digest = html.replaceAll("</?[^>]+>", "");
         digest = digest.replaceAll("\\s*|\t|\r|\n", "");
-        digest = digest.replaceAll("&nbsp;","");
         int len = digest.length()>200?200:digest.length();
         return digest.substring(0,len);
     }

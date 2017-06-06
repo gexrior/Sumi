@@ -1,6 +1,14 @@
 package cn.sumi.po;
 
 public class Article {
+
+    /**
+     * 文章在回收站还是在草稿箱
+     * */
+    public static int TYPE_NORMAL = 0;
+    public static int TYPE_DRAFT = 1;
+    public static int TYPE_DELETED = 2;
+
     private Integer aid;
 
     private String title;
@@ -9,7 +17,9 @@ public class Article {
 
     private String digest;
 
-    private Integer cid;
+    private Integer categoryId;
+
+    private Integer articleType;
 
     private String publishDate;
 
@@ -19,12 +29,13 @@ public class Article {
 
     private String contents;
 
-    public Article(Integer aid, String title, String author, String digest, Integer cid, String publishDate, Integer comments, Integer views, String contents) {
+    public Article(Integer aid, String title, String author, String digest, Integer categoryId, Integer articleType, String publishDate, Integer comments, Integer views, String contents) {
         this.aid = aid;
         this.title = title;
         this.author = author;
         this.digest = digest;
-        this.cid = cid;
+        this.categoryId = categoryId;
+        this.articleType = articleType;
         this.publishDate = publishDate;
         this.comments = comments;
         this.views = views;
@@ -67,12 +78,20 @@ public class Article {
         this.digest = digest == null ? null : digest.trim();
     }
 
-    public Integer getCid() {
-        return cid;
+    public Integer getCategoryId() {
+        return categoryId;
     }
 
-    public void setCid(Integer cid) {
-        this.cid = cid;
+    public void setCategoryId(Integer categoryId) {
+        this.categoryId = categoryId;
+    }
+
+    public Integer getArticleType() {
+        return articleType;
+    }
+
+    public void setArticleType(Integer articleType) {
+        this.articleType = articleType;
     }
 
     public String getPublishDate() {
@@ -114,7 +133,8 @@ public class Article {
                 ", title='" + title + '\'' +
                 ", author='" + author + '\'' +
                 ", digest='" + digest + '\'' +
-                ", cid=" + cid +
+                ", categoryId=" + categoryId +
+                ", articleType=" + articleType +
                 ", publishDate='" + publishDate + '\'' +
                 ", comments=" + comments +
                 ", views=" + views +

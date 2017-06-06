@@ -7,7 +7,8 @@
             <arg column="title" jdbcType="VARCHAR" javaType="java.lang.String"/>
             <arg column="author" jdbcType="VARCHAR" javaType="java.lang.String"/>
             <arg column="digest" jdbcType="VARCHAR" javaType="java.lang.String"/>
-            <arg column="cid" jdbcType="INTEGER" javaType="java.lang.Integer"/>
+            <arg column="category_id" jdbcType="INTEGER" javaType="java.lang.Integer"/>
+            <arg column="article_type" jdbcType="INTEGER" javaType="java.lang.Integer"/>
             <arg column="publish_date" jdbcType="VARCHAR" javaType="java.lang.String"/>
             <arg column="comments" jdbcType="INTEGER" javaType="java.lang.Integer"/>
             <arg column="views" jdbcType="INTEGER" javaType="java.lang.Integer"/>
@@ -19,7 +20,8 @@
             <arg column="title" jdbcType="VARCHAR" javaType="java.lang.String"/>
             <arg column="author" jdbcType="VARCHAR" javaType="java.lang.String"/>
             <arg column="digest" jdbcType="VARCHAR" javaType="java.lang.String"/>
-            <arg column="cid" jdbcType="INTEGER" javaType="java.lang.Integer"/>
+            <arg column="category_id" jdbcType="INTEGER" javaType="java.lang.Integer"/>
+            <arg column="article_type" jdbcType="INTEGER" javaType="java.lang.Integer"/>
             <arg column="publish_date" jdbcType="VARCHAR" javaType="java.lang.String"/>
             <arg column="comments" jdbcType="INTEGER" javaType="java.lang.Integer"/>
             <arg column="views" jdbcType="INTEGER" javaType="java.lang.Integer"/>
@@ -27,7 +29,7 @@
         </constructor>
     </resultMap>
     <sql id="Base_Column_List">
-    aid, title, author, digest, cid, publish_date, comments, views
+    aid, title, author, digest, category_id, article_type, publish_date, comments, views
   </sql>
     <sql id="Blob_Column_List">
     contents
@@ -42,6 +44,17 @@
         from article;
     </select>
 
+    <select id="findByType" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        ,
+        <include refid="Blob_Column_List"/>
+        from article
+        where article_type=#{articleType};
+    </select>
+
+    <!-- end -->
+
     <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer">
         select
         <include refid="Base_Column_List"/>
@@ -50,20 +63,19 @@
         from article
         where aid = #{aid,jdbcType=INTEGER}
     </select>
-
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from article
     where aid = #{aid,jdbcType=INTEGER}
   </delete>
     <insert id="insert" useGeneratedKeys="true" keyProperty="aid" parameterType="cn.sumi.po.Article">
     insert into article (aid, title, author, 
-      digest, cid, publish_date, 
-      comments, views, contents
-      )
+      digest, category_id, article_type, 
+      publish_date, comments, views, 
+      contents)
     values (#{aid,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, #{author,jdbcType=VARCHAR}, 
-      #{digest,jdbcType=VARCHAR}, #{cid,jdbcType=INTEGER}, #{publishDate,jdbcType=VARCHAR}, 
-      #{comments,jdbcType=INTEGER}, #{views,jdbcType=INTEGER}, #{contents,jdbcType=LONGVARCHAR}
-      )
+      #{digest,jdbcType=VARCHAR}, #{categoryId,jdbcType=INTEGER}, #{articleType,jdbcType=INTEGER}, 
+      #{publishDate,jdbcType=VARCHAR}, #{comments,jdbcType=INTEGER}, #{views,jdbcType=INTEGER}, 
+      #{contents,jdbcType=LONGVARCHAR})
   </insert>
     <insert id="insertSelective" parameterType="cn.sumi.po.Article">
         insert into article
@@ -80,8 +92,11 @@
             <if test="digest != null">
                 digest,
             </if>
-            <if test="cid != null">
-                cid,
+            <if test="categoryId != null">
+                category_id,
+            </if>
+            <if test="articleType != null">
+                article_type,
             </if>
             <if test="publishDate != null">
                 publish_date,
@@ -109,8 +124,11 @@
             <if test="digest != null">
                 #{digest,jdbcType=VARCHAR},
             </if>
-            <if test="cid != null">
-                #{cid,jdbcType=INTEGER},
+            <if test="categoryId != null">
+                #{categoryId,jdbcType=INTEGER},
+            </if>
+            <if test="articleType != null">
+                #{articleType,jdbcType=INTEGER},
             </if>
             <if test="publishDate != null">
                 #{publishDate,jdbcType=VARCHAR},
@@ -138,8 +156,11 @@
             <if test="digest != null">
                 digest = #{digest,jdbcType=VARCHAR},
             </if>
-            <if test="cid != null">
-                cid = #{cid,jdbcType=INTEGER},
+            <if test="categoryId != null">
+                category_id = #{categoryId,jdbcType=INTEGER},
+            </if>
+            <if test="articleType != null">
+                article_type = #{articleType,jdbcType=INTEGER},
             </if>
             <if test="publishDate != null">
                 publish_date = #{publishDate,jdbcType=VARCHAR},
@@ -161,7 +182,8 @@
     set title = #{title,jdbcType=VARCHAR},
       author = #{author,jdbcType=VARCHAR},
       digest = #{digest,jdbcType=VARCHAR},
-      cid = #{cid,jdbcType=INTEGER},
+      category_id = #{categoryId,jdbcType=INTEGER},
+      article_type = #{articleType,jdbcType=INTEGER},
       publish_date = #{publishDate,jdbcType=VARCHAR},
       comments = #{comments,jdbcType=INTEGER},
       views = #{views,jdbcType=INTEGER},
@@ -173,7 +195,8 @@
     set title = #{title,jdbcType=VARCHAR},
       author = #{author,jdbcType=VARCHAR},
       digest = #{digest,jdbcType=VARCHAR},
-      cid = #{cid,jdbcType=INTEGER},
+      category_id = #{categoryId,jdbcType=INTEGER},
+      article_type = #{articleType,jdbcType=INTEGER},
       publish_date = #{publishDate,jdbcType=VARCHAR},
       comments = #{comments,jdbcType=INTEGER},
       views = #{views,jdbcType=INTEGER}

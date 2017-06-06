@@ -17,6 +17,8 @@ public interface ArticleMapper {
 
     List<Article> findAll();
 
+    List<Article> findByType(int articleType);
+
     int updateByPrimaryKeySelective(Article record);
 
     int updateByPrimaryKeyWithBLOBs(Article record);

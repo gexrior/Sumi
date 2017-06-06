@@ -27,6 +27,14 @@ public class ArticleMapperUnint extends BaseConfiguration {
     }
 
     @Test
+    public void findByType() {
+        List<Article> articles = articleMapper.findByType(Article.TYPE_NORMAL);
+        for (Article article : articles) {
+            logger.info(article);
+        }
+    }
+
+    @Test
     public void deleteByPrimaryKey() {
 
     }

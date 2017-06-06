@@ -1,6 +1,7 @@
 package cn.sumi.controller;
 
 import cn.sumi.po.Article;
+import cn.sumi.po.User;
 import cn.sumi.service.ArticleService;
 import cn.sumi.service.UserService;
 import cn.sumi.dto.JsonResult;
@@ -36,6 +37,8 @@ public class ArticleController {
     Logger logger = Logger.getLogger(ArticleController.class);
     @Autowired
     private ArticleService articleService;
+    @Autowired
+    private UserService userService;
 
     /**
      * 新文章
@@ -61,7 +64,8 @@ public class ArticleController {
         logger.info("article: " + article);
         JsonResult JsonResult = new JsonResult();
         try {
-            int postId = articleService.newArticle(article, account);
+            User user = userService.getAccountInfo(account);
+            int postId = articleService.newArticle(article, user.getNickname());
             JsonResult.setState(JsonResult.SUCCESS);
             JsonResult.setMessage(account);
             JsonResult.setData(postId);
