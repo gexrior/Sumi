@@ -35,8 +35,6 @@ public class ArticleController {
 
     Logger logger = Logger.getLogger(ArticleController.class);
     @Autowired
-    private UserService userService;
-    @Autowired
     private ArticleService articleService;
 
     /**
