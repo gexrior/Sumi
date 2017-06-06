@@ -186,7 +186,7 @@
                 <td>
                     <a href="">编辑</a> |
                     <a href="">置顶</a> |
-                    <a href="" name="del">删除</a> |
+                    <a href="/root/${account}/article/delete/${article.aid}" name="del">删除</a> |
                     <a href="" class="cat">分类</a>
                 </td>
             </tr>

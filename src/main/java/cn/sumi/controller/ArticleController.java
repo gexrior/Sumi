@@ -41,11 +41,12 @@ public class ArticleController {
 
     /**
      * 新文章
+     *
      * @param account 当前用户
-     * */
+     */
     @RequestMapping("/postedit")
-    public String newArticle(@PathVariable String account,Model model){
-        model.addAttribute("account",account);
+    public String newArticle(@PathVariable String account, Model model) {
+        model.addAttribute("account", account);
         return "root/postedit";
     }
 
@@ -82,8 +83,10 @@ public class ArticleController {
      * @author gonghf95
      */
     @RequestMapping("/delete/{aid}")
-    public String delete(@PathVariable int aid) {
-        return null;
+    public String delete(@PathVariable int aid, @PathVariable String account, Model model) {
+        model.addAttribute("account", account);
+        articleService.deleteArticle(aid);
+        return "redirect:/root/"+account+"/postlist";
     }
 
     /**
@@ -124,7 +127,7 @@ public class ArticleController {
     }
 
     private void processFormField(FileItem item) {
-        logger.info("processFormField: "+item);
+        logger.info("processFormField: " + item);
     }
 
     private void processUploadedFile(FileItem item, String savePath, HttpServletRequest request, HttpServletResponse response) throws Exception {

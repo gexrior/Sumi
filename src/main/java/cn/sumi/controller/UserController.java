@@ -1,5 +1,6 @@
 package cn.sumi.controller;
 
+import cn.sumi.po.Article;
 import cn.sumi.service.ArticleService;
 import cn.sumi.service.UserService;
 import org.apache.log4j.Logger;
@@ -7,6 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Collections;
+import java.util.List;
 
 /**
  * 用户控制层
@@ -33,7 +37,9 @@ public class UserController {
     @RequestMapping("/postlist")
     public String manage(Model model, @PathVariable String account) {
         model.addAttribute("account", account);
-        model.addAttribute("articleList",articleService.findAll());
+        List<Article> articleList = articleService.findAll();
+        Collections.reverse(articleList);
+        model.addAttribute("articleList",articleList);
         return "root/postlist";
     }
 
