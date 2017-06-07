@@ -3,9 +3,10 @@ package cn.sumi.controller;
 import cn.sumi.po.Article;
 import cn.sumi.po.BlogConfigure;
 import cn.sumi.po.User;
-import cn.sumi.service.ArticleService;
+import cn.sumi.service.PostService;
 import cn.sumi.service.UserService;
 import cn.sumi.dto.JsonResult;
+import cn.sumi.utils.Constants;
 import com.alibaba.fastjson.JSON;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +34,7 @@ public class CommonController {
     @Autowired
     private UserService userService;
     @Autowired
-    private ArticleService articleService;
+    private PostService postService;
 
     /**
      * 主页访问
@@ -42,7 +43,7 @@ public class CommonController {
      */
     @RequestMapping("/home")
     public String home(Model model) {
-        List<Article> articleList = articleService.findAll();
+        List<Article> articleList = postService.getArticleListByType(Constants.ARTICLE_TYPE_NORMAL);
         BlogConfigure blogConfigure = userService.getBlogInfo();
         Collections.reverse(articleList);
         model.addAttribute("articleList", articleList);
@@ -82,7 +83,7 @@ public class CommonController {
      */
     @RequestMapping("/article/details/{articleId}")
     public String articleDetails(@PathVariable int articleId, Model model, HttpServletRequest request) {
-        Article article = articleService.find(articleId);
+        Article article = postService.find(articleId);
         if (article != null) {//文章找到
             model.addAttribute("article", article);
             HttpSession session = request.getSession();
@@ -90,7 +91,7 @@ public class CommonController {
             if (user == null) {//登录后查看文章不计为浏览
                 article.setViews(article.getViews() + 1);
             }
-            articleService.updateArticle(article);
+            postService.updateArticle(article);
             return "details";
         }
         JsonResult capsule = new JsonResult();

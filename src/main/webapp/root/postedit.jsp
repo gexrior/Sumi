@@ -131,9 +131,9 @@
             <a class="home-nav-item" href="/root/${account}/postlist">文章管理 <span class="badge"></span> </a>
             <a class="home-nav-item" href="/root/${account}/category">类别管理 <span class="badge"></span></a>
             <a class="home-nav-item" href="/root/${account}/comment">评论管理 <span class="badge"></span></a>
-            <a class="home-nav-item" href="/root/${account}/draft">草稿箱 <span class="badge"></span></a>
-            <a class="home-nav-item" href="/root/${account}/deleted">回收站 <span class="badge"></span></a>
-            <a class="home-nav-item navbar-right glyphicon glyphicon-edit active" href="/root/${account}/article/postedit">写新文章 </a>
+            <a class="home-nav-item" href="/root/${account}/postlist/0/draft">草稿箱 <span class="badge"></span></a>
+            <a class="home-nav-item" href="/root/${account}/postlist/0/deleted">回收站 <span class="badge"></span></a>
+            <a class="home-nav-item navbar-right glyphicon glyphicon-edit active" href="/root/${account}/postedit">写新文章 </a>
         </nav>
     </div>
 </div>
@@ -171,7 +171,7 @@
                 language: 'zh-ch',
                 extraPlugins: 'codesnippet',
                 codeSnippet_theme: 'rainbow',
-                filebrowserUploadUrl: '/root/${account}/article/upload',
+                filebrowserUploadUrl: '/root/${account}/article/uploadimg',
                 toolbarCanCollapse: true,
                 disableObjectResizing: true
             });
@@ -194,7 +194,7 @@
                 }
                 $.ajax({
                     type: "POST",
-                    url: "/root/${account}/article/add",
+                    url: "/root/${account}/postlist/add",
                     data: {title: title, contents: contents},
                     datatype: "json",
                     success: function (data) {

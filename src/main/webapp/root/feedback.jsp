@@ -99,10 +99,10 @@
             <a class="home-nav-item" href="/root/${account}/postlist">文章管理 <span class="badge"></span> </a>
             <a class="home-nav-item" href="/root/${account}/category">类别管理 <span class="badge"></span></a>
             <a class="home-nav-item active" href="/root/${account}/comment">评论管理 <span class="badge"></span></a>
-            <a class="home-nav-item" href="/root/${account}/draft">草稿箱 <span class="badge"></span></a>
-            <a class="home-nav-item" href="#">回收站 <span class="badge"></span></a>
+            <a class="home-nav-item" href="/root/${account}/postlist/0/draft">草稿箱 <span class="badge"></span></a>
+            <a class="home-nav-item" href="/root/${account}/postlist/0/deleted">回收站 <span class="badge"></span></a>
             <a class="home-nav-item navbar-right glyphicon glyphicon-edit"
-               href="/root/${account}/article/postedit">写新文章</a>
+               href="/root/${account}/postedit">写新文章</a>
         </nav>
     </div>
 </div>

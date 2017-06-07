@@ -9,12 +9,12 @@ import java.util.List;
  * 文章业务
  * Created by gonghf95 on 5/24/17.
  */
-public interface ArticleService {
+public interface PostService {
 
     /**
      * 获取用户的文章列表
      */
-    List<Article> findAll();
+    List<Article> getArticleListByType(int articleType);
 
     /**
      * 添加新文章
@@ -42,8 +42,13 @@ public interface ArticleService {
      *
      * @param articleId 待删除文章Id
      */
-    void deleteArticle(int articleId);
+    void delete(int articleId);
 
+    /**
+     * 移除该文章
+     * @param articleId 删除文章
+     * */
+    void remove(int articleId);
 
     /**
      * 文章详情

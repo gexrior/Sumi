@@ -2,13 +2,6 @@ package cn.sumi.po;
 
 public class Article {
 
-    /**
-     * 文章在回收站还是在草稿箱
-     * */
-    public static int TYPE_NORMAL = 0;
-    public static int TYPE_DRAFT = 1;
-    public static int TYPE_DELETED = 2;
-
     private Integer aid;
 
     private String title;

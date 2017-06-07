@@ -3,6 +3,7 @@ package mapper;
 import base.BaseConfiguration;
 import cn.sumi.mapper.ArticleMapper;
 import cn.sumi.po.Article;
+import cn.sumi.utils.Constants;
 import org.apache.log4j.Logger;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +29,7 @@ public class ArticleMapperUnint extends BaseConfiguration {
 
     @Test
     public void findByType() {
-        List<Article> articles = articleMapper.findByType(Article.TYPE_NORMAL);
+        List<Article> articles = articleMapper.findByType(Constants.ARTICLE_TYPE_DELETED);
         for (Article article : articles) {
             logger.info(article);
         }

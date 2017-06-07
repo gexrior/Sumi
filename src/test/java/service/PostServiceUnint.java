@@ -1,7 +1,7 @@
 package service;
 
 import base.BaseConfiguration;
-import cn.sumi.service.ArticleService;
+import cn.sumi.service.PostService;
 import org.apache.log4j.Logger;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,12 +9,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 /**
  * Created by gonghf95 on 5/31/17.
  */
-public class ArticleServiceUnint extends BaseConfiguration{
+public class PostServiceUnint extends BaseConfiguration{
 
-    Logger logger = Logger.getLogger(ArticleServiceUnint.class);
+    Logger logger = Logger.getLogger(PostServiceUnint.class);
 
     @Autowired
-    private ArticleService articleService;
+    private PostService postService;
 
 
     @Test

@@ -3,7 +3,8 @@ package cn.sumi.service.impl;
 import cn.sumi.mapper.ArticleMapper;
 import cn.sumi.po.Article;
 import cn.sumi.po.Comment;
-import cn.sumi.service.ArticleService;
+import cn.sumi.service.PostService;
+import cn.sumi.utils.Constants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
@@ -17,14 +18,16 @@ import java.util.List;
  * Created by gonghf95 on 5/24/17.
  */
 @Service
-public class ArticleServiceImpl implements ArticleService {
+public class PostServiceImpl implements PostService {
 
     @Autowired
     private ArticleMapper articleMapper;
 
-    public List<Article> findAll() {
-        return articleMapper.findAll();
+    public List<Article> getArticleListByType(int articleType) {
+        return articleMapper.findByType(articleType);
     }
+
+
 
     public int newArticle(Article article, String author) throws DataAccessException {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -46,7 +49,13 @@ public class ArticleServiceImpl implements ArticleService {
 
     }
 
-    public void deleteArticle(int articleId) {
+    public void delete(int articleId) {
+        Article article = articleMapper.selectByPrimaryKey(articleId);
+        article.setArticleType(Constants.ARTICLE_TYPE_DELETED);
+        articleMapper.updateByPrimaryKey(article);
+    }
+
+    public void remove(int articleId) {
         articleMapper.deleteByPrimaryKey(articleId);
     }
 

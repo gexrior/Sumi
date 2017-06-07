@@ -6,4 +6,21 @@ package cn.sumi.utils;
  */
 public class Constants {
     public static String BLOG = "Sumi";//o
+
+    public static String ACTION_DEL = "del";
+    public static String ACTION_DEEP_DELETE = "deepdel";
+
+    /**
+     * 文章在回收站还是在草稿箱
+     */
+    public static int ARTICLE_TYPE_NORMAL = 0;
+    public static int ARTICLE_TYPE_DRAFT = 1;
+    public static int ARTICLE_TYPE_DELETED = 2;
+
+    /**
+     * 请求类型
+     */
+    public static String REQUEST_TYPE_NORMAL = "normal";
+    public static String REQUEST_TYPE_DRAFT = "draft";
+    public static String REQUEST_TYPE_DELETED = "deleted";
 }
