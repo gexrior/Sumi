@@ -1,6 +1,6 @@
 package cn.sumi.controller;
 
-import cn.sumi.dto.JsonResult;
+import cn.sumi.dto.JSONInfo;
 import cn.sumi.po.Article;
 import cn.sumi.service.PostService;
 import cn.sumi.utils.Constants;
@@ -10,10 +10,11 @@ import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -65,7 +66,6 @@ public class UserController {
     /**
      * 回收站
      *
-     * @param model
      * @param account 当前账户
      * @author gonghf95
      */
@@ -79,17 +79,6 @@ public class UserController {
     }
 
     /**
-     * 用户配置
-     *
-     * @author gonghf95
-     */
-    @RequestMapping("/configure")
-    public String configure(@PathVariable String account) {
-        return null;
-    }
-
-
-    /**
      * 新文章
      *
      * @param account 当前用户
@@ -100,6 +89,39 @@ public class UserController {
         return "root/postedit";
     }
 
+    /**
+     * 文章添加
+     *
+     * @param account 当前用户
+     * @param article 添加帖子
+     * @author gonghf95
+     */
+    @RequestMapping("/postedit/add")
+    public @ResponseBody
+    String add(@PathVariable String account, Article article) {
+        logger.info("article: " + article);
+        postService.newPost(article, account);
+        JSONInfo jsonInfo = new JSONInfo(account,Constants.STATUS_SUCCESS);
+        return JSON.toJSONString(jsonInfo);
+    }
+
+    @RequestMapping("/postedit/{aid}")
+    public String editArticle(@PathVariable int aid, @PathVariable String account, Model model) {
+        model.addAttribute("account",account);
+        Article article = postService.find(aid);
+        model.addAttribute("post",article);
+        return "/root/postedit";
+    }
+
+    @RequestMapping("/postedit/update/{aid}")
+    public  @ResponseBody
+    String updatePost(@PathVariable String account,@PathVariable int aid, Article article){
+        logger.info("更新文章内容: ---------------->" + article);
+        article.setAid(aid);
+        postService.updateFromOldPost(article);
+        JSONInfo jsonInfo = new JSONInfo(account,Constants.STATUS_SUCCESS);
+        return JSON.toJSONString(jsonInfo);
+    }
 
     /**
      * 用户上传图片

@@ -5,7 +5,7 @@ import cn.sumi.po.BlogConfigure;
 import cn.sumi.po.User;
 import cn.sumi.service.PostService;
 import cn.sumi.service.UserService;
-import cn.sumi.dto.JsonResult;
+import cn.sumi.dto.JSONInfo;
 import cn.sumi.utils.Constants;
 import com.alibaba.fastjson.JSON;
 import org.apache.log4j.Logger;
@@ -30,7 +30,7 @@ import java.util.List;
 @Controller
 public class CommonController {
 
-    Logger logger = Logger.getLogger(CommonController.class);
+    private Logger logger = Logger.getLogger(CommonController.class);
     @Autowired
     private UserService userService;
     @Autowired
@@ -62,17 +62,17 @@ public class CommonController {
     public @ResponseBody
     String login(HttpServletRequest httpServletRequest, User user) {
         logger.info(user);
-        JsonResult JsonResult = null;
+        JSONInfo JSONInfo;
         if (userService.login(user)) {
-            JsonResult = new JsonResult(user.getAccount(), JsonResult.SUCCESS);
-            //如果登录成功的话，可以再查该用户了
+            JSONInfo = new JSONInfo(user.getAccount(), Constants.STATUS_SUCCESS);
+            //如果登录成功的话
             HttpSession session = httpServletRequest.getSession();
             session.setAttribute("usr", user);
             session.setMaxInactiveInterval(1800);
-            return JSON.toJSONString(JsonResult);
+            return JSON.toJSONString(JSONInfo);
         }
-        JsonResult = new JsonResult("Incorrect username or password.", JsonResult.FAILURE);
-        return JSON.toJSONString(JsonResult);
+        JSONInfo = new JSONInfo("Incorrect username or password.",Constants.STATUS_FAILURE);
+        return JSON.toJSONString(JSONInfo);
     }
 
     /**
@@ -91,11 +91,11 @@ public class CommonController {
             if (user == null) {//登录后查看文章不计为浏览
                 article.setViews(article.getViews() + 1);
             }
-            postService.updateArticle(article);
+            postService.updatePost(article);
             return "details";
         }
-        JsonResult capsule = new JsonResult();
-        capsule.setState(JsonResult.FAILURE);
+        JSONInfo capsule = new JSONInfo();
+        capsule.setState(Constants.STATUS_FAILURE);
         capsule.setMessage("查看文章详情失败。出错原因可能是该文章id不存在。");
         model.addAttribute("result", capsule);
         return "error";

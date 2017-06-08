@@ -178,7 +178,7 @@
         <c:forEach var="article" items="${articleList}">
             <tr class="">
                 <td class="tditem">
-                    <a href="" target="_blank">${article.title}</a><span class="gray">（${article.publishDate}）</span>
+                    <a href="/article/details/${article.aid}" target="_blank">${article.title}</a><span class="gray">（${article.publishDate}）</span>
                 </td>
                 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                 <td>${article.views}</td>

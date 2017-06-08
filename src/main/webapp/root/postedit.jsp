@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page isELIgnored="false"%>
-<%@ taglib prefix="s" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page isELIgnored="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -133,7 +133,8 @@
             <a class="home-nav-item" href="/root/${account}/comment">评论管理 <span class="badge"></span></a>
             <a class="home-nav-item" href="/root/${account}/postlist/0/draft">草稿箱 <span class="badge"></span></a>
             <a class="home-nav-item" href="/root/${account}/postlist/0/deleted">回收站 <span class="badge"></span></a>
-            <a class="home-nav-item navbar-right glyphicon glyphicon-edit active" href="/root/${account}/postedit">写新文章 </a>
+            <a class="home-nav-item navbar-right glyphicon glyphicon-edit active"
+               href="/root/${account}/postedit">写新文章 </a>
         </nav>
     </div>
 </div>
@@ -141,10 +142,10 @@
 <div class="container">
 
     <p class="subtit" style="margin-top: 20px">文章标题</p>
-    <input type="text" id="title" class="form-control" style="width: 560px;height: 26px;">
+    <input type="text" id="title" class="form-control" style="width: 560px;height: 26px;" value="${post.title}">
 
     <p class="subtit">文章内容</p>
-    <textarea cols="80" id="editor" name="editor" rows="10"></textarea>
+    <textarea cols="80" id="editor" name="editor" rows="10">${post.contents}</textarea>
 
     <p class="subtit">文章分类</p>
     <div>
@@ -158,7 +159,7 @@
         提示：请不要发布任何推广、广告（包括招聘）、政治、低俗等方面的内容，不要把博客当作SEO工具，否则可能会影响到您的使用。</p>
     <div class="btn_area">
         <input type="button" class="btn btn-primary input_btn" value="发表文章" id="publish">
-        <!--<input type="button" class="btn btn-primary input_btn" value="立即保存" id="draft"> -->
+        <input type="button" class="btn btn-primary input_btn" value="立即保存" id="save">
         <input type="button" class="btn btn-primary input_btn" value="舍弃" id="cancel">
     </div>
 
@@ -178,39 +179,85 @@
             /*提交按鈕事件响应*/
             $("#publish").click(function () {
                 var title = $("#title").val();
-                if (title===""){
+                if (title === "") {
                     alert("标题不能为空");
                     return false;
                 }
                 var contents = CKEDITOR.instances.editor.getData();
-                if (contents===""){
+                if (contents === "") {
                     alert("文章内容不能为空");
                     return false;
                 }
                 var category = $("#category").val();
-                if(category===""){
+                if (category === "") {
                     alert("类别不能为空");
                     return false;
                 }
                 $.ajax({
                     type: "POST",
-                    url: "/root/${account}/postlist/add",
-                    data: {title: title, contents: contents},
-                    datatype: "json",
+                    <c:choose>
+                    <c:when test="${post.aid>0}">
+                    url: "/root/${account}/postedit/update/${post.aid}",
+                    </c:when>
+                    <c:otherwise>
+                    url: "/root/${account}/postedit/add",
+                    </c:otherwise>
+                    </c:choose>
+                    data: {
+                        title: title,
+                        contents: contents,
+                        articleType: 0
+                    },
                     success: function (data) {
-                        var resp = jQuery.parseJSON(data);
-                        if(resp.state===1){
-                            var path = "/root/${account}/postlist";
+                        var res = jQuery.parseJSON(data);
+                        if (res.state === 1) {
+                            var path = "/root/"+res.message+"/postlist";
                             window.location.href=path;
                         }
-                    },
-                    //调用执行后调用的函数
-                    complete: function (XMLHttpRequest, textStatus) {
+                    }
+                });
+            });
 
+
+            /*保存按鈕事件响应*/
+            $("#save").click(function () {
+                var title = $("#title").val();
+                if (title === "") {
+                    alert("标题不能为空");
+                    return false;
+                }
+                var contents = CKEDITOR.instances.editor.getData();
+                if (contents === "") {
+                    alert("文章内容不能为空");
+                    return false;
+                }
+                var category = $("#category").val();
+                if (category === "") {
+                    alert("类别不能为空");
+                    return false;
+                }
+                $.ajax({
+                    type: "POST",
+                    <c:choose>
+                    <c:when test="${post.aid>0}">
+                    url: "/root/${account}/postedit/update/${post.aid}",
+                    </c:when>
+                    <c:otherwise>
+                    url: "/root/${account}/postedit/add",
+                    </c:otherwise>
+                    </c:choose>
+                    data: {
+                        title: title,
+                        contents: contents,
+                        articleType: 1
                     },
-                    //调用出错执行的函数
-                    error: function () {
-                        //请求出错处理
+                    datatype: "json",
+                    success: function (data) {
+                        var res = jQuery.parseJSON(data);
+                        if (res.state === 1) {
+                            var path = "/root/"+res.message+"/postlist/0/draft";
+                            window.location.href=path;
+                        }
                     }
                 });
             });

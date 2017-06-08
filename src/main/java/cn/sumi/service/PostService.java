@@ -22,20 +22,23 @@ public interface PostService {
      * @param article 待添加文章
      * @return 插入后的id
      */
-    int newArticle(Article article, String author);
+    int newPost(Article article, String author);
 
     /**
      * 更新文章
      * @param article 记录
      * */
-    void updateArticle(Article article);
+    void updatePost(Article article);
+
+    /***/
+    void updateFromOldPost(Article article);
 
     /**
      * 编辑文章
      *
      * @param articleId 待编辑的文章
      */
-    void editArticle(Article articleId);
+    void editPost(Article articleId);
 
     /**
      * 删除文章

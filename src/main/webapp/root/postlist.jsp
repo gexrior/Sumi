@@ -184,8 +184,8 @@
                 <td>${article.comments}</td>
                 <td><a href="" class="lock">禁止评论</a></td>
                 <td>
-                    <a href="">编辑</a> |
-                    <a href="">置顶</a> |
+                    <a href="/root/${account}/postedit/${article.aid}">编辑</a> |
+                    <a href="?t=top&id=${article.aid}">置顶</a> |
                     <a href="?t=del&id=${article.aid}" name="del">删除</a> |
                     <a href="" class="cat">分类</a>
                 </td>

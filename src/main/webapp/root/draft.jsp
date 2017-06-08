@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page isELIgnored="false"%>
-<%@ taglib prefix="s" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page isELIgnored="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -18,6 +18,7 @@
             font-family: Georgia, "Times New Roman", Times, serif;
             color: #555;
         }
+
         h1, .h1,
         h2, .h2,
         h3, .h3,
@@ -88,6 +89,60 @@
         .btn_area input {
             margin: 0 20px;
         }
+
+        /*====list====*/
+        #lstable {
+            width: 100%;
+            margin-top: 40px;
+        }
+
+        #lstable th {
+            text-align: center;
+            font-weight: bold;
+            border-bottom: solid 1px #ccc;
+            padding: 6px 2px;
+        }
+
+        #lstable td {
+            text-align: center;
+            padding: 12px 2px;
+            border-top: solid 1px #eee;
+        }
+
+        #lstable .tditem {
+            text-align: left;
+            padding-left: 6px;
+        }
+
+        #lstable .altitem td {
+            background-color: #f9f9f9;
+        }
+
+        #lstable .over td {
+            background-color: #F9FAD1;
+        }
+
+        #lstable td.enabled {
+        }
+
+        #lstable td.draft {
+            color: #999;
+        }
+
+        #lstable td.deleted {
+            color: #f00;
+        }
+
+        #lstable td.verifying {
+            color: #c60;
+        }
+
+        #lstable .recon {
+            text-align: left;
+            color: #333;
+            padding-left: 6px;
+            padding-bottom: 12px;
+        }
     </style>
 </head>
 
@@ -109,6 +164,35 @@
 
 <div class="container">
 
+    <table id="lstable" cellspacing="0">
+        <tbody>
+        <tr class="">
+            <th class="tditem">标题</th>
+            <th style="width:50px;">状态</th>
+            <th style="width:50px;">阅读</th>
+            <th style="width:50px;">评论</th>
+            <th style="width:70px;">评论权限</th>
+            <th style="width:170px;">操作</th>
+        </tr>
+
+        <c:forEach items="${articleList}" var="article">
+            <tr class="">
+                <td class="tditem"><a href="/article/details/${article.aid}"
+                                      target="_blank">${article.title}</a><span class="gray">（${article.publishDate}）</span></td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td>${article.views}</td>
+                <td>${article.comments}</td>
+                <td></td>
+                <td>
+                    <a href="/root/${account}/postedit/${article.aid}">编辑</a> |
+                    <a href="?t=del&id=${article.aid}" name="del">删除</a> |
+                    <a href="" onclick="" class="cat">分类</a>
+                </td>
+            </tr>
+        </c:forEach>
+
+        </tbody>
+    </table>
 
 </div><!-- /.container -->
 
