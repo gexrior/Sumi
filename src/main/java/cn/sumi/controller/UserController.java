@@ -39,7 +39,6 @@ public class UserController {
     @RequestMapping("/postlist")
     public String manage(Model model, @PathVariable String account) {
         model.addAttribute("account", account);
-        //TODO:do your business
         return "postlist";
     }
 
@@ -48,21 +47,18 @@ public class UserController {
      *
      * @param model
      * @param account 当前用户
-     * @author gonghf95
      */
     @RequestMapping("/category")
     public String category(Model model, @PathVariable String account) {
+        //TODO:do your business
         model.addAttribute("account", account);
         List<CategoryInfo> categoryInfoList = new ArrayList<CategoryInfo>();
-        ///
-        Category category=null;
-        CategoryInfo categoryInfo=null;
-        for (int i=0;i<10;i++){
-            category = new Category(1,String.valueOf((char)('a'+i)));
-            categoryInfo = new CategoryInfo(category,i);
-            categoryInfoList.add(categoryInfo);
-        }
-        model.addAttribute("categoryInfoList",categoryInfoList);
+        ///将数据库中的数据转化为前端数据
+        Category category=new Category();
+        CategoryInfo categoryInfo=new CategoryInfo();
+        List<Category>  s = categoryService.findAll();
+        categoryInfo.setCategory(s);
+        model.addAttribute("categoryInfo",categoryInfo);  //添加新的类别列表
         return "category";
     }
 

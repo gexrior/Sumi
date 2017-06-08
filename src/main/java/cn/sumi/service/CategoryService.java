@@ -29,9 +29,9 @@ public interface CategoryService{
     /**
      * 编辑类别
      *
-     * @param categoryId 待编辑的类别
+     * @param category 待编辑的类别
      */
-    void editCategory(Category categoryId);
+    void editCategory(Category category);
 
     /**
      * 删除类别

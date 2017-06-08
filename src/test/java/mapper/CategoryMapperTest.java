@@ -39,6 +39,7 @@ public class CategoryMapperTest extends BaseConfiguration{
 
     @Test
     public void deleteByPrimaryKey() {
+        categoryMapper.deleteByPrimaryKey(2);
     }
 
     @Test
@@ -48,8 +49,8 @@ public class CategoryMapperTest extends BaseConfiguration{
 
     @Test
    public void selectByPrimaryKey(){
-        Category category1 = categoryMapper.selectByPrimaryKey(122);
-        Assert.assertNull(category1);
+        Category category1 = categoryMapper.selectByPrimaryKey(2);
+
    }
 
     @Test
@@ -61,6 +62,8 @@ public class CategoryMapperTest extends BaseConfiguration{
 
     @Test
     public void updateByPrimaryKey(){
-
+        Category category= categoryMapper.selectByPrimaryKey(1);
+        category.setName("hhgfhj");
+     categoryMapper.updateByPrimaryKey(category);
     }
 }

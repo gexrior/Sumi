@@ -89,6 +89,19 @@
             margin: 0 20px;
         }
     </style>
+
+    <script language="JavaScript">
+
+    function addcategory() {
+        var category=document.getElementsByClassName("input_txt");
+        if(category.length==null)
+            window.alert("类别不能为空！");
+        else
+            window.alert("类别添加成功");
+    }
+    </script>
+
+    <script language="JavaScript" src="category.jsp"></script>
 </head>
 
 <body>
@@ -116,24 +129,53 @@
                 <th style="width:100px;">操作</th>
                 <th style="width:100px;">排序</th></tr>
             </thead>
+        </table>
 
-            <c:forEach items="${categoryInfoList}" var="categoryInfo">
-            <tr><td><th class="Cname"><span> ${categoryInfo.category.name}</span></th></td>
-                <td><th class="ArticleCount" >${categoryInfo.count}</th></td>
-                <td class="operation"><a href='#6931870' name='edit' onclick="javascript:doExec(this,6931870,'edit');return false;">编辑</a>
-                    | <a href='?del=6931870' name='del' onclick="javascript:doExec(this,6931870,'del');return false;">删除</a></td>
-                <td class="sort"></td>
-                </tr>
 
+            <div align="center" >
+                <table>
+            <c:forEach items="${categoryInfo.category}" var="category">
                 <tr>
-                </tr>
-                    </tbody>
-            </c:forEach>
 
+                <td>
+                <th class="Cname"><span> ${category.name}</span>
+                </th>
+                </td>
+
+
+
+                </td>
+                <td><th class="ArticleCount" >${categoryInfo.count}</th></td>
+
+                <td class="operation">
+                    <th><a href="/root/${account}/category/categoryedit" name="edit"  )>编辑</a>
+                    | <a href="/root/${account}/category/deletecategory" name="del")>删除</a></td>
+                    </th>
+
+                <td class="sort">
+                    <th>
+                    <a href='javascript:void(0);' name="up" )>上移</a>
+                    | <a href='javascript:void(0);' name="down")>下移</a>
+                   </th>
+                </td>
+                </tr>
+    </c:forEach>
+            </div>
         </table>
         </table>
+
+    <div align="center"  class="btn_area">
+       <tr>
+           <td>
+               <input id="categoryname" type="text" class="input_txt">
+               <input type="button" class="input_btn" value="添加类别" onclick="addcategory()">
+        </td>
+       </tr>
+    </div>
 
 </div><!-- /.container -->
+
+<div style="display: block;height: 70px;" id="content"></div>
 
 <div class="footer">
     <div class="container">

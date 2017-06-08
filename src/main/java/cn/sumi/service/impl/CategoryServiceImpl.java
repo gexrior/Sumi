@@ -6,6 +6,7 @@ import cn.sumi.pojo.Article;
 import cn.sumi.pojo.Category;
 import cn.sumi.pojo.Comment;
 import cn.sumi.service.CategoryService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
 
@@ -18,9 +19,12 @@ import java.util.List;
  */
 @Service
 public class CategoryServiceImpl implements CategoryService{
+
+    @Autowired
     private CategoryMapper categoryMapper;
 
     public List<Category> findAll() {
+
         return categoryMapper.findAll();
     }
 
@@ -31,13 +35,16 @@ public class CategoryServiceImpl implements CategoryService{
 
     public  void editCategory(Category categoryId){
 
+        categoryMapper.updateByPrimaryKey(categoryId);
     }
 
     public void deleteCategory(int categoryId) {
+
         categoryMapper.deleteByPrimaryKey(categoryId);
     }
 
     public Category find(int categoryId) {
+
         return categoryMapper.selectByPrimaryKey(categoryId);
     }
 
